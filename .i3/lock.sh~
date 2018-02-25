@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-tmpbg='/tmp/screen.png'
-
-scrot "$tmpbg"
-#convert -scale 10% -blur 0x2.5 -resize 1000% "$tmpbg" "$tmpbg"
-convert "$tmpbg" -alpha Set -virtual-pixel transparent -channel A -radial-blur 0x45 +channel "$tmpbg"
-         
-i3lock -u -i "$tmpbg"

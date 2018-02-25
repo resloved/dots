@@ -2,7 +2,12 @@
 
 ## Preview
 
-![Preview](https://imgur.com/5e1BRPX)
+![Preview](https://imgur.com/5e1BRPX.png)
+
+## Dependancies
+
+* WM: [i3-gaps](https://github.com/Airblader/i3)
+* Font: [Office Code Pro](https://github.com/nathco/Office-Code-Pro)
 
 ## Description
 
@@ -24,4 +29,4 @@ Basic i3 configuration has stayed mostly the same and I'm happy it's in a place 
 
 ## Wallpaper
 
-![Wallpaper](https://imgur.com/Pe0teoR)
+![Wallpaper](https://imgur.com/Pe0teoR.png)

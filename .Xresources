@@ -1,0 +1,56 @@
+*customization: -color
+xterm*termName: xterm
+
+xterm*faceName: Office Code Pro Light
+xterm*faceSize: 8
+
+!border
+xterm*borderWidth: 0
+xterm*internalBorder: 24
+
+! special
+xterm*foreground:   #ffffff
+xterm*background:   #1b1d1e
+
+! black
+xterm*color0:       #262626
+xterm*color8:       #636363
+
+! red
+xterm*color1:       #d7005f
+xterm*color9:       #d7005f
+
+! green
+xterm*color2:       #87ff00
+xterm*color10:      #87ff00
+
+! yellow
+xterm*color3:       #ff8700
+xterm*color11:      #ff8700
+
+! blue
+xterm*color4:       #acac85
+xterm*color12:      #acac85
+
+! magenta
+xterm*color5:       #af5fff
+xterm*color13:      #af5fff
+
+! cyan
+xterm*color6:       #5fd7ff
+xterm*color14:      #5fd7ff
+
+! white
+xterm*color7:       #444444
+xterm*color15:      #8a8a8a
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #1b1d1e, #252525, #252525
+rofi.color-normal: #1b1d1e, #ffffff, #1b1d1e, #e3e3e3, #000000
+rofi.color-active: #1b1d1e, #389bdf, #1b1d1e, #389bdf, #ffffff
+rofi.color-urgent: #1b1d1e, #ff5f00, #1b1d1e, #ff5f00, #ffffff
+rofi.bw: 10
+rofi.font: Source Code Pro 10

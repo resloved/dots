@@ -1,0 +1,99 @@
+/*===============================*/
+/* userChrome.css
+/*
+/* AUTHOR: /u/matfurla
+/* SRC: https://www.reddit.com/r/FirefoxCSS/comments/7l92q0/minimal_firefox_css/
+/* MODIFIED BY: Benjamin Friesen
+/* CONTACT: bfriesenwork@gmail.com
+/*
+/*===============================*/
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+ 
+:root {
+/*********************************/
+/**** URL BAR VARIABLES ****/
+/*********************************/
+    --url-background: #EEEEEE;
+    --url-foreground: #1B1D1E;
+    --url-fonts: "Sans-Serif";
+    --url-font-size: 10pt;
+    --url-text-align: center;
+    --url-height: 48px;
+}
+ 
+ 
+/*********************************/
+/**** MENU BAR CONFIG ****/
+/*********************************/
+#navigator-toolbox, #main-window[sizemode="normal"] #navigator-toolbox, #main-window[sizemode="maximized"] #navigator-toolbox {
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+    box-shadow: none !important;
+}
+ 
+/*********************************/
+/**** TAB BAR CONFIG ****/
+/*********************************/
+#TabsToolbar {
+    display: none;
+}
+ 
+/*********************************/
+/**** URL BAR CONFIG ****/
+/*********************************/
+#urlbar, .searchbar-textbox, urlbar-container {
+    height: var(--url-height) !important;
+    background-color: var(--url-background) !important;
+    color: var(--url-foreground) !important;
+    font-family: var(--url-fonts) !important;
+    font-size: var(--url-font-size);
+    text-shadow: none !important;
+    text-align: var(--url-text-align) !important;
+    border: 0px !important;
+    box-shadow: none !important;
+}
+ 
+#nav-bar[id], #PersonalToolbar[id], #web-developer-toolbar[id], #navigator-toolbox[tabsontop="true"] > #nav-bar[id], #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"][id] + toolbar, #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + #customToolbars + #PersonalToolbar[id], #navigator-toolbox[tabsontop="false"] > #nav-bar[id], #navigator-toolbox[tabsontop="false"]:not([customizing]) > #nav-bar[collapsed="true"][id] + toolbar, #navigator-toolbox[tabsontop="false"]:not([customizing]) > #nav-bar[collapsed="true"] + #customToolbars + #PersonalToolbar[id] {
+    background-image: none !important;
+    background: var(--url-background) !important;
+    background-color: var(--url-background) !important;
+    margin-top: 0px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+}
+ 
+/**** URL BUTTONS (DEFAULT=NONE) ****/
+#forward-button, #back-button, #PanelUI-menu-button, #PanelUI-button, .restore-tabs-button {
+    display: none !important;
+}
+ 
+/*********************************/
+/**** SCROLLBAR ****/
+/*********************************/
+#content browser {
+    margin-right:-18px!important;
+    margin-bottom:-18px!important;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+/*********************************/
+/**** OTHER CONFIGS ****/
+/*********************************/
+window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled], :not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon[class], #main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon[class] {
+    background-image: none !important;
+    background-color: var(--url-background) !important;
+    box-shadow: 0px !important;
+    border: 0px !important;
+}
+ 
+browser[type="content-primary"], browser[type="content"] {
+    background: var(--bg-dark) !important;
+}
+ 
+browser, browser.display.background_color, tabbrowser tabpanels {
+    background-color: var(--bg-dark) !important;
+}

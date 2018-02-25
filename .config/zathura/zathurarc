@@ -1,0 +1,45 @@
+# zathurarc
+
+# font
+set font "Office Code Pro 8"
+
+# colors
+#let bg         = "#262626"
+#let black      = "#000000"
+#let white      = "#ffffff"
+#let lightgrey  = "#8A8A8A"
+#let mediumgrey = "#444444"
+#let darkgrey   = "#1b1d1e"
+#let blue       = "#0087af"
+#let green      = "#7baa14"
+#let orange     = "#d75f00"
+
+set default-fg "#8a8a8a"
+set default-bg "#1b1d1e"
+
+set tabbar-fg "#1b1d1d"
+set tabbar-bg "#8a8a8a"
+
+set recolor-darkcolor  "#1b1d1e"
+set recolor-lightcolor "#8a8a8a"
+
+set statusbar-fg "#ffffff"
+set statusbar-bg "#403d3d"
+
+set inputbar-fg "#8a8a8a"
+set inputbar-bg "#1b1d1e"
+
+set completion-fg "#8a8a8a"
+set completion-bg "#1b1d1e"
+
+set completion-group-fg "#8a8a8a"
+set completion-group-bg "#222222"
+
+set completion-highlight-fg "#1b1d1e"
+set completion-highlight-bg "#8a8a8a"
+
+# shortcuts
+map <C-s> toggle_statusbar
+
+map <C-i> zoom in
+map <C-o> zoom out

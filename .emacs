@@ -23,7 +23,7 @@
  '(org-agenda-files (quote ("~/1.org" "~/test.org")))
  '(package-selected-packages
    (quote
-    (emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -220,3 +220,8 @@
 (diminish 'abbrev-mode)
 (diminish 'impatient-mode)
 (diminish 'emmet-mode)
+(diminish 'org-indent-mode)
+
+;; emojify
+(use-package emojify)
+(global-emojify-mode)

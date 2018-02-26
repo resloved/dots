@@ -18,24 +18,19 @@ function battery_pct_remaining() {
 
 function battery_pct_prompt() {
     b=$(battery_pct_remaining) 
-    if [[ $(acpi 2>/dev/null | grep -c '^Battery.*Discharging') -gt 0 ]] ; then
-        if [ $b -gt 50 ] ; then
-        color='green'
-        elif [ $b -gt 20 ] ; then
-        color='yellow'
-        else
-        color='red'
-        fi
-    else
-        color='cyan'
-    fi
-
-    t=''
     if [ $b -gt 90 ] ; then
-        # t='⦿' 
-        t='+' 
+        color='cyan'
+    elif [ $b -gt 50 ] ; then
+        color='green'
+    elif [ $b -gt 20 ] ; then
+        color='yellow'
     else
+        color='red'
+    fi
+    if [[ $(acpi 2>/dev/null | grep -c '^Battery.*Discharging') -gt 0 ]] ; then
         t='o'
+    else
+        t='+' 
     fi
     echo "%{$fg[$color]%} $t"
 }

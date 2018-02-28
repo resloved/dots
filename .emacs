@@ -39,7 +39,7 @@
 
 ;; line numbers
 (global-linum-mode t)
-(setq linum-format "    %d  ")
+(setq linum-format "%d  ")
 
 ;; no splash
 (setq inhibit-startup-screen t)
@@ -56,14 +56,16 @@
 ;; visual line
 (global-visual-line-mode 1)
 
-;;col
-(column-number-mode 1)
+;; ============= MODELINE ============
 
 ;;git
 (defadvice vc-mode-line (after strip-backend () activate)
   (when (stringp vc-mode)
     (let ((gitlogo (replace-regexp-in-string "^ Git." " " vc-mode)))
           (setq vc-mode gitlogo))))
+
+;; col
+(column-number-mode 1)
 
 
 ;; ============= PACKAGES ============
@@ -221,6 +223,7 @@
 (diminish 'impatient-mode)
 (diminish 'emmet-mode)
 (diminish 'org-indent-mode)
+(diminish 'auto-revert-mode)
 
 ;; emojify
 (use-package emojify)

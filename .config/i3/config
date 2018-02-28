@@ -322,7 +322,7 @@ bindsym $mod+Shift+y exec blender
 #bindsym $mod+Ctrl+u  exec
 #bindsym $mod+Shift+u exec
 
-bindsym $mod+i       exec emacs
+bindsym $mod+i       exec emacs -ib 24
 #bindsym $mod+Ctrl+i  exec
 bindsym $mod+Shift+i exec zathura
 

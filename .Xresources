@@ -43,14 +43,3 @@ xterm*color14:      #5fd7ff
 ! white
 xterm*color7:       #444444
 xterm*color15:      #8a8a8a
-
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-rofi.color-enabled: true
-rofi.color-window: #1b1d1e, #252525, #252525
-rofi.color-normal: #1b1d1e, #ffffff, #1b1d1e, #e3e3e3, #000000
-rofi.color-active: #1b1d1e, #389bdf, #1b1d1e, #389bdf, #ffffff
-rofi.color-urgent: #1b1d1e, #ff5f00, #1b1d1e, #ff5f00, #ffffff
-rofi.bw: 10
-rofi.font: Source Code Pro 10

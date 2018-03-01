@@ -19,11 +19,15 @@
    (quote
     ("1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default)))
  '(fringe-mode 0 nil (fringe))
+ '(git-gutter:added-sign " ")
+ '(git-gutter:deleted-sign " ")
+ '(git-gutter:modified-sign " ")
+ '(git-gutter:window-width 1)
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/1.org" "~/test.org")))
  '(package-selected-packages
    (quote
-    (diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -36,10 +40,6 @@
  '(default ((t (:family "Office Code Pro" :foundry "NATH" :slant normal :weight light :height 83 :width normal)))))
 
 ;; ============= GENERAL ============
-
-;; line numbers
-(global-linum-mode t)
-(setq linum-format " %d  ")
 
 ;; no splash
 (setq inhibit-startup-screen t)
@@ -211,24 +211,30 @@
 (use-package emojify)
 (global-emojify-mode)
 
-;; git-gutter
-(use-package git-gutter)
-(global-git-gutter-mode)
+;; git-gutter+
+(use-package git-gutter-fringe+)
+(require 'git-gutter-fringe+)
+(global-git-gutter+-mode)
+(git-gutter+-toggle-fringe)
 
 (custom-set-variables
- '(git-gutter:added-sign " ")
- '(git-gutter:modified-sign " ")
- '(git-gutter:deleted-sign " "))
+ '(git-gutter+-added-sign     " ")
+ '(git-gutter+-modified-sign  " ")
+ '(git-gutter+-deleted-sign   " ")
+ '(git-gutter+-separator-sign " "))
 
-(set-face-attribute 'git-gutter:added nil
-                    :background "#AACC20"
-                    :foreground "#AACC20")
-(set-face-attribute 'git-gutter:modified nil
-                    :background "#AE81FF"
-                    :foreground "#AE81FF")
-(set-face-attribute 'git-gutter:deleted nil
-                    :background "#CCAA20"
-                    :foreground "#CCAA20")
+(set-face-attribute 'git-gutter+-added nil
+                    :background "#B6D22E"
+                    :foreground "#B6D22E")
+(set-face-attribute 'git-gutter+-modified nil
+                    :background "#FD971F"
+                    :foreground "#FD971F")
+(set-face-attribute 'git-gutter+-deleted nil
+                    :background "#D7005F"
+                    :foreground "#D7005F")
+(set-face-attribute 'git-gutter+-separator nil
+                    :background "#1B1D1E"
+                    :foreground "#1B1D1E")
 
 ;; diminish
 
@@ -245,3 +251,4 @@
 (diminish 'emmet-mode)
 (diminish 'org-indent-mode)
 (diminish 'auto-revert-mode)
+(diminish 'git-gutter+-mode)

@@ -26,6 +26,7 @@ floating_modifier $mod
 
 # window edge
 for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
 
 # gaps
 set $inner 16

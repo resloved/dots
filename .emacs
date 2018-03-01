@@ -1,13 +1,13 @@
-;; ========================================================================
-;; emacs config file
+;; =======================================================================
+;; .emacs
 ;;
 ;; AUTHOR:  Benjamin Friesen
-;; REPO:    https://github.com/resloved/dotfiles-yadm
+;; REPO:    https://github.com/resloved/dots
 ;; CONTACT: bfriesenwork@gmail.com
 ;;
-;; ========================================================================
+;; =======================================================================
 
-;; ============= GENERATED ============
+;; == GENERATED ==
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -39,7 +39,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Office Code Pro" :foundry "NATH" :slant normal :weight light :height 83 :width normal)))))
 
-;; ============= GENERAL ============
+;; == GENERAL ==
 
 ;; no splash
 (setq inhibit-startup-screen t)
@@ -47,7 +47,7 @@
 ;; tab as spaces
 (setq-default indent-tabs-mode nil)
 
-;; ============= VISUAL ============
+;; == VISUAL ==
 
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -56,7 +56,7 @@
 ;; visual line
 (global-visual-line-mode 1)
 
-;; ============= MODELINE ============
+;; == MODELINE ==
 
 ;;git
 (defadvice vc-mode-line (after strip-backend () activate)
@@ -68,7 +68,7 @@
 (column-number-mode 1)
 
 
-;; ============= PACKAGES ============
+;; == PACKAGES ==
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -91,8 +91,8 @@
   (progn
     (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
     (global-set-key "\C-cl" 'org-store-link)
-    (global-set-key "\C-ca" 'org-agenda)))
-    (setq org-startup-indented t)
+    (global-set-key "\C-ca" 'org-agenda)
+    (setq org-startup-indented t)))
 
 (setq org-src-tab-acts-nativley t)
 
@@ -158,20 +158,19 @@
         (evil-leader/set-key
           "e" 'helm-projectile
           "b" 'helm-mini
-          "z" 'previous-buffer "x" 'next-buffer
+          "z" 'previous-buffer
+          "x" 'next-buffer
           "c" 'kill-buffer
           "v" 'split-window-below
           "h" 'split-window-right
           "w" 'other-window
-          "g" 'magit-status)))
+          "g" 'magit-status
+          "o" 'git-gutter+-previous-hunk
+          "p" 'git-gutter+-next-hunk)))
     (evil-mode t)
     (use-package evil-surround
       :config
       (global-evil-surround-mode 1))
-    ;;(use-package evil-escape
-    ;;  :init (evil-escape-mode)
-    ;;  :config
-    ;;  (setq-default evil-escape-key-sequence "C-c"))
     (define-key evil-visual-state-map (kbd "C-c") 'evil-exit-visual-state)
     (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
     (evil-define-key 'normal org-mode-map

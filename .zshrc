@@ -1,4 +1,13 @@
-#== OHMYZSH ==
+# ========================================================================
+# .zshrc
+#
+# AUTHOR:  Benjamin Friesen
+# REPO:    https://github.com/resloved/dots
+# CONTACT: bfriesenwork@gmail.com
+#
+# ========================================================================
+
+# == OHMYZSH ==
 # Path to your oh-my-zsh installation.
 export ZSH=/home/ben/.oh-my-zsh
 ZSH_THEME="terminalpartied"

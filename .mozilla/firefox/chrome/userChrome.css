@@ -71,16 +71,6 @@
 }
  
 /*********************************/
-/**** SCROLLBAR ****/
-/*********************************/
-#content browser {
-    margin-right:-18px!important;
-    margin-bottom:-18px!important;
-    overflow-y:scroll;
-    overflow-x:hidden;
-}
-
-/*********************************/
 /**** OTHER CONFIGS ****/
 /*********************************/
 window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled], :not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon[class], #main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon[class] {

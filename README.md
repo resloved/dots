@@ -2,7 +2,7 @@
 
 ## Preview
 
-![Preview](https://imgur.com/5e1BRPX.png)
+![Preview](https://imgur.com/Ygz2Gdy.png)
 
 ## Dependancies
 

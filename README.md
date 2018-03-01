@@ -13,7 +13,7 @@
 
 ### Goals
 
-My last setup was a mess caused by experimentation, poor structural organization, and an unending amount of dependencies. Since changes had to made I kept a couple goals in mind.
+My last setup was a mess caused by experimentation, poor structural organization, and an unending amount of dependencies. Since changes had to be made I kept a couple goals in mind.
 
 + Maintainability
 + Essential

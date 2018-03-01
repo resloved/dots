@@ -23,7 +23,7 @@
  '(org-agenda-files (quote ("~/1.org" "~/test.org")))
  '(package-selected-packages
    (quote
-    (emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -39,7 +39,7 @@
 
 ;; line numbers
 (global-linum-mode t)
-(setq linum-format "%d  ")
+(setq linum-format " %d  ")
 
 ;; no splash
 (setq inhibit-startup-screen t)
@@ -186,9 +186,7 @@
   (evil-collection-init))
 
 ;; rainbow-mode
-
 (use-package rainbow-mode)
-(rainbow-mode)
 
 ;; processing
 
@@ -209,6 +207,29 @@
 ;; emmet
 (use-package emmet-mode)
 
+;; emojify
+(use-package emojify)
+(global-emojify-mode)
+
+;; git-gutter
+(use-package git-gutter)
+(global-git-gutter-mode)
+
+(custom-set-variables
+ '(git-gutter:added-sign " ")
+ '(git-gutter:modified-sign " ")
+ '(git-gutter:deleted-sign " "))
+
+(set-face-attribute 'git-gutter:added nil
+                    :background "#AACC20"
+                    :foreground "#AACC20")
+(set-face-attribute 'git-gutter:modified nil
+                    :background "#AE81FF"
+                    :foreground "#AE81FF")
+(set-face-attribute 'git-gutter:deleted nil
+                    :background "#CCAA20"
+                    :foreground "#CCAA20")
+
 ;; diminish
 
 ;;hide minor modes
@@ -224,7 +245,3 @@
 (diminish 'emmet-mode)
 (diminish 'org-indent-mode)
 (diminish 'auto-revert-mode)
-
-;; emojify
-(use-package emojify)
-(global-emojify-mode)

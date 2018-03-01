@@ -303,9 +303,9 @@ for_window [class="Spotify"] move to workspace $ws10
 #bindsym $mod+Shift+b exec
 
 set $code file:///home/ben/code/
-bindsym $mod+n       exec $browser
+bindsym $mod+n       exec firefox
 bindsym $mod+Ctrl+n  exec $browser --app=$code
-bindsym $mod+Shift+n exec firefox
+bindsym $mod+Shift+n exec firefox --private-window
 
 bindsym $mod+m       exec $music
 bindsym $mod+Ctrl+m  exec $browser --app=https://discordapp.com/channels/@me

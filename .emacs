@@ -67,7 +67,6 @@
 ;; col
 (column-number-mode 1)
 
-
 ;; == PACKAGES ==
 
 (require 'package)

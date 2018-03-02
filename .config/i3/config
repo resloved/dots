@@ -312,15 +312,15 @@ bindsym $mod+m       exec $music
 bindsym $mod+Ctrl+m  exec $browser --app=https://discordapp.com/channels/@me
 bindsym $mod+Shift+m exec nautilus
 
-bindsym $mod+t       exec $browser --app=https://tweetdeck.twitter.com
-bindsym $mod+Ctrl+t  exec $browser --app=https://twitch.tv
-bindsym $mod+Shift+t exec $browser --app=https://youtube.com
+bindsym $mod+t       exec $app=https://tweetdeck.twitter.com
+bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
+bindsym $mod+Shift+t exec $app=https://youtube.com
 
 bindsym $mod+y       exec gimp
 bindsym $mod+Ctrl+y  exec inkscape
 bindsym $mod+Shift+y exec blender
 
-bindsym $mod+u       exec $app=https://gmail.com
+bindsym $mod+u       exec $app=https://inbox.google.com
 bindsym $mod+Ctrl+u  exec $app=https://calendar.google.com
 bindsym $mod+Shift+u exec $app=https://drive.google.com
 

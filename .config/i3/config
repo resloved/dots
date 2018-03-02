@@ -17,7 +17,7 @@ set $mod Mod4
 font pango:Office Source Pro Semibold 12
 
 # general variables
-set $browser    chromium
+set $browser    firefox
 set $music      spotify
 set $term       xterm -fn xterm-256color
 
@@ -303,9 +303,10 @@ for_window [class="Spotify"] move to workspace $ws10
 #bindsym $mod+Shift+b exec
 
 set $code file:///home/ben/code/
-bindsym $mod+n       exec firefox
-bindsym $mod+Ctrl+n  exec $browser --app=$code
-bindsym $mod+Shift+n exec firefox --private-window
+set $app chromium --app
+bindsym $mod+n       exec $browser
+bindsym $mod+Ctrl+n  exec $app=$code
+bindsym $mod+Shift+n exec $browser --private-window
 
 bindsym $mod+m       exec $music
 bindsym $mod+Ctrl+m  exec $browser --app=https://discordapp.com/channels/@me
@@ -319,9 +320,9 @@ bindsym $mod+y       exec gimp
 bindsym $mod+Ctrl+y  exec inkscape
 bindsym $mod+Shift+y exec blender
 
-#bindsym $mod+u       exec
-#bindsym $mod+Ctrl+u  exec
-#bindsym $mod+Shift+u exec
+bindsym $mod+u       exec $app=https://gmail.com
+bindsym $mod+Ctrl+u  exec $app=https://calendar.google.com
+bindsym $mod+Shift+u exec $app=https://drive.google.com
 
 bindsym $mod+i       exec emacs -ib 24
 #bindsym $mod+Ctrl+i  exec

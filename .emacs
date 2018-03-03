@@ -58,15 +58,22 @@
 
 ;; == MODELINE ==
 
-;;git
-(defadvice vc-mode-line (after strip-backend () activate)
-  (when (stringp vc-mode)
-    (let ((gitlogo (replace-regexp-in-string "^ Git." " " vc-mode)))
-          (setq vc-mode gitlogo))))
+(setq-default mode-line-format
+  (list
 
-;; col
-(column-number-mode 1)
+   " "
 
+   '(:eval (propertize "%b" 'face '(:weight bold)))
+
+   " : "
+
+   '(:eval (propertize "%m" 'face '(:foreground "white")))
+
+   '(:eval (propertize '(vc-state (buffer-file-name (current)))))
+
+   ))
+
+;;(vc-state (buffer-file-name (current-buffer)))
 ;; == PACKAGES ==
 
 (require 'package)
@@ -233,20 +240,3 @@
 (set-face-attribute 'git-gutter+-separator nil
                     :background "#1B1D1E"
                     :foreground "#1B1D1E")
-
-;; diminish
-
-;;hide minor modes
-(use-package diminish)
-(require 'diminish)
-(diminish 'projectile-global-mode)
-(diminish 'projectile-mode)
-(diminish 'rainbow-mode)
-(diminish 'visual-line-mode)
-(diminish 'undo-tree-mode)
-(diminish 'abbrev-mode)
-(diminish 'impatient-mode)
-(diminish 'emmet-mode)
-(diminish 'org-indent-mode)
-(diminish 'auto-revert-mode)
-(diminish 'git-gutter+-mode)

@@ -302,14 +302,14 @@ for_window [class="Spotify"] move to workspace $ws10
 #bindsym $mod+Ctrl+b  exec
 #bindsym $mod+Shift+b exec
 
-set $code file:///home/ben/code/
+set $code http://localhost:8080/imp/live/index.html/
 set $app chromium --app
 bindsym $mod+n       exec $browser
 bindsym $mod+Ctrl+n  exec $app=$code
 bindsym $mod+Shift+n exec $browser --private-window
 
 bindsym $mod+m       exec $music
-bindsym $mod+Ctrl+m  exec $browser --app=https://discordapp.com/channels/@me
+bindsym $mod+Ctrl+m  exec $app=https://discordapp.com/channels/@me
 bindsym $mod+Shift+m exec nautilus
 
 bindsym $mod+t       exec $app=https://tweetdeck.twitter.com

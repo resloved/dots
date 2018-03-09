@@ -19,7 +19,7 @@ font pango:Office Source Pro Semibold 12
 # general variables
 set $browser    firefox
 set $music      spotify
-set $term       xterm -fn xterm-256color
+set $term       urxvt
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -43,7 +43,7 @@ bindsym $mod+Ctrl+g exec pkill compton; gaps inner all set 0; gaps outer all set
 bindsym $mod+Return exec $term
 #bindsym $mod+Shift+Return exec $term
 #bindsym $mod+Ctrl+Return exec $term
-bindsym $mod+Shift+Ctrl+Return exec $term -class blank
+bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
 
 # kill focused window
 bindsym $mod+x kill

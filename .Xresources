@@ -1,3 +1,4 @@
+!XTERM
 *customization: -color
 xterm*termName: xterm
 
@@ -7,39 +8,64 @@ xterm*faceSize: 8
 !border
 xterm*borderWidth: 0
 xterm*internalBorder: 24
-
 ! special
 xterm*foreground:   #ffffff
 xterm*background:   #1b1d1e
-
 ! black
 xterm*color0:       #262626
 xterm*color8:       #636363
-
 ! red
 xterm*color1:       #d7005f
 xterm*color9:       #d7005f
-
 ! green
 xterm*color2:       #87ff00
 xterm*color10:      #87ff00
-
 ! yellow
 xterm*color3:       #ff8700
 xterm*color11:      #ff8700
-
 ! blue
 xterm*color4:       #acac85
 xterm*color12:      #acac85
-
 ! magenta
 xterm*color5:       #af5fff
 xterm*color13:      #af5fff
-
 ! cyan
 xterm*color6:       #5fd7ff
 xterm*color14:      #5fd7ff
-
 ! white
 xterm*color7:       #444444
 xterm*color15:      #8a8a8a
+
+!URXVT
+URxvt*font: xft:Office Code Pro Light:size=8
+URxvt*borderWidth: 0
+URxvt*internalBorder: 24
+URxvt*scrollBar: false
+
+!Colors
+URxvt*foreground:   #ffffff
+URxvt*background:   #1b1d1e
+
+URxvt*color0:       #262626
+URxvt*color8:       #636363
+
+URxvt*color1:       #d7005f
+URxvt*color9:       #d7005f
+
+URxvt*color2:       #87ff00
+URxvt*color10:      #87ff00
+
+URxvt*color3:       #ff8700
+URxvt*color11:      #ff8700
+
+URxvt*color4:       #acac85
+URxvt*color12:      #acac85
+
+URxvt*color5:       #af5fff
+URxvt*color13:      #af5fff
+
+URxvt*color6:       #5fd7ff
+URxvt*color14:      #5fd7ff
+
+URxvt*color7:       #444444
+URxvt*color15:      #8a8a8a

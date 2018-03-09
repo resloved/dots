@@ -220,7 +220,7 @@
 (use-package git-gutter-fringe+)
 (require 'git-gutter-fringe+)
 (global-git-gutter+-mode)
-(git-gutter+-toggle-fringe)
+;; (git-gutter+-toggle-fringe)
 
 (custom-set-variables
  '(git-gutter+-added-sign     " ")

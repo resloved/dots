@@ -1,11 +1,11 @@
-;; =======================================================================
+;; ============================================================
 ;; .emacs
 ;;
 ;; AUTHOR:  Benjamin Friesen
 ;; REPO:    https://github.com/resloved/dots
 ;; CONTACT: bfriesenwork@gmail.com
 ;;
-;; =======================================================================
+;; ============================================================
 
 ;; == GENERATED ==
 
@@ -58,6 +58,18 @@
 
 ;; == MODELINE ==
 
+;; right-align
+(defun mode-line-fill (face reserve)
+  "Return empty space using FACE and leaving RESERVE space on the right."
+  (unless reserve
+    (setq reserve 20))
+  (when (and window-system (eq 'right (get-scroll-bar-mode)))
+    (setq reserve (- reserve 3)))
+  (propertize " "
+              'display `((space :align-to (- (+ right right-fringe right-margin) ,reserve)))
+              'face face))
+
+;; format
 (setq-default mode-line-format
   (list
 
@@ -65,15 +77,17 @@
 
    '(:eval (propertize "%b" 'face '(:weight bold)))
 
+   '(:eval (propertize "[%l]" 'face '(:weight bold)))
+
    " : "
 
-   '(:eval (propertize "%m" 'face '(:foreground "white")))
+   '(:eval (propertize "%m" 'face '(:weight light)))
 
    '(:eval (propertize '(vc-state (buffer-file-name (current)))))
 
+
    ))
 
-;;(vc-state (buffer-file-name (current-buffer)))
 ;; == PACKAGES ==
 
 (require 'package)

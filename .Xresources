@@ -1,14 +1,25 @@
-!XTERM
+! =============================================================
+! .Xresources
+!
+! AUTHOR:  Benjamin Friesen
+! REPO:    https://github.com/resloved/dots
+! CONTACT: bfriesenwork@gmail.com
+!
+! =============================================================
+
+! == XTERM ==
 *customization: -color
 xterm*termName: xterm
 
+! Font
 xterm*faceName: Office Code Pro Light
 xterm*faceSize: 8
 
-!border
+! Border
 xterm*borderWidth: 0
 xterm*internalBorder: 24
-! special
+
+! Colors
 xterm*foreground:   #ffffff
 xterm*background:   #1b1d1e
 ! black
@@ -36,36 +47,40 @@ xterm*color14:      #5fd7ff
 xterm*color7:       #444444
 xterm*color15:      #8a8a8a
 
-!URXVT
-URxvt*font: xft:Office Code Pro Light:size=8
-URxvt*borderWidth: 0
-URxvt*internalBorder: 24
+! == URXVT ==
 URxvt*scrollBar: false
 
-!Colors
+! Font
+URxvt*font: xft:Office Code Pro Light:size=8
+
+! Border
+URxvt*borderWidth: 0
+URxvt*internalBorder: 24
+
+! Colors
 URxvt*foreground:   #ffffff
 URxvt*background:   #1b1d1e
-
+! black
 URxvt*color0:       #262626
 URxvt*color8:       #636363
-
+! red
 URxvt*color1:       #d7005f
 URxvt*color9:       #d7005f
-
+! green
 URxvt*color2:       #87ff00
 URxvt*color10:      #87ff00
-
+! yellow
 URxvt*color3:       #ff8700
 URxvt*color11:      #ff8700
-
+! blue
 URxvt*color4:       #acac85
 URxvt*color12:      #acac85
-
+!magenta
 URxvt*color5:       #af5fff
 URxvt*color13:      #af5fff
-
+! cyan
 URxvt*color6:       #5fd7ff
 URxvt*color14:      #5fd7ff
-
+! white
 URxvt*color7:       #444444
 URxvt*color15:      #8a8a8a

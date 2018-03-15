@@ -325,7 +325,7 @@ bindsym $mod+Ctrl+u  exec $app=https://calendar.google.com
 bindsym $mod+Shift+u exec $app=https://drive.google.com
 
 bindsym $mod+i       exec emacs -ib 24
-#bindsym $mod+Ctrl+i  exec
+bindsym $mod+Ctrl+i  exec emacsclient -c
 bindsym $mod+Shift+i exec zathura
 
 #bindsym $mod+o       exec
@@ -340,3 +340,4 @@ bindsym $mod+Shift+i exec zathura
 
 exec --no-startup-id .i3/lock.sh
 exec_always --no-startup-id compton
+exec --no-startup-id emacs --daemon

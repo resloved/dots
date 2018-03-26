@@ -25,7 +25,7 @@ bindkey -s "^l" '^Ule^M'
 
 # == ALIAS ==
 alias le="echo ''; ls; echo ''"
-alias neofetch="clear; neofetch"
+alias neo="clear; echo '\n'; neofetch"
 
 # == PATH == 
 # Python

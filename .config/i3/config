@@ -27,8 +27,8 @@ for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
 
 # gaps
-set $inner 16
-set $outer 32
+set $inner 32
+set $outer 16
 
 gaps inner $inner
 gaps outer $outer
@@ -260,7 +260,7 @@ client.focused_inactive     $dull	$dull	        $dull	    $dull
 client.urgent		    $dull   	$dull	        $dull	    $dull
 
 # background
-set $background ~/pictures/wallpapers/moon.jpg
+set $background ~/pictures/wallpapers/Cesar/cesar2.jpg
 exec_always feh --bg-scale $background
 
 # == APPLICATIONS ==

@@ -17,7 +17,8 @@
  '(cua-mode t nil (cua-base))
  '(custom-safe-themes
    (quote
-    ("1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default))) '(fringe-mode 0 nil (fringe))
+    ("1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default)))
+ '(fringe-mode 0 nil (fringe))
  '(git-gutter+-added-sign " ")
  '(git-gutter+-deleted-sign " ")
  '(git-gutter+-modified-sign " ")
@@ -30,7 +31,7 @@
  '(org-agenda-files (quote ("~/1.org" "~/test.org")))
  '(package-selected-packages
    (quote
-    (web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -66,17 +67,11 @@
   (list
 
    " "
-
-
    '(:eval (propertize "%b" 'face '(:weight bold)))
-
    " : "
-
    '(:eval (propertize "%m" 'face '(:weight normal)))
-
    " @ "
-
-   '(:eval (propertize "%l" 'face '(:weight light)))
+   '(:eval (propertize "%l" 'face '(:weight normal)))
 
    ))
 
@@ -176,9 +171,9 @@
           "v" 'split-window-below
           "h" 'split-window-right
           "w" 'other-window
-          "g" 'magit-status
-          "o" 'git-gutter+-previous-hunk
-          "p" 'git-gutter+-next-hunk)))
+          "t" 'term
+          "r" 'term-char-mode
+          "g" 'magit-status)))
     (evil-mode t)
     (use-package evil-surround
       :config
@@ -218,30 +213,58 @@
 ;; emmet
 (use-package emmet-mode)
 
-;; emojify
-(use-package emojify)
-(global-emojify-mode)
-
-;; git-gutter+
-(use-package git-gutter-fringe+)
-(require 'git-gutter-fringe+)
-(global-git-gutter+-mode)
-;; (git-gutter+-toggle-fringe)
-
-
-
-(set-face-attribute 'git-gutter+-added nil
-                    :background "#B6D22E"
-                    :foreground "#B6D22E")
-(set-face-attribute 'git-gutter+-modified nil
-                    :background "#FD971F"
-                    :foreground "#FD971F")
-(set-face-attribute 'git-gutter+-deleted nil
-                    :background "#D7005F"
-                    :foreground "#D7005F")
-(set-face-attribute 'git-gutter+-separator nil
-                    :background "#1B1D1E"
-                    :foreground "#1B1D1E")
-
 ;; web-mode
 (use-package web-mode)
+
+;; eterm-256color
+(use-package eterm-256color)
+(add-hook 'term-mode-hook #'eterm-256color-mode)
+
+(set-face-attribute 'eterm-256color-0 nil
+                    :background "#262626"
+                    :foreground "#262626")
+(set-face-attribute 'eterm-256color-1 nil
+                    :background "#d7005f"
+                    :foreground "#d7005f")
+(set-face-attribute 'eterm-256color-2 nil
+                    :background "#87ff00"
+                    :foreground "#87ff00")
+(set-face-attribute 'eterm-256color-3 nil
+                    :background "#ff8700"
+                    :foreground "#ff8700")
+(set-face-attribute 'eterm-256color-4 nil
+                    :background "#acac85"
+                    :foreground "#acac85")
+(set-face-attribute 'eterm-256color-5 nil
+                    :background "#af5fff"
+                    :foreground "#af5fff")
+(set-face-attribute 'eterm-256color-6 nil
+                    :background "#5fd7ff"
+                    :foreground "#5fd7ff")
+(set-face-attribute 'eterm-256color-7 nil
+                    :background "#444444"
+                    :foreground "#444444")
+(set-face-attribute 'eterm-256color-8 nil
+                    :background "#262626"
+                    :foreground "#262626")
+(set-face-attribute 'eterm-256color-9 nil
+                    :background "#d7005f"
+                    :foreground "#d7005f")
+(set-face-attribute 'eterm-256color-10 nil
+                    :background "#87ff00"
+                    :foreground "#87ff00")
+(set-face-attribute 'eterm-256color-11 nil
+                    :background "#ff8700"
+                    :foreground "#ff8700")
+(set-face-attribute 'eterm-256color-12 nil
+                    :background "#acac85"
+                    :foreground "#acac85")
+(set-face-attribute 'eterm-256color-13 nil
+                    :background "#af5fff"
+                    :foreground "#af5fff")
+(set-face-attribute 'eterm-256color-14 nil
+                    :background "#5fd7ff"
+                    :foreground "#5fd7ff")
+(set-face-attribute 'eterm-256color-15 nil
+                    :background "#444444"
+                    :foreground "#444444")

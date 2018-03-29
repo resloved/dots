@@ -19,14 +19,6 @@
    (quote
     ("1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default)))
  '(fringe-mode 0 nil (fringe))
- '(git-gutter+-added-sign " ")
- '(git-gutter+-deleted-sign " ")
- '(git-gutter+-modified-sign " ")
- '(git-gutter+-separator-sign " ")
- '(git-gutter:added-sign " ")
- '(git-gutter:deleted-sign " ")
- '(git-gutter:modified-sign " ")
- '(git-gutter:window-width 1)
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/1.org" "~/test.org")))
  '(package-selected-packages
@@ -41,7 +33,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Office Code Pro" :foundry "NATH" :slant normal :weight light :height 83 :width normal)))))
+ '(default ((t (:family "Hasklug Nerd Font Mono" :height 80 :weight semi-light :width normal)))))
 
 ;; == GENERAL ==
 
@@ -68,9 +60,9 @@
 
    " "
    '(:eval (propertize "%b" 'face '(:weight bold)))
-   " : "
+   '(:eval (propertize "  " 'face '(:foreground "#87ff00")))
    '(:eval (propertize "%m" 'face '(:weight normal)))
-   " @ "
+   '(:eval (propertize "  " 'face '(:foreground "#ff8700")))
    '(:eval (propertize "%l" 'face '(:weight normal)))
 
    ))
@@ -103,7 +95,12 @@
 
 (setq org-src-tab-acts-nativley t)
 
-(use-package org-bullets)
+(use-package org-bullets
+  :init
+  (setq org-bullets-bullet-list
+        '(""))
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -251,8 +248,8 @@
                     :background "#d7005f"
                     :foreground "#d7005f")
 (set-face-attribute 'eterm-256color-10 nil
-                    :background "#87ff00"
-                    :foreground "#87ff00")
+                    :foreground "#87ff00"
+                    :background "#87ff00")
 (set-face-attribute 'eterm-256color-11 nil
                     :background "#ff8700"
                     :foreground "#ff8700")
@@ -268,3 +265,4 @@
 (set-face-attribute 'eterm-256color-15 nil
                     :background "#444444"
                     :foreground "#444444")
+

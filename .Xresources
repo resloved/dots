@@ -12,7 +12,7 @@
 xterm*termName: xterm
 
 ! Font
-xterm*faceName: Office Code Pro Light
+xterm*faceName: Office Code Pro
 xterm*faceSize: 8
 
 ! Border
@@ -51,7 +51,7 @@ xterm*color15:      #8a8a8a
 URxvt*scrollBar: false
 
 ! Font
-URxvt*font: xft:Office Code Pro Light:size=8
+URxvt*font: xft:Hasklug Nerd Font Mono:size=8
 
 ! Border
 URxvt*borderWidth: 0
@@ -62,7 +62,7 @@ URxvt*foreground:   #ffffff
 URxvt*background:   #1b1d1e
 ! black
 URxvt*color0:       #262626
-URxvt*color8:       #636363
+URxvt*color8:       #1b1d1e
 ! red
 URxvt*color1:       #d7005f
 URxvt*color9:       #d7005f

@@ -11,7 +11,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/ben/.oh-my-zsh
 ZSH_THEME="terminalpartied"
-plugins=(git battery-color)
+plugins=(git git-prompt battery-color)
 source $ZSH/oh-my-zsh.sh
 
 # == BINDS ==
@@ -32,3 +32,5 @@ alias neo="clear; echo '\n'; neofetch"
 export PYTHONPATH=/usr/lib/python3.6/site-packages
 # Java
 export PATH=/usr/lib/jvm/java-10-jdk/bin/:$PATH
+# Fonts
+source ~/.fonts/*.sh

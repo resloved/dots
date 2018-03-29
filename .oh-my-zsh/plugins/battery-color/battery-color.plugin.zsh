@@ -1,7 +1,6 @@
 function battery_is_charging() {
 ! [[ $(acpi 2>/dev/null | grep -c '^Battery.*Discharging') -gt 0 ]]
-}
-
+} 
 function battery_pct() {
 if (( $+commands[acpi] )) ; then
     echo "$(acpi 2>/dev/null | cut -f2 -d ',' | tr -cd '[:digit:]')"
@@ -28,9 +27,9 @@ function battery_pct_prompt() {
         color='red'
     fi
     if [[ $(acpi 2>/dev/null | grep -c '^Battery.*Discharging') -gt 0 ]] ; then
-        t='o'
+        t=''
     else
-        t='+' 
+        t='' 
     fi
     echo "%{$fg[$color]%} $t"
 }

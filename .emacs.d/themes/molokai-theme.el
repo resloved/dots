@@ -98,12 +98,12 @@
    `(font-lock-warning-face ((t (:foreground ,molokai-palevioletred :weight bold))))
 
    ;; mode line
-   `(mode-line ((t (:foreground ,molokai-fg
-                                :background ,molokai-grey+2
-                                :box nil))))
    `(mode-line-buffer-id ((t (:weight bold))))
+   `(mode-line ((t (:foreground ,molokai-fg
+                                :background ,molokai-bg
+                                :box nil))))
    `(mode-line-inactive ((t (:foreground ,molokai-fg
-                                         :background ,molokai-grey+3
+                                         :background ,molokai-bg
                                          :box nil))))
 
    ;; search

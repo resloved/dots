@@ -33,7 +33,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hasklug Nerd Font Mono" :height 80 ght :width normal)))))
+ '(default ((t (:family "Hasklug Nerd Font Mono" :height 80 :width normal)))))
 
 ;; == GENERAL ==
 
@@ -54,16 +54,22 @@
 
 ;; == MODELINE ==
 
+'(mode-line ((t (:box (:line-width 24 :color "#1b1d1e")))))
+'(mode-line-inactive ((t (:box (:line-width 24 :color "#1b1d1e")))))
+
 ;; format
 (setq-default mode-line-format
   (list
 
-   " "
    '(:eval (propertize "%b" 'face '(:weight bold)))
-   '(:eval (propertize "  " 'face '(:foreground "#87ff00")))
+   '(:eval (if (buffer-modified-p)
+               (propertize " ✖ " 'face '(:foreground "#ff0087" :height 80))
+             (propertize "  " 'face '(:foreground "#87ff00"))))
+
    '(:eval (propertize "%m" 'face '(:weight normal)))
    '(:eval (propertize "  " 'face '(:foreground "#ff8700")))
    '(:eval (propertize "%l" 'face '(:weight normal)))
+   '(:eval (propertize "✖" 'face '(:foreground "#1b1d1e")))
 
    ))
 
@@ -87,8 +93,7 @@
 ;; org
 (use-package org
   :init
-  (progn
-    (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+  (progn (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
     (setq org-startup-indented t)))

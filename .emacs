@@ -33,7 +33,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hasklug Nerd Font Mono" :height 80 :weight semi-light :width normal)))))
+ '(default ((t (:family "Hasklug Nerd Font Mono" :height 80 ght :width normal)))))
 
 ;; == GENERAL ==
 
@@ -120,6 +120,21 @@
            :publishing-function org-twbs-publish-to-html
            :with-sub-superscript nil))))
 
+(set-face-attribute 'org-level-1 nil
+                    :weight 'normal)
+(set-face-attribute 'org-level-2 nil
+                    :weight 'normal)
+(set-face-attribute 'org-level-3 nil
+                    :weight 'normal)
+(set-face-attribute 'org-level-4 nil
+                    :weight 'normal)
+(set-face-attribute 'org-level-5 nil
+                    :weight 'normal)
+(set-face-attribute 'org-level-6 nil
+                    :weight 'normal)
+(set-face-attribute 'org-level-7 nil
+                    :weight 'normal)
+
 ;; helm
 (use-package helm)
 
@@ -129,12 +144,10 @@
 (set-face-attribute 'helm-selection nil
                     :background "#4c4745"
                     :foreground "#F8F8F0")
-
 (set-face-attribute 'helm-source-header nil
                     :background "#403d3d"
                     :foreground "#F8F8F0"
                     :height 90)
-
 (set-face-attribute 'helm-candidate-number nil
                     :background "#4c4745"
                     :foreground "#F8F8F0")
@@ -179,9 +192,7 @@
     (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
     (evil-define-key 'normal org-mode-map
       (kbd "M-k") 'org-metaup
-      (kbd "M-j") 'org-metadown
-      (kbd "M-h") 'org-do-promote
-      (kbd "M-l") 'org-do-demote)))
+      (kbd "M-j") 'org-metadown (kbd "M-h") 'org-do-promote (kbd "M-l") 'org-do-demote)))
 
 (use-package evil-collection
   :after evil
@@ -217,6 +228,8 @@
 (use-package eterm-256color)
 (add-hook 'term-mode-hook #'eterm-256color-mode)
 
+(set-face-attribute 'eterm-256color-default nil
+                    :weight 'normal)
 (set-face-attribute 'eterm-256color-0 nil
                     :background "#262626"
                     :foreground "#262626")
@@ -265,4 +278,6 @@
 (set-face-attribute 'eterm-256color-15 nil
                     :background "#444444"
                     :foreground "#444444")
+                    
 
+                 

@@ -27,9 +27,9 @@ function battery_pct_prompt() {
         color='red'
     fi
     if [[ $(acpi 2>/dev/null | grep -c '^Battery.*Discharging') -gt 0 ]] ; then
-        t=''
+        t=''
     else
-        t='' 
+        t='' 
     fi
     echo "%{$fg[$color]%} $t"
 }

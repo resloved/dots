@@ -8,11 +8,9 @@
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
 
-    prin "$(color 2)\$0x$(printf '%x\n' $$)"
-    info line_break
-    info "OS" distro
-    info "Kernel" kernel
-    info "Shell" shell
+    info "$(color 6)" distro
+    info "$(color 6)" kernel
+    info "$(color 6)" shell
 
     # info "WM" wm
     # info "Model" model
@@ -35,10 +33,6 @@ print_info() {
     # info "GPU" gpu
     # info "Memory" memory
 
-    info line_break
-    info line_break
-    info cols
-    info line_break
     info line_break
 }
 
@@ -402,7 +396,7 @@ install_time_format="12h"
 # Example:
 # colors=(distro)      - Text is colored based on Distro colors.
 # colors=(4 6 1 8 8 6) - Text is colored in the order above.
-colors=(3 3 3 3 4 7)
+colors=(3 3 3 3 0 7)
 
 
 # Text Options

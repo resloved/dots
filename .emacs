@@ -54,8 +54,10 @@
 
 ;; == MODELINE ==
 
-'(mode-line ((t (:box (:line-width 24 :color "#1b1d1e")))))
-'(mode-line-inactive ((t (:box (:line-width 24 :color "#1b1d1e")))))
+(set-face-attribute 'mode-line nil
+                    :box '(:line-width 6 :color "#1b1d1e"))
+(set-face-attribute 'mode-line-inactive nil
+                    :box '(:line-width 6 :color "#1b1d1e"))
 
 ;; format
 (setq-default mode-line-format

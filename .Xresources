@@ -61,7 +61,7 @@ URxvt*internalBorder: 24
 URxvt*foreground:   #ffffff
 URxvt*background:   #1b1d1e
 ! black
-URxvt*color0:       #262626
+URxvt*color0:       #444444
 URxvt*color8:       #1b1d1e
 ! red
 URxvt*color1:       #d7005f
@@ -82,5 +82,5 @@ URxvt*color13:      #af5fff
 URxvt*color6:       #5fd7ff
 URxvt*color14:      #5fd7ff
 ! white
-URxvt*color7:       #444444
-URxvt*color15:      #8a8a8a
+URxvt*color7:       #ffffff
+URxvt*color15:      #ffffff

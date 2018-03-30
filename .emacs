@@ -65,7 +65,7 @@
 
    '(:eval (propertize "%b" 'face '(:weight bold)))
    '(:eval (if (buffer-modified-p)
-               (propertize " ✖ " 'face '(:foreground "#ff0087" :height 80))
+               (propertize " ✖ " 'face '(:foreground "#ff0087"))
              (propertize "  " 'face '(:foreground "#87ff00"))))
 
    '(:eval (propertize "%m" 'face '(:weight normal)))

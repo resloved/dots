@@ -34,6 +34,7 @@ print_info() {
     # info "Memory" memory
 
     info line_break
+    info line_break
 }
 
 
@@ -396,7 +397,7 @@ install_time_format="12h"
 # Example:
 # colors=(distro)      - Text is colored based on Distro colors.
 # colors=(4 6 1 8 8 6) - Text is colored in the order above.
-colors=(3 3 3 3 0 7)
+colors=(3 3 3 3 8 7)
 
 
 # Text Options

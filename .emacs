@@ -68,9 +68,9 @@
                (propertize " ✖ " 'face '(:foreground "#ff0087"))
              (propertize "  " 'face '(:foreground "#87ff00"))))
 
-   '(:eval (propertize "%m" 'face '(:weight normal)))
+   '(:eval (propertize "%m" 'face '(:weight bold)))
    '(:eval (propertize "  " 'face '(:foreground "#ff8700")))
-   '(:eval (propertize "%l" 'face '(:weight normal)))
+   '(:eval (propertize "%l" 'face '(:weight bold)))
    '(:eval (propertize "✖" 'face '(:foreground "#1b1d1e")))
 
    ))
@@ -147,17 +147,27 @@
 
 (setq helm-M-x-fuzzy-match t)
 (global-set-key (kbd "M-x") 'helm-M-x)
+(setq-default helm-mode-line-string )
+(setq helm-display-header-line nil)
+(setq helm-split-window-in-side-p t)
 
 (set-face-attribute 'helm-selection nil
-                    :background "#4c4745"
-                    :foreground "#F8F8F0")
-(set-face-attribute 'helm-source-header nil
-                    :background "#403d3d"
-                    :foreground "#F8F8F0"
-                    :height 90)
+                    :background "#333333"
+                    :foreground "#f0f0f0")
 (set-face-attribute 'helm-candidate-number nil
-                    :background "#4c4745"
-                    :foreground "#F8F8F0")
+                    :background "#1b1d1e"
+                    :foreground "#f8f8f0")
+(set-face-attribute 'helm-source-header nil
+                    :background "#1b1d1e"
+                    :foreground "#f8f8f0"
+                    :family "Hasklug Nerd Font Mono"
+                    :height 80)
+
+(defun my/helm-fonts ()
+  (face-remap-add-relative 'default
+                           :foreground "#444444"))
+
+(add-hook 'helm-major-mode-hook #'my/helm-fonts)
 
 ;; projectile
 (use-package projectile)
@@ -283,8 +293,8 @@
                     :background "#5fd7ff"
                     :foreground "#5fd7ff")
 (set-face-attribute 'eterm-256color-15 nil
-                    :background "#444444"
-                    :foreground "#444444")
+                    :background "#ffffff"
+                    :foreground "#ffffff")
                     
 
                  

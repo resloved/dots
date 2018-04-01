@@ -15,9 +15,9 @@
 
 Included configurations for:
 * i3
-* urxvt ![Preview](https://i.imgur.com/L4w09It.png)
+* urxvt
 * zsh
-* emacs ![Preview](https://i.imgur.com/AGzHMrZ.png)
+* emacs
 * compton
 * neofetch
 * zathura

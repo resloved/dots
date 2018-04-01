@@ -43,4 +43,4 @@ Removed my gtk changes, as well as firefox configuration. Both were rarely used 
 ## Wallpaper
 
 ![Wallpaper](https://i.imgur.com/SZBNOQy.jpg)
-![Source](https://unsplash.com/photos/GvL_0uNFfK4)
+[Source](https://unsplash.com/photos/GvL_0uNFfK4)

@@ -9,15 +9,15 @@
 * WM: [i3-gaps](https://github.com/Airblader/i3)
 * Term: [urxvt](https://wiki.archlinux.org/index.php/Rxvt-unicode)
 * Shell: zsh ([Oh-My-Zsh](http://ohmyz.sh/))
-* Font: [Hasklug](https://nerdfonts.com/)(A patched font from Nerd Fonts)
+* Font: [Hasklug](https://nerdfonts.com/) (A patched font from Nerd Fonts)
 
 ## Configured
 
 Included configurations for:
 * i3
-* urxvt [Preview](https://i.imgur.com/L4w09It.png)
+* urxvt ![Preview](https://i.imgur.com/L4w09It.png)
 * zsh
-* emacs [Preview](https://i.imgur.com/AGzHMrZ.png)
+* emacs ![Preview](https://i.imgur.com/AGzHMrZ.png)
 * compton
 * neofetch
 * zathura

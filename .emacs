@@ -1,13 +1,12 @@
-;; ============================================================
-;; .emacs
-;;
-;; AUTHOR:  Benjamin Friesen
-;; REPO:    https://github.com/resloved/dots
-;; CONTACT: bfriesenwork@gmail.com
-;;
-;; ============================================================
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;                   ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; .emacs / RESLOVED ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;                   ;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; == GENERATED ==
+;;;;; GENERATED ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -35,31 +34,24 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Hasklug Nerd Font Mono" :height 80 :width normal)))))
 
-;; == GENERAL ==
+;;;;; GENERAL ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; no splash
+;; NO SPLASH
 (setq inhibit-startup-screen t)
-
-;; tab as spaces
+;; TABS AS SPACES
 (setq-default indent-tabs-mode nil)
 
-;; == VISUAL ==
+;;;;; VISUAL ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; theme
+;; MOLOKAI
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'molokai t)
-
-;; visual line
+;; VISUAL LINE (Wrapping mode)
 (global-visual-line-mode 1)
 
-;; == MODELINE ==
+;;;;; MODE-LINE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(set-face-attribute 'mode-line nil
-                    :box '(:line-width 6 :color "#1b1d1e"))
-(set-face-attribute 'mode-line-inactive nil
-                    :box '(:line-width 6 :color "#1b1d1e"))
-
-;; format
+;; FORMAT
 (setq-default mode-line-format
   (list
 
@@ -75,16 +67,16 @@
 
    ))
 
-;; == PACKAGES ==
+;;;;; PACKAGES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; PACKAGE MANAGER
 (require 'package)
 (setq package-enable-at-startup nil)
-
+;; CONNECT TO MELPA
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (package-initialize)
-
-;; package manager
+;; USE-PACKAGE
 (unless (package-installed-p 'use-pacakge)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -92,7 +84,9 @@
   (require 'use-package)
   (setq use-package-always-ensure t))
 
-;; org
+;;;;; org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; INIT
 (use-package org
   :init
   (progn (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -100,8 +94,7 @@
     (global-set-key "\C-ca" 'org-agenda)
     (setq org-startup-indented t)))
 
-(setq org-src-tab-acts-nativley t)
-
+;; ORG-BULLETS
 (use-package org-bullets
   :init
   (setq org-bullets-bullet-list
@@ -109,6 +102,7 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+;; ORG-BABEL
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
@@ -118,15 +112,7 @@
    (js . t)
    (latex . t)))
 
-(use-package ox-twbs
-  :config
-  (setq org-publish-project-alist
-        '(("org-notes"
-           :base-directory "~/org/"
-           :publishing-directory "~/public_html"
-           :publishing-function org-twbs-publish-to-html
-           :with-sub-superscript nil))))
-
+;; BOLD HEADERS
 (set-face-attribute 'org-level-1 nil
                     :weight 'bold)
 (set-face-attribute 'org-level-2 nil
@@ -142,16 +128,20 @@
 (set-face-attribute 'org-level-7 nil
                     :weight 'bold)
 
-;; helm
+;;;;; helm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package helm)
 
+;; HELM M-X BIND
 (global-set-key (kbd "M-x") 'helm-M-x)
+;; FUZZY
 (setq helm-M-x-fuzzy-match t)
+;; HIDE HEADER
 (setq helm-display-header-line nil)
-(setq helm-split-window-in-side-p t)
 
+;; FACES
 (set-face-attribute 'helm-selection nil
-                    :background "#333333"
+                    :background "#1b1d1e"
                     :foreground "#f0f0f0")
 (set-face-attribute 'helm-candidate-number nil
                     :background "#1b1d1e"
@@ -164,30 +154,35 @@
 
 (defun my/helm-fonts ()
   (face-remap-add-relative 'default
-                           :foreground "#444444"))
+                           :foreground "#465457"))
 
 (add-hook 'helm-major-mode-hook #'my/helm-fonts)
 
-;; projectile
+;;;;; projectile ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package projectile)
 
+;; HELM PROJECTILE
 (use-package helm-projectile)
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
 (setq projectile-enable-caching t)
 (helm-projectile-on)
 
-;; evil
+;;;;; evil ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package evil
   :init
   (setq evil-want-integration nil)
   (progn
+    ;; EVIL LEADER
     (use-package evil-leader
       :init (global-evil-leader-mode)
       :config
       (progn
         (evil-leader/set-leader ",")
         (setq evil-leader/in-all-states t)
+        ;; LEADER BINDS
         (evil-leader/set-key
           "e" 'helm-projectile
           "b" 'helm-mini
@@ -201,6 +196,7 @@
           "r" 'term-char-mode
           "g" 'magit-status)))
     (evil-mode t)
+    ;; EVIL SURROUND
     (use-package evil-surround
       :config
       (global-evil-surround-mode 1))
@@ -210,40 +206,49 @@
       (kbd "M-k") 'org-metaup
       (kbd "M-j") 'org-metadown (kbd "M-h") 'org-do-promote (kbd "M-l") 'org-do-demote)))
 
+;; EVIL COLLECTION
 (use-package evil-collection
   :after evil
   :config
   (evil-collection-init))
 
-;; rainbow-mode
+;;;;; rainbow-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package rainbow-mode)
 
-;; processing
+;;;;; processing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package processing-mode)
+
 (add-to-list 'auto-mode-alist '("\\.pde$" . processing-mode))
 (setq processing-location "/usr/bin/processing-java")
 
-;; magit
+;;;;; magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package magit)
 
-;;evil
+;; MAGIT EVIL
 (use-package evil-magit)
 (require 'evil-magit)
 
-;; impatient-mode
+;;;;; impatient-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package impatient-mode)
 
-;; emmet
+;;;;; emmet ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package emmet-mode)
 
-;; web-mode
+;;;;; web-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package web-mode)
 
-;; eterm-256color
+;;;;; eterm-256color ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (use-package eterm-256color)
 (add-hook 'term-mode-hook #'eterm-256color-mode)
 
+;; ETERM FACES
 (set-face-attribute 'eterm-256color-default nil
                     :weight 'normal)
 (set-face-attribute 'eterm-256color-0 nil
@@ -294,6 +299,7 @@
 (set-face-attribute 'eterm-256color-15 nil
                     :background "#ffffff"
                     :foreground "#ffffff")
-                    
 
-                 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;; end ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

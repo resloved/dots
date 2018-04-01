@@ -1,62 +1,58 @@
-# =============================================================
-# .i3/config
-#
-# AUTHOR:  Benjamin Friesen
-# REPO:    https://github.com/resloved/dots
-# CONTACT: bfriesenwork@gmail.com
-#
-# =============================================================
+###################################################
+###################################################
+#####                       #######################
+##### i3-config / RESLOVED  #######################
+#####                       #######################
+###################################################
+###################################################
 
-# == GENERAL ==
-
+##### GENERAL ##################################### 
 
 set $mod Mod4
 
-# Font
-font pango:Office Source Pro Semibold 12
-
-# general variables
+# APP VARIABLES
 set $browser    firefox
 set $music      spotify
 set $term       urxvt
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# FLOATING
 floating_modifier $mod
 
-# window edge
+# NO WINDOW BORDER
 for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
 
-# gaps
+# GAP VARIABLES
 set $inner 32
 set $outer 16
 
+# SET GAPS
 gaps inner $inner
 gaps outer $outer
 
-# gap toggle
+# TOGGLE GAPS
 bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
 bindsym $mod+Ctrl+g exec pkill compton; gaps inner all set 0; gaps outer all set 0
 
-# start a terminal
+# TERMINAL BINDS
 bindsym $mod+Return exec $term
 #bindsym $mod+Shift+Return exec $term
 #bindsym $mod+Ctrl+Return exec $term
 bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
 
-# kill focused window
+# KILL
 bindsym $mod+x kill
 
-# reload the configuration file
+# RELOAD 
 bindsym $mod+Ctrl+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# RESTART
 bindsym $mod+Ctrl+r restart
-# exit i3 (logs you out of your X session)
+# EXIT
 bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# == MOVEMENT ==
+##### MOVEMENT ####################################
 
-# change focus
+# FOCUS
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -67,7 +63,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# MOVE
 bindsym $mod+Ctrl+h move left
 bindsym $mod+Ctrl+j move down
 bindsym $mod+Ctrl+k move up
@@ -78,7 +74,7 @@ bindsym $mod+Ctrl+Down move down
 bindsym $mod+Ctrl+Up move up
 bindsym $mod+Ctrl+Right move right
 
-# resize window
+# RESIZE
 bindsym $mod+Shift+h     resize shrink width  10px or 10 ppt
 bindsym $mod+Shift+j     resize shrink height 10px or 10 ppt
 bindsym $mod+Shift+k     resize grow height   10px or 10 ppt
@@ -99,37 +95,27 @@ bindsym $mod+Shift+Ctrl+Down  resize shrink height 1px or 1 ppt
 bindsym $mod+Shift+Ctrl+Up    resize grow height   1px or 1 ppt
 bindsym $mod+Shift+Ctrl+Right resize grow width    1px or 1 ppt
 
-# split in horizontal orientation
+# HORIZONTAL SPLIT
 bindsym $mod+b split h
 
-# split in vertical orientation
+# VERTICAL SPLIT
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# FULLSCREEN
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# PAPER MODE
+bindsym $mod+space floating toggle; resize set 426px 676px; move absolute position center
 
-# paper/focus
-bindsym $mod+space floating toggle; resize set 500px 675px; move absolute position center
-# toggle tiling / floating
+# TOGGLE FLOATING
 bindsym $mod+Ctrl+space floating toggle
 
-# change focus between tiling / floating windows
+# MODE TOGGLE
 bindsym $mod+Shift+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
+##### WORKSPACES ##################################
 
-# focus the child container
-bindsym $mod+d focus child
-
-# == WORKSPACES ==
-
-# workspaces
+# WORKSPACES
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -141,7 +127,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# SWITCH TO WORKSPACE
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -153,7 +139,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# move focused container to workspace
+# MOVE WINDOW TO WORKSPACE
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3
@@ -165,7 +151,6 @@ bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10
 
-# -numpad
 bindsym $mod+Mod2+KP_1 workspace $ws1
 bindsym $mod+Mod2+KP_2 workspace $ws2
 bindsym $mod+Mod2+KP_3 workspace $ws3
@@ -188,50 +173,17 @@ bindsym $mod+Ctrl+Mod2+KP_8 move container to workspace $ws8
 bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
 bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 
-# switch workspace monitor
-bindsym $mod+Shift+s move workspace to output right
+##### TOOLS ########################################
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym h resize shrink width  10 px or 10 ppt
-        bindsym j resize grow height   10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width    10 px or 10 ppt
-
-        bindsym Shift+h resize shrink width  50 px or 50 ppt
-        bindsym Shift+j resize grow height   50 px or 50 ppt
-        bindsym Shift+k resize shrink height 50 px or 50 ppt
-        bindsym Shift+l resize grow width    50 px or 50 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height  10 px or 10 ppt
-        bindsym Up resize shrink height  10 px or 10 ppt
-        bindsym Right resize grow width  10 px or 10 ppt
-
-        bindsym Shift+Left resize shrink width 50 px or 50 ppt
-        bindsym Shift+Down resize grow height  50 px or 50 ppt
-        bindsym Shift+Up resize shrink height  50 px or 50 ppt
-        bindsym Shift+Right resize grow width  50 px or 50 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-# == TOOLS ==
-
-# lock
+# LOCK
 bindsym $mod+Ctrl+x exec ~/.i3/lock.sh
 #bindsym $mod+Ctrl+x exec i3lock
 
-# screenshot
+# SCREENSHOT
 bindsym --release $mod+Print exec scrot -e 'mv $f ~/pictures/screenshots'
 bindsym --release $mod+Ctrl+Print exec scrot -s -e 'mv $f ~/pictures/screenshots'
 
-# media control
+# MEDIA CONTROLS
 bindsym $mod+slash  exec playerctl play-pause
 bindsym $mod+comma  exec playerctl previous
 bindsym $mod+period exec playerctl next
@@ -240,64 +192,43 @@ bindsym $mod+Ctrl+slash  exec pactl set-sink-mute 0 toggle # pause toggle
 bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
-# == VISUAL ==
-
-# colors
-set $black      #000000
-set $white	#ffffff
-set $lightgrey	#969696
-set $mediumgrey #252525
-set $darkgrey	#1b1d1e
-set $blue       #0087af
-set $orange     #ff5f00
-set $dull       #454545
-set $sharp      #969696
-
-# window		    border	background      text        indicator
-client.focused		    $sharp      $sharp          $sharp      $sharp
-client.focused_inactive     $dull	$dull	        $dull	    $dull
-client.unfocused            $dull	$dull	        $dull	    $dull
-client.focused_inactive     $dull	$dull	        $dull	    $dull
-client.urgent		    $dull   	$dull	        $dull	    $dull
-
-# background
+# BACKGROUND
 set $background ~/pictures/wallpapers/Cesar/cesar2.jpg
 exec_always feh --bg-scale $background
 
-# == APPLICATIONS ==
 
-# -- Application rules --
+##### APP RULES ###################################
 
-# gimp
+# GIMP RULES
 for_window [title="GIMP Startup"] move workspace $ws6
 for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
 for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
 assign [class="Gimp"] $ws6
 
-# inkscape
+# INKSCAPE RULES
 assign [class="Inkscape"] $ws6
 
-# blender
+# BLENDER RULES
 assign [class="Blender"] $ws6
 
-# twitch
+# TWITCH RULES
 assign [instance="twitch.tv"] $ws7
 for_window [instance="twitch.tv"] floating enable; move absolute position center; set resize 1270px 562px
 
-# youtube
+# YOUTUBE RULES
 assign [instance="youtube.com"] $ws7
 
-# discord
+# DISCORD RULES
 assign [class="discord"] $ws8
 
-# tweetdeck
+# TWEETDECK RULES
 assign [instance="tweetdeck.twitter.com"] $ws9
 for_window [instance="tweetdeck.twitter.com"] fullscreen enable
 
-# spotify
+# SPOTIFY RULES
 for_window [class="Spotify"] move to workspace $ws10
 
-# -- Application binding --
+##### APP BINDS ###################################
 
 #bindsym $mod+b       exec
 #bindsym $mod+Ctrl+b  exec
@@ -337,8 +268,15 @@ bindsym $mod+Shift+i exec zathura
 #bindsym $mod+Ctrl+p  exec
 #bindsym $mod+Shift+p exec
 
-# == LAUNCH ==
+##### LAUNCH ###################################### 
 
+# STARTUP
 exec --no-startup-id .i3/lock.sh
-exec_always --no-startup-id compton
 exec --no-startup-id emacs --daemon
+
+# RELOAD
+exec_always --no-startup-id compton
+
+###################################################
+##### end #########################################
+###################################################

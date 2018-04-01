@@ -1,36 +1,45 @@
-# =============================================================
-# .zshrc
-#
-# AUTHOR:  Benjamin Friesen
-# REPO:    https://github.com/resloved/dots
-# CONTACT: bfriesenwork@gmail.com
-#
-# =============================================================
+###################################################
+###################################################
+#####                   ###########################
+##### .zshrc / RESLOVED ###########################
+#####                   ###########################
+###################################################
+###################################################
 
-# == OHMYZSH ==
-# Path to your oh-my-zsh installation.
+###### OHMYZSH ####################################
+
+# PATH
 export ZSH=/home/ben/.oh-my-zsh
 ZSH_THEME="terminalpartied"
 plugins=(git git-prompt battery-color)
 source $ZSH/oh-my-zsh.sh
 
-# == BINDS ==
-# Sudo bind (https://stackoverflow.com/a/970202)
+##### BINDS #######################################
+
+# SUDO BIND (https://stackoverflow.com/a/970202)
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^a" insert-sudo
 
+# CLIMB BIND
 bindkey -s "^k" '^Ucd ..^M'
+# DIR BIND
 bindkey -s "^l" '^Ule^M'
 
-# == ALIAS ==
+##### ALIAS #######################################
+
+# SPACED DIR
 alias le="echo ''; ls; echo ''"
+# SPACED NEO
 alias neo="clear; echo '\n'; neofetch"
 
-# == PATH == 
-# Python
+##### PATH ######################################## 
+
+# PYTHON
 export PYTHONPATH=/usr/lib/python3.6/site-packages
-# Java
+# JAVA
 export PATH=/usr/lib/jvm/java-10-jdk/bin/:$PATH
-# Fonts
-source ~/.fonts/*.sh
+
+###################################################
+##### end #########################################
+###################################################

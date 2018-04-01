@@ -2,34 +2,45 @@
 
 ## Preview
 
-![Preview](https://imgur.com/Ygz2Gdy.png)
+![Preview](https://i.imgur.com/fQHtom2.png)
 
-## Dependancies
+## Details
 
 * WM: [i3-gaps](https://github.com/Airblader/i3)
-* Font: [Office Code Pro](https://github.com/nathco/Office-Code-Pro)
+* Term: [urxvt](https://wiki.archlinux.org/index.php/Rxvt-unicode)
+* Shell: zsh ([Oh-My-Zsh](http://ohmyz.sh/))
+* Font: [Hasklug](https://nerdfonts.com/)(A patched font from Nerd Fonts)
 
-## Description
+## Configured
 
-### Goals
+Included configurations for:
+* i3
+* urxvt [Preview](https://i.imgur.com/L4w09It.png)
+* zsh
+* emacs [Preview](https://i.imgur.com/AGzHMrZ.png)
+* compton
+* neofetch
+* zathura
 
-My last setup was a mess caused by experimentation, poor structural organization, and an unending amount of dependencies. Since changes had to be made I kept a couple goals in mind.
+## Changes
 
-+ Maintainability
-+ Essential
-+ Configurable
+Started to use a patched fonts. Includes glyphs from fontawesome, devicons, etc. Transitioned to using icons in some of my configurations.
 
-### Changes
+Added a floating bind to my i3 that floats and centers a window. Useful for when I'm writing notes or just don't need the full screen realestate when using only one window.
 
-For the most part I've been able to follow these guidelines and it has resulted in a few large changes.
+Configured the terminal within emacs. Now has 256 colors and uses my colorscheme. Would like to figure out a way to support bold text though.
 
-+ The largest change has been cutting a bar altogether. In it's stead I use zsh now over bash, and have configured a theme that includes both the current time and battery life.
-+ Using firefox over chrome for easy themeing with ![.userChrome](.mozilla/firefox/chrome/userChrome.css).
-+ I've started using emacs over vim for essentially just org-mode and have added ![.emacs](.emacs) to the repo (For brave eyes only).
-+ How I handle the repo itself. Cut all the third-party handlers and add files as necessary. This is only possible as I have cut down the files I personally configure.
+Restructured and reformatted some of the major config files. Still not perfect (especially .emacs), but have to start somewhere.
 
-Basic i3 configuration has stayed mostly the same and I'm happy it's in a place where I no longer need to maintain it.
+Removed my gtk changes, as well as firefox configuration. Both were rarely used because they weren't terribly functional.
+
+## TODO
+
+* Update zathura or change to a new PDF reader
+* Configure an IRC client (weechat/irssi)
+* Stop using neofetch and move to my own script
 
 ## Wallpaper
 
-![Wallpaper](https://imgur.com/Pe0teoR.png)
+![Wallpaper](https://i.imgur.com/SZBNOQy.jpg)
+![Source](https://unsplash.com/photos/GvL_0uNFfK4)

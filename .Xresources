@@ -1,86 +1,50 @@
-! =============================================================
-! .Xresources
-!
-! AUTHOR:  Benjamin Friesen
-! REPO:    https://github.com/resloved/dots
-! CONTACT: bfriesenwork@gmail.com
-!
-! =============================================================
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!                        !!!!!!!!!!!!!!!!!!!!!! 
+!!!!! .Xresources / RESLOVED !!!!!!!!!!!!!!!!!!!!!! 
+!!!!!                        !!!!!!!!!!!!!!!!!!!!!! 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! == XTERM ==
-*customization: -color
-xterm*termName: xterm
+!!!!! URXVT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! Font
-xterm*faceName: Office Code Pro
-xterm*faceSize: 8
-
-! Border
-xterm*borderWidth: 0
-xterm*internalBorder: 24
-
-! Colors
-xterm*foreground:   #ffffff
-xterm*background:   #1b1d1e
-! black
-xterm*color0:       #262626
-xterm*color8:       #636363
-! red
-xterm*color1:       #d7005f
-xterm*color9:       #d7005f
-! green
-xterm*color2:       #87ff00
-xterm*color10:      #87ff00
-! yellow
-xterm*color3:       #ff8700
-xterm*color11:      #ff8700
-! blue
-xterm*color4:       #acac85
-xterm*color12:      #acac85
-! magenta
-xterm*color5:       #af5fff
-xterm*color13:      #af5fff
-! cyan
-xterm*color6:       #5fd7ff
-xterm*color14:      #5fd7ff
-! white
-xterm*color7:       #444444
-xterm*color15:      #8a8a8a
-
-! == URXVT ==
 URxvt*scrollBar: false
 
-! Font
+! FONT
 URxvt*font: xft:Hasklug Nerd Font Mono:size=8
 
-! Border
+! BORDER
 URxvt*borderWidth: 0
 URxvt*internalBorder: 24
 
-! Colors
+! SPECIAL
 URxvt*foreground:   #ffffff
 URxvt*background:   #1b1d1e
-! black
-URxvt*color0:       #444444
+! BLACK
+URxvt*color0:       #465457
 URxvt*color8:       #1b1d1e
-! red
+! RED
 URxvt*color1:       #d7005f
 URxvt*color9:       #d7005f
-! green
+! GREEN
 URxvt*color2:       #87ff00
 URxvt*color10:      #87ff00
-! yellow
+! YELLOW
 URxvt*color3:       #ff8700
 URxvt*color11:      #ff8700
-! blue
+! BLUE
 URxvt*color4:       #acac85
 URxvt*color12:      #acac85
-!magenta
+! MAGENTA
 URxvt*color5:       #af5fff
 URxvt*color13:      #af5fff
-! cyan
+! CYAN
 URxvt*color6:       #5fd7ff
 URxvt*color14:      #5fd7ff
-! white
-URxvt*color7:       #ffffff
+! WHITE
+URxvt*color7:       #f8f8f8
 URxvt*color15:      #ffffff
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!! end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

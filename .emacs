@@ -128,26 +128,25 @@
            :with-sub-superscript nil))))
 
 (set-face-attribute 'org-level-1 nil
-                    :weight 'normal)
+                    :weight 'bold)
 (set-face-attribute 'org-level-2 nil
-                    :weight 'normal)
+                    :weight 'bold)
 (set-face-attribute 'org-level-3 nil
-                    :weight 'normal)
+                    :weight 'bold)
 (set-face-attribute 'org-level-4 nil
-                    :weight 'normal)
+                    :weight 'bold)
 (set-face-attribute 'org-level-5 nil
-                    :weight 'normal)
+                    :weight 'bold)
 (set-face-attribute 'org-level-6 nil
-                    :weight 'normal)
+                    :weight 'bold)
 (set-face-attribute 'org-level-7 nil
-                    :weight 'normal)
+                    :weight 'bold)
 
 ;; helm
 (use-package helm)
 
-(setq helm-M-x-fuzzy-match t)
 (global-set-key (kbd "M-x") 'helm-M-x)
-(setq-default helm-mode-line-string )
+(setq helm-M-x-fuzzy-match t)
 (setq helm-display-header-line nil)
 (setq helm-split-window-in-side-p t)
 

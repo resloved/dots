@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+
 # Neofetch config file
 # https://github.com/dylanaraps/neofetch
 
@@ -8,9 +8,10 @@
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
 
-    info "$(color 6)" distro
-    info "$(color 6)" kernel
-    info "$(color 6)" shell
+    info "$(color 3) $(color 7)DISTRO $(color 15) $(color 2)" distro
+    info "$(color 3) $(color 7)KERNEL $(color 15) $(color 2)" kernel
+    info "$(color 3) $(color 7)SHELL\t $(color 15) $(color 2)" shell
+    prin "$(color 3) $(color 7)PKGS\t $(color 15) $(~/scripts/./neopkg.sh)"
 
     # info "WM" wm
     # info "Model" model
@@ -33,7 +34,6 @@ print_info() {
     # info "GPU" gpu
     # info "Memory" memory
 
-    info line_break
     info line_break
 }
 

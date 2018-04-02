@@ -215,9 +215,6 @@ assign [class="Blender"] $ws6
 assign [instance="twitch.tv"] $ws7
 for_window [instance="twitch.tv"] floating enable; move absolute position center; set resize 1270px 562px
 
-# YOUTUBE RULES
-assign [instance="youtube.com"] $ws7
-
 # DISCORD RULES
 assign [class="discord"] $ws8
 

@@ -252,8 +252,8 @@
 (set-face-attribute 'eterm-256color-default nil
                     :weight 'normal)
 (set-face-attribute 'eterm-256color-0 nil
-                    :background "#262626"
-                    :foreground "#262626")
+                    :background "#465457"
+                    :foreground "#465457")
 (set-face-attribute 'eterm-256color-1 nil
                     :background "#d7005f"
                     :foreground "#d7005f")
@@ -273,11 +273,11 @@
                     :background "#5fd7ff"
                     :foreground "#5fd7ff")
 (set-face-attribute 'eterm-256color-7 nil
-                    :background "#444444"
-                    :foreground "#444444")
+                    :background "#f8f8f8"
+                    :foreground "#f8f8f8")
 (set-face-attribute 'eterm-256color-8 nil
-                    :background "#262626"
-                    :foreground "#262626")
+                    :background "#1b1d1e"
+                    :foreground "#1b1d1e")
 (set-face-attribute 'eterm-256color-9 nil
                     :background "#d7005f"
                     :foreground "#d7005f")

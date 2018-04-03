@@ -104,6 +104,8 @@ bindsym $mod+f fullscreen toggle
 
 # PAPER MODE
 bindsym $mod+space floating toggle; resize set 426px 676px; move absolute position center
+# VIDEO MODE
+bindsym $mod+Ctrl+Shift+space floating toggle; resize set 1152 648px; move absolute position center
 
 # TOGGLE FLOATING
 bindsym $mod+Ctrl+space floating toggle
@@ -232,7 +234,7 @@ for_window [class="Spotify"] move to workspace $ws10
 set $code http://localhost:8080/imp/live/index.html/
 set $app chromium --app
 bindsym $mod+n       exec ~/./beaker_start
-bindsym $mod+Ctrl+n  exec $app=$code
+bindsym $mod+Ctrl+n  exec chromium
 bindsym $mod+Shift+n exec $browser
 
 bindsym $mod+m       exec $music

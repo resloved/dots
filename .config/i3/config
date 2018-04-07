@@ -15,6 +15,9 @@ set $browser    firefox
 set $music      spotify
 set $term       urxvt
 
+# DIR VARIABLES
+set $scripts    ~/scripts
+
 # FLOATING
 floating_modifier $mod
 
@@ -176,21 +179,26 @@ bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 ##### TOOLS ########################################
 
 # LOCK
-bindsym $mod+Ctrl+x exec ~/.i3/lock.sh
+bindsym $mod+Ctrl+x exec $scripts/lock.sh
 #bindsym $mod+Ctrl+x exec i3lock
 
 # SCREENSHOT
 bindsym --release $mod+Print exec scrot -e 'mv $f ~/pictures/screenshots'
 bindsym --release $mod+Ctrl+Print exec scrot -s -e 'mv $f ~/pictures/screenshots'
 
-# MEDIA CONTROLS
-bindsym $mod+slash  exec playerctl play-pause
-bindsym $mod+comma  exec playerctl previous
-bindsym $mod+period exec playerctl next
+# CAST
+bindsym --release $mod+Shift+Print exec $scripts/cast.sh 
+bindsym --release $mod+Ctrl+Shift+Print exec $scripts/cast.sh -s 
+bindsym $mod+F12 exec pkill ffmpeg
 
-bindsym $mod+Ctrl+slash  exec pactl set-sink-mute 0 toggle # pause toggle
-bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
-bindsym $mod+Ctrl+period exec amixer sset Master 5%+
+# MEDIA CONTROLS
+bindsym $mod+slash  exec playerctl play-pause; exec $scripts/paused.sh
+bindsym $mod+comma  exec playerctl previous;   exec dunstify -r 7 ""
+bindsym $mod+period exec playerctl next;       exec dunstify -r 7 ""
+
+bindsym $mod+Ctrl+slash  exec pactl set-sink-mute 0 toggle; exec $scripts/muted.sh
+bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-; exec dunstify -u low -r 6 ""
+bindsym $mod+Ctrl+period exec amixer sset Master 5%+; exec dunstify -u low -r 6 ""
 
 # BACKGROUND
 set $background ~/pictures/wallpapers/Cesar/cesar2.jpg
@@ -220,19 +228,18 @@ assign [class="discord"] $ws8
 
 # TWEETDECK RULES
 assign [instance="tweetdeck.twitter.com"] $ws9
-for_window [instance="tweetdeck.twitter.com"] fullscreen enable
 
 # SPOTIFY RULES
 for_window [class="Spotify"] move to workspace $ws10
 
 ##### APP BINDS ###################################
 
+set $app chromium --app
+
 #bindsym $mod+b       exec
 #bindsym $mod+Ctrl+b  exec
 #bindsym $mod+Shift+b exec
 
-set $code http://localhost:8080/imp/live/index.html/
-set $app chromium --app
 bindsym $mod+n       exec ~/./beaker_start
 bindsym $mod+Ctrl+n  exec chromium
 bindsym $mod+Shift+n exec $browser
@@ -257,9 +264,9 @@ bindsym $mod+i       exec emacs -ib 24
 bindsym $mod+Ctrl+i  exec emacsclient -c
 bindsym $mod+Shift+i exec zathura
 
-#bindsym $mod+o       exec
-#bindsym $mod+Ctrl+o  exec
-#bindsym $mod+Shift+o exec
+bindsym $mod+o       exec $scripts/timer.sh 300
+#bindsym $mod+Ctrl+o  exec $scripts/timer.sh 300
+#bindsym $mod+Sift+o  exec $scripts/timer.sh 1500
 
 #bindsym $mod+p       exec
 #bindsym $mod+Ctrl+p  exec
@@ -268,11 +275,14 @@ bindsym $mod+Shift+i exec zathura
 ##### LAUNCH ###################################### 
 
 # STARTUP
-exec --no-startup-id .i3/lock.sh
+exec --no-startup-id $scripts/lock.sh
 exec --no-startup-id emacs --daemon
+exec --no-startpu-id $scripts/charge.sh
+exec --no-startpu-id $scripts/up.sh
 
 # RELOAD
 exec_always --no-startup-id compton
+exec_awlays --no-startup-id dunst --config ~/.config/dunst/dunstrc
 
 ###################################################
 ##### end #########################################

@@ -96,11 +96,11 @@ bindsym $mod+Shift+Ctrl+Down  resize shrink height 1px or 1 ppt
 bindsym $mod+Shift+Ctrl+Up    resize grow height   1px or 1 ppt
 bindsym $mod+Shift+Ctrl+Right resize grow width    1px or 1 ppt
 
-# HORIZONTAL SPLIT
-bindsym $mod+b split h
-
 # VERTICAL SPLIT
 bindsym $mod+v split v
+
+# HORIZONTAL SPLIT
+bindsym $mod+Ctrl+v split h
 
 # FULLSCREEN
 bindsym $mod+f fullscreen toggle
@@ -129,6 +129,9 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# LAST WORKSPACE
+bindsym $mod+b workspace back_and_forth
 
 # SWITCH TO WORKSPACE
 bindsym $mod+1 workspace $ws1
@@ -236,10 +239,6 @@ for_window [class="Spotify"] move to workspace $ws10
 
 set $app chromium --app
 
-#bindsym $mod+b       exec
-#bindsym $mod+Ctrl+b  exec
-#bindsym $mod+Shift+b exec
-
 bindsym $mod+n       exec ~/./beaker_start
 bindsym $mod+Ctrl+n  exec chromium
 bindsym $mod+Shift+n exec $browser
@@ -267,10 +266,6 @@ bindsym $mod+Shift+i exec zathura
 bindsym $mod+o       exec $scripts/timer.sh 300
 #bindsym $mod+Ctrl+o  exec $scripts/timer.sh 300
 #bindsym $mod+Sift+o  exec $scripts/timer.sh 1500
-
-#bindsym $mod+p       exec
-#bindsym $mod+Ctrl+p  exec
-#bindsym $mod+Shift+p exec
 
 ##### LAUNCH ###################################### 
 

@@ -1,7 +1,9 @@
 #!/bin/sh
+
+# `pkg.sh` FOR NEOFETCH
+
 arch=$(checkupdates | wc -l)
 
-# if ! updates_aur=$(cower -u 2> /dev/null | wc -l); then
 if ! aur=$(trizen -Su --aur --quiet | wc -l); then
     aur=0
 fi

@@ -277,12 +277,14 @@ bindsym $mod+o       exec $scripts/timer.sh 300
 # STARTUP
 exec --no-startup-id $scripts/lock.sh
 exec --no-startup-id emacs --daemon
+
+# BACKGROUND SCRIPTS
 exec --no-startpu-id $scripts/charge.sh
 exec --no-startpu-id $scripts/up.sh
+exec --no-startpu-id $scripts/on.sh
 
 # RELOAD
 exec_always --no-startup-id compton
-exec_awlays --no-startup-id dunst --config ~/.config/dunst/dunstrc
 
 ###################################################
 ##### end #########################################

@@ -5,7 +5,7 @@
 sleep 0.1
 PULL=$(amixer sget Master | grep off)
 
-if [[ $PULL == "" ]]; then
+if [[ -z $PULL ]]; then
     dunstify -u low -r 7 ""
 else
     dunstify -u low -r 7 ""

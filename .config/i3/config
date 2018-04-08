@@ -195,13 +195,13 @@ bindsym --release $mod+Ctrl+Shift+Print exec $scripts/cast.sh -s
 bindsym $mod+F12 exec pkill ffmpeg
 
 # MEDIA CONTROLS
-bindsym $mod+slash  exec playerctl play-pause; exec $scripts/paused.sh
-bindsym $mod+comma  exec playerctl previous;   exec dunstify -r 7 ""
-bindsym $mod+period exec playerctl next;       exec dunstify -r 7 ""
+bindsym $mod+slash  exec playerctl play-pause
+bindsym $mod+comma  exec playerctl previous
+bindsym $mod+period exec playerctl next
 
-bindsym $mod+Ctrl+slash  exec pactl set-sink-mute 0 toggle; exec $scripts/muted.sh
-bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-; exec dunstify -u low -r 6 ""
-bindsym $mod+Ctrl+period exec amixer sset Master 5%+; exec dunstify -u low -r 6 ""
+bindsym $mod+Ctrl+slash  exec pactl set-sink-mute 0 toggle
+bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
+bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # BACKGROUND
 set $background ~/pictures/wallpapers/Cesar/cesar2.jpg
@@ -272,11 +272,6 @@ bindsym $mod+o       exec $scripts/timer.sh 300
 # STARTUP
 exec --no-startup-id $scripts/lock.sh
 exec --no-startup-id emacs --daemon
-
-# BACKGROUND SCRIPTS
-exec --no-startpu-id $scripts/charge.sh
-exec --no-startpu-id $scripts/up.sh
-exec --no-startpu-id $scripts/on.sh
 
 # RELOAD
 exec_always --no-startup-id compton

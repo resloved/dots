@@ -18,6 +18,9 @@ set $term       urxvt
 # DIR VARIABLES
 set $scripts    ~/scripts
 
+# RESIZE VARIABLES
+set $video floating toggle; resize set 1152 648px; move absolute position center
+
 # FLOATING
 floating_modifier $mod
 
@@ -107,8 +110,9 @@ bindsym $mod+f fullscreen toggle
 
 # PAPER MODE
 bindsym $mod+space floating toggle; resize set 426px 676px; move absolute position center
+
 # VIDEO MODE
-bindsym $mod+Ctrl+Shift+space floating toggle; resize set 1152 648px; move absolute position center
+bindsym $mod+Ctrl+Shift+space $video
 
 # TOGGLE FLOATING
 bindsym $mod+Ctrl+space floating toggle
@@ -210,17 +214,8 @@ exec_always feh --bg-scale $background
 
 ##### APP RULES ###################################
 
-# GIMP RULES
-for_window [title="GIMP Startup"] move workspace $ws6
-for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
-for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
-assign [class="Gimp"] $ws6
-
-# INKSCAPE RULES
-assign [class="Inkscape"] $ws6
-
-# BLENDER RULES
-assign [class="Blender"] $ws6
+# YOUTUBE RULES
+for_window [instance="youtube.com"] floating enable; $video
 
 # TWITCH RULES
 assign [instance="twitch.tv"] $ws7
@@ -247,13 +242,13 @@ bindsym $mod+m       exec $music
 bindsym $mod+Ctrl+m  exec discord
 #bindsym $mod+Shift+m exec
 
-bindsym $mod+t       exec $app=https://tweetdeck.twitter.com
+bindsym $mod+t exec $app=https://tweetdeck.twitter.com
 bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
 bindsym $mod+Shift+t exec $app=https://youtube.com
 
-bindsym $mod+y       exec gimp
-bindsym $mod+Ctrl+y  exec inkscape
-bindsym $mod+Shift+y exec blender
+#bindsym $mod+y       exec
+#bindsym $mod+Ctrl+y  exec
+#bindsym $mod+Shift+y exec
 
 bindsym $mod+u       exec $app=https://inbox.google.com
 bindsym $mod+Ctrl+u  exec $app=https://calendar.google.com
@@ -263,14 +258,13 @@ bindsym $mod+i       exec emacs -ib 24
 bindsym $mod+Ctrl+i  exec emacsclient -c
 bindsym $mod+Shift+i exec zathura
 
-bindsym $mod+o       exec $scripts/timer.sh 300
-#bindsym $mod+Ctrl+o  exec $scripts/timer.sh 300
-#bindsym $mod+Sift+o  exec $scripts/timer.sh 1500
+#bindsym $mod+o       exec
+#bindsym $mod+Ctrl+o  exec
+#bindsym $mod+Sift+o  exec
 
 ##### LAUNCH ###################################### 
 
 # STARTUP
-exec --no-startup-id $scripts/lock.sh
 exec --no-startup-id emacs --daemon
 
 # RELOAD

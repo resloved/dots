@@ -19,5 +19,5 @@ BG='\033[1;30m'
 if [$upd=0]; then
     echo -e "${GR} ${BG}:${WH}$tot"
 else
-    echo -e "${RD}✖ ${BG}:${WH}$upd / $tot"
+    echo -e "${RD} ${BG}:${WH}$upd / $tot"
 fi

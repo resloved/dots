@@ -13,6 +13,6 @@ NEW=$(pacman -Si $1 | grep Version | awk '{print $3;}')
 if [[ $OLD == $NEW ]]; then
     echo -e "${GR} ${BG} ${WH}$OLD"
 else
-    echo -e "${RD}✖ ${BG} ${WH}$OLD"
+    echo -e "${RD} ${BG} ${WH}$OLD"
 fi
 

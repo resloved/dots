@@ -209,12 +209,12 @@ bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show run
 bindsym $mod+Ctrl+d exec rofi -show window
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND
-set $background ~/pictures/wallpapers/Cesar/cesar5.jpg
+set $background ~/pictures/wallpapers/sky/sky2.jpg
 exec_always feh --bg-scale $background
 
 

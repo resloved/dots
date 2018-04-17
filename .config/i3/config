@@ -186,10 +186,11 @@ bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 ##### TOOLS ########################################
 
 # LOCK
-bindsym $mod+Ctrl+x exec $scripts/lock.sh
-#bindsym $mod+Ctrl+x exec i3lock
+bindsym $mod+Ctrl+x exec slock
 
 # SCREENSHOT
+set $folder ~/pictures/screenshots/
+set $date %Y/%m/%d-%T-scrot.png
 bindsym --release $mod+Print exec scrot -e 'mv $f ~/pictures/screenshots'
 bindsym --release $mod+Ctrl+Print exec scrot -s -e 'mv $f ~/pictures/screenshots'
 
@@ -207,8 +208,13 @@ bindsym $mod+Ctrl+slash  exec pactl set-sink-mute 0 toggle
 bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
+# ROFI
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Ctrl+d exec rofi -show window
+bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
+
 # BACKGROUND
-set $background ~/pictures/wallpapers/Cesar/cesar2.jpg
+set $background ~/pictures/wallpapers/Cesar/cesar5.jpg
 exec_always feh --bg-scale $background
 
 
@@ -234,12 +240,12 @@ for_window [class="Spotify"] move to workspace $ws10
 
 set $app chromium --app
 
-bindsym $mod+n       exec ~/./beaker_start
-bindsym $mod+Ctrl+n  exec chromium
-bindsym $mod+Shift+n exec $browser
+bindsym $mod+n       exec surf duckduckgo.com
+bindsym $mod+Ctrl+n  exec $scripts/search.sh 
+#bindsym $mod+Shift+n exec 
 
 bindsym $mod+m       exec $music
-bindsym $mod+Ctrl+m  exec discord
+bindsym $mod+Ctrl+m  exec $app=https://discordapp.com
 #bindsym $mod+Shift+m exec
 
 bindsym $mod+t exec $app=https://tweetdeck.twitter.com
@@ -266,6 +272,7 @@ bindsym $mod+Shift+i exec zathura
 
 # STARTUP
 exec --no-startup-id emacs --daemon
+exec --no-startup-id slock
 
 # RELOAD
 exec_always --no-startup-id compton

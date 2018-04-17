@@ -8,6 +8,13 @@
 
 !!!!! URXVT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+! SETTINGS
+URxvt*buffered: false
+URxvt*saveLines: 0
+URxvt*skipBuiltinGlyphs: true
+
+URxvt.perl-ext:
+URxvt.perl-ext-common:
 URxvt*scrollBar: false
 
 ! FONT

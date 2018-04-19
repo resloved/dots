@@ -141,46 +141,46 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+# bindsym $mod+4 workspace $ws4
+# bindsym $mod+5 workspace $ws5
+# bindsym $mod+6 workspace $ws6
+# bindsym $mod+7 workspace $ws7
+# bindsym $mod+8 workspace $ws8
+# bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # MOVE WINDOW TO WORKSPACE
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
+# bindsym $mod+Ctrl+4 move container to workspace $ws4
+# bindsym $mod+Ctrl+5 move container to workspace $ws5
+# bindsym $mod+Ctrl+6 move container to workspace $ws6
+# bindsym $mod+Ctrl+7 move container to workspace $ws7
+# bindsym $mod+Ctrl+8 move container to workspace $ws8
+# bindsym $mod+Ctrl+9 move container to workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10
 
 bindsym $mod+Mod2+KP_1 workspace $ws1
 bindsym $mod+Mod2+KP_2 workspace $ws2
 bindsym $mod+Mod2+KP_3 workspace $ws3
-bindsym $mod+Mod2+KP_4 workspace $ws4
-bindsym $mod+Mod2+KP_5 workspace $ws5
-bindsym $mod+Mod2+KP_6 workspace $ws6
-bindsym $mod+Mod2+KP_7 workspace $ws7
-bindsym $mod+Mod2+KP_8 workspace $ws8
-bindsym $mod+Mod2+KP_9 workspace $ws9
+# bindsym $mod+Mod2+KP_4 workspace $ws4
+# bindsym $mod+Mod2+KP_5 workspace $ws5
+# bindsym $mod+Mod2+KP_6 workspace $ws6
+# bindsym $mod+Mod2+KP_7 workspace $ws7
+# bindsym $mod+Mod2+KP_8 workspace $ws8
+# bindsym $mod+Mod2+KP_9 workspace $ws9
 bindsym $mod+Mod2+KP_0 workspace $ws10
 
 bindsym $mod+Ctrl+Mod2+KP_1 move container to workspace $ws1
 bindsym $mod+Ctrl+Mod2+KP_2 move container to workspace $ws2
 bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
-bindsym $mod+Ctrl+Mod2+KP_4 move container to workspace $ws4
-bindsym $mod+Ctrl+Mod2+KP_5 move container to workspace $ws5
-bindsym $mod+Ctrl+Mod2+KP_6 move container to workspace $ws6
-bindsym $mod+Ctrl+Mod2+KP_7 move container to workspace $ws7
-bindsym $mod+Ctrl+Mod2+KP_8 move container to workspace $ws8
-bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
+# bindsym $mod+Ctrl+Mod2+KP_4 move container to workspace $ws4
+# bindsym $mod+Ctrl+Mod2+KP_5 move container to workspace $ws5
+# bindsym $mod+Ctrl+Mod2+KP_6 move container to workspace $ws6
+# bindsym $mod+Ctrl+Mod2+KP_7 move container to workspace $ws7
+# bindsym $mod+Ctrl+Mod2+KP_8 move container to workspace $ws8
+# bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
 bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 
 ##### TOOLS ########################################
@@ -209,12 +209,12 @@ bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Ctrl+d exec rofi -show window
+bindsym $mod+d exec rofi -show window
+bindsym $mod+Ctrl+d exec rofi -show drun
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND
-set $background ~/pictures/wallpapers/sky/sky2.jpg
+set $background ~/pictures/wallpapers/Cesar/cesar5.jpg
 exec_always feh --bg-scale $background
 
 
@@ -224,11 +224,10 @@ exec_always feh --bg-scale $background
 for_window [instance="youtube.com"] floating enable; $video
 
 # TWITCH RULES
-assign [instance="twitch.tv"] $ws7
 for_window [instance="twitch.tv"] floating enable; move absolute position center; set resize 1270px 562px
 
 # DISCORD RULES
-assign [class="discord"] $ws8
+# assign [class="discord"] $ws8
 
 # TWEETDECK RULES
 assign [instance="tweetdeck.twitter.com"] $ws9
@@ -240,15 +239,15 @@ for_window [class="Spotify"] move to workspace $ws10
 
 set $app chromium --app
 
-bindsym $mod+n       exec surf duckduckgo.com
+bindsym $mod+n       exec $scripts/direct.sh
 bindsym $mod+Ctrl+n  exec $scripts/search.sh 
 #bindsym $mod+Shift+n exec 
 
 bindsym $mod+m       exec $music
-bindsym $mod+Ctrl+m  exec $app=https://discordapp.com
+#bindsym $mod+Ctrl+m  exec $app=https://discordapp.com
 #bindsym $mod+Shift+m exec
 
-bindsym $mod+t exec $app=https://tweetdeck.twitter.com
+# bindsym $mod+t exec $app=https://tweetdeck.twitter.com
 bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
 bindsym $mod+Shift+t exec $app=https://youtube.com
 

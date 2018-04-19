@@ -1,5 +1,10 @@
-#!/bin/sh
+#!/usr/bin/sh
 
 # ROFI => SURF SEARCH
 
-echo "" | rofi -dmenu | xargs -I{} surf https://duckduckgo.com/?q={}
+INP=echo $(cat ".history/search_history") | rofi -dmenu 
+echo $INP
+./history.sh $INP 
+if [ ! -e $INP ] ; then
+    surf "https://duckduckgo.com/?q=$INP"
+fi	

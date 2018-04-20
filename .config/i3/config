@@ -210,7 +210,7 @@ bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
 bindsym $mod+d exec rofi -show window
-bindsym $mod+Ctrl+d exec rofi -show drun
+bindsym $mod+Ctrl+d exec rofi -show run
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND
@@ -241,7 +241,7 @@ set $app chromium --app
 
 bindsym $mod+n       exec $scripts/direct.sh
 bindsym $mod+Ctrl+n  exec $scripts/search.sh 
-#bindsym $mod+Shift+n exec 
+bindsym $mod+Shift+n exec $scripts/bookmarks.sh 
 
 bindsym $mod+m       exec $music
 #bindsym $mod+Ctrl+m  exec $app=https://discordapp.com

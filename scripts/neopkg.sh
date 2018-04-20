@@ -16,7 +16,7 @@ RD='\033[0;31m'
 GR='\033[0;32m'
 BG='\033[1;30m'
 
-if [$upd=0]; then
+if [ "$upd" -eq 0 ]; then
     echo -e "${GR} ${BG}:${WH}$tot"
 else
     echo -e "${RD} ${BG}:${WH}$upd / $tot"

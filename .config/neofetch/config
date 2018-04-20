@@ -8,11 +8,11 @@
 
 print_info() {
 
-    info "$(color 3) $(color 7)DISTRO $(color 15) $(color 6)" distro
-    info "$(color 3) $(color 7)KERNEL $(color 15) $(color 6)" kernel
-    prin "$(color 3) $(color 7)ZSH\t $(color 15) $(~/scripts/./ver.sh zsh)"
-    prin "$(color 3) $(color 7)EMACS\t $(color 15) $(~/scripts/./ver.sh emacs)"
-    prin "$(color 3) $(color 7)PKGS\t $(color 15) $(~/scripts/./neopkg.sh)"
+    info "DISTRO\t$(color 6)" distro
+    info "KERNEL\t$(color 6)" kernel
+    prin "ZSH\t$(~/scripts/./ver.sh zsh)"
+    prin "EMACS\t$(~/scripts/./ver.sh emacs)"
+    prin "PKGS\t$(~/scripts/./neopkg.sh)"
 
     # info "WM" wm
     # info "Model" model

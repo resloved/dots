@@ -4,7 +4,6 @@
 
 bold=$(tput bold)
 norm=$(tput sgr0)
-
 base=$(tput setaf 6)
 
 KERN=$(uname -rv | awk '{print $1;}')

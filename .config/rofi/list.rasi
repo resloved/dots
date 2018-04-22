@@ -1,0 +1,59 @@
+/**************************************************/
+/**************************************************/
+/*****                 ****************************/
+/***** Rofi / RESLOVED ****************************/
+/*****                 ****************************/
+/**************************************************/
+/**************************************************/
+
+* {
+background-color:      #1b1d1e00;
+border-color:          #ffffff44;
+text-color:            white;
+font:                  "Hasklug Nerd Font Bold 9";
+}
+
+configuration {
+modi: "window,run,ssh";
+window-format: "{n}";
+}
+
+#window {
+anchor:     north;
+location:   north;
+width:      100%;
+padding:    16px 48px 6px 48px;
+children:   [ horibox ];
+}
+
+#horibox {
+orientation: horizontal;
+children:   [listview];
+}
+
+#listview {
+layout:     horizontal;
+spacing:    4px;
+lines:      100;
+}
+
+#entry {
+padding:    0px 4px;
+expand:     false;
+width:      10em;
+font:       "Hasklug Nerd Font Bold 9";
+}
+
+#element {
+padding: 0px 2px;
+}
+
+#element selected {
+background-color: SteelBlue;
+}
+
+/**************************************************/
+/**** end *****************************************/
+/**************************************************/
+
+/* -*- mode: css; -*- */

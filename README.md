@@ -24,5 +24,5 @@ Included configurations for:
 
 ## Wallpaper
 
-![Wallpaper](https://imgur.com/5IM3CKQ.jpg)
+![Wallpaper](https://imgur.com/PNjUdcR.jpg)
 [Source](https://unsplash.com/photos/GvL_0uNFfK4)

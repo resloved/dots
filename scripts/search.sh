@@ -2,5 +2,5 @@
 
 # ROFI => SURF SEARCH
 
-rofi -dmenu | \
+rofi -dmenu -theme entry | \
     xargs -I{} surf https://duckduckgo.com/?q={}

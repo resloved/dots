@@ -210,7 +210,7 @@ bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
 bindsym $mod+d exec rofi -show window
-bindsym $mod+Ctrl+d exec rofi -show run
+bindsym $mod+Ctrl+d exec rofi -show drun -show-icons
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND

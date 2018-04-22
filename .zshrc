@@ -39,6 +39,8 @@ alias neo="clear; echo '\n'; neofetch"
 export PYTHONPATH=/usr/lib/python3.6/site-packages
 # JAVA
 export PATH=/usr/lib/jvm/java-10-jdk/bin/:$PATH
+# SCRIPTS
+export PATH=$HOME/scripts:$PATH
 
 ###################################################
 ##### end #########################################

@@ -28,7 +28,7 @@ children:   [ horibox ];
 
 #horibox {
 orientation: horizontal;
-children:   [listview];
+children:   [ entry, listview ];
 }
 
 #listview {
@@ -38,10 +38,9 @@ lines:      100;
 }
 
 #entry {
-padding:    0px 4px;
+color:      rgba(0, 0, 0, 0);
 expand:     false;
-width:      10em;
-font:       "Hasklug Nerd Font Bold 9";
+width:      0;
 }
 
 #element {

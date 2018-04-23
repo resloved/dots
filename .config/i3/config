@@ -109,7 +109,7 @@ bindsym $mod+Ctrl+v split h
 bindsym $mod+f fullscreen toggle
 
 # PAPER MODE
-bindsym $mod+space floating toggle; resize set 426px 676px; move absolute position center
+bindsym $mod+space floating toggle; resize set 426px 670px; move absolute position center
 
 # VIDEO MODE
 bindsym $mod+Ctrl+Shift+space $video
@@ -119,6 +119,9 @@ bindsym $mod+Ctrl+space floating toggle
 
 # MODE TOGGLE
 bindsym $mod+Shift+space focus mode_toggle
+
+# CENTER FLOATING
+bindsym $mod+c move absolute position center
 
 ##### WORKSPACES ##################################
 
@@ -209,8 +212,8 @@ bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
-bindsym $mod+d exec rofi -show window
-bindsym $mod+Ctrl+d exec rofi -show drun -show-icons
+bindsym $mod+d exec rofi -show window -theme list
+bindsym $mod+Ctrl+d exec rofi -show drun -show-icons -theme list
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND

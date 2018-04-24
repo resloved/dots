@@ -16,11 +16,6 @@ source $ZSH/oh-my-zsh.sh
 
 ##### BINDS #######################################
 
-# SUDO BIND (https://stackoverflow.com/a/970202)
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^a" insert-sudo
-
 # CLIMB BIND
 bindkey -s "^k" '^Ucd ..^M'
 # DIR BIND
@@ -32,6 +27,8 @@ bindkey -s "^l" '^Ule^M'
 alias le="echo ''; ls; echo ''"
 # SPACED NEO
 alias neo="clear; echo '\n'; neofetch"
+# EMACS CLIENT
+alias ec="emacsclient -t"
 
 ##### PATH ######################################## 
 

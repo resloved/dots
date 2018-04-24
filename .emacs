@@ -16,7 +16,7 @@
  '(cua-mode t nil (cua-base))
  '(custom-safe-themes
    (quote
-    ("1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default)))
+    ("d92735a3039de9ceebe8326f5299a5272600b2544e34fd6e15c3c95bf99812eb" "1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default)))
  '(fringe-mode 0 nil (fringe))
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/1.org" "~/test.org")))
@@ -57,7 +57,7 @@
 
    '(:eval (propertize "%b" 'face '(:weight bold)))
    '(:eval (if (buffer-modified-p)
-               (propertize " ✖ " 'face '(:foreground "#ff0087"))
+               (propertize "  " 'face '(:foreground "#ff0087"))
              (propertize "  " 'face '(:foreground "#87ff00"))))
 
    '(:eval (propertize "%m" 'face '(:weight bold)))
@@ -242,6 +242,10 @@
 ;;;;; web-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package web-mode)
+
+;;;;; haskell-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package haskell-mode)
 
 ;;;;; eterm-256color ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

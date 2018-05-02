@@ -194,7 +194,8 @@
           "w" 'other-window
           "t" 'term
           "r" 'term-char-mode
-          "g" 'magit-status)))
+          "g" 'magit-status
+          "a" 'org-agenda)))
     (evil-mode t)
     ;; EVIL SURROUND
     (use-package evil-surround

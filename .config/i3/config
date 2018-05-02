@@ -192,15 +192,14 @@ bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 bindsym $mod+Ctrl+x exec slock
 
 # SCREENSHOT
-set $folder ~/pictures/screenshots/
-set $date %Y/%m/%d-%T-scrot.png
 bindsym --release $mod+Print exec scrot -e 'mv $f ~/pictures/screenshots'
 bindsym --release $mod+Ctrl+Print exec scrot -s -e 'mv $f ~/pictures/screenshots'
+bindsym --release $mod+Shift+Print exec $scripts/scrop.sh
 
 # CAST
-bindsym --release $mod+Shift+Print exec $scripts/cast.sh 
-bindsym --release $mod+Ctrl+Shift+Print exec $scripts/cast.sh -s 
-bindsym $mod+F12 exec pkill ffmpeg
+bindsym --release $mod+F12 exec $scripts/cast.sh 
+bindsym --release $mod+Ctrl+F12 exec $scripts/cast.sh -s 
+bindsym $mod+F11 exec pkill ffmpeg
 
 # MEDIA CONTROLS
 bindsym $mod+slash  exec playerctl play-pause

@@ -10,6 +10,8 @@
 
 set $mod Mod4
 
+font pango:Hasklug Nerd Font Mono 0
+
 # APP VARIABLES
 set $browser    firefox
 set $music      spotify
@@ -25,8 +27,10 @@ set $video floating toggle; resize set 1152 648px; move absolute position center
 floating_modifier $mod
 
 # NO WINDOW BORDER
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
+#for_window [class="^.*"] border pixel 0
+#for_window [title="^.*"] border pixel 0
+#for_window [class="Emacs"] normal pixel 24
+new_window normal 0 px
 
 # GAP VARIABLES
 set $inner 32
@@ -41,9 +45,9 @@ bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $oute
 bindsym $mod+Ctrl+g exec pkill compton; gaps inner all set 0; gaps outer all set 0
 
 # TERMINAL BINDS
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term -e tmux
-#bindsym $mod+Ctrl+Return exec $term
+bindsym $mod+Return exec $term -e tmux
+bindsym $mod+Shift+Return exec $term -e tmux new-session -A -s main
+bindsym $mod+Ctrl+Return exec $term
 bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
 
 # KILL
@@ -186,6 +190,17 @@ bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
 # bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
 bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 
+##### COLORS #######################################
+
+# CLASS                 BORDER  BACK    TEXT    INDICATOR
+client.focused          #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
+client.focused_inactive #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
+client.unfocused        #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
+client.urgent           #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
+client.placeholder      #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
+
+client.background       #1b1d1e
+
 ##### TOOLS ########################################
 
 # LOCK
@@ -216,8 +231,11 @@ bindsym $mod+Ctrl+d exec rofi -show drun -show-icons -theme list
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND
-set $background ~/pictures/wallpapers/Cesar/cesar5.jpg
-exec_always feh --bg-scale $background
+#set $background ~/pictures/wallpapers/Cesar/cesar5.jpg
+#exec_always feh --bg-scale $background
+set $g1 "#c79081"
+set $g2 "#dfa579"
+exec_always hsetroot -add $g1 -add $g2 -gradient 0 
 
 # COUNTER
 bindsym $mod+grave exec $scripts/counter.sh
@@ -252,8 +270,8 @@ bindsym $mod+Ctrl+m  exec $app=https://discordapp.com/channels/@me
 #bindsym $mod+Shift+m exec
 
 # bindsym $mod+t exec $app=https://tweetdeck.twitter.com
-bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
-bindsym $mod+Shift+t exec $app=https://youtube.com
+#bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
+#bindsym $mod+Shift+t exec $app=https://youtube.com
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
@@ -263,8 +281,8 @@ bindsym $mod+u       exec $app=https://inbox.google.com
 bindsym $mod+Ctrl+u  exec $app=https://calendar.google.com
 bindsym $mod+Shift+u exec $app=https://drive.google.com
 
-bindsym $mod+i       exec emacs -ib 24
-bindsym $mod+Ctrl+i  exec emacsclient -c
+bindsym $mod+i       exec emacsclient -c
+bindsym $mod+Ctrl+i  exec emacs --daemon
 bindsym $mod+Shift+i exec zathura
 
 #bindsym $mod+o       exec

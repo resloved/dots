@@ -33,7 +33,8 @@ alias ec="emacsclient -t"
 ##### PATH ######################################## 
 
 # PYTHON
-export PYTHONPATH=/usr/lib/python3.6/site-packages
+#export PYTHONPATH=/usr/lib/python3.6/site-packages
+export PATH=/usr/local/anaconda/bin:$PATH
 # JAVA
 export PATH=/usr/lib/jvm/java-10-jdk/bin/:$PATH
 # RUBY

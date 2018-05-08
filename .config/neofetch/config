@@ -8,18 +8,12 @@
 
 print_info() {
 
-    info "DISTRO\t$(color 6)" distro
-    info "KERNEL\t$(color 6)" kernel
-    prin "ZSH\t$(~/scripts/./ver.sh zsh)"
-    prin "EMACS\t$(~/scripts/./ver.sh emacs)"
-    prin "PKGS\t$(~/scripts/./neopkg.sh)"
-
-    # info "WM" wm
+    info "WM" wm
     # info "Model" model
     # info "Uptime" uptime
     # info "Resolution" resolution
     # info "DE" de
-    # info "Terminal" term
+    info "Terminal" term
     # info "CPU Usage" cpu_usage
     # info "Disk" disk
     # info "Battery" battery
@@ -35,6 +29,7 @@ print_info() {
     # info "GPU" gpu
     # info "Memory" memory
 
+    info cols
     info line_break
 }
 

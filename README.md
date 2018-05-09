@@ -2,7 +2,7 @@
 
 ## Preview
 
-![Preview](https://imgur.com/5IM3CKQ.png)
+![Preview](https://i.imgur.com/Ra9qPVK.png)
 
 ## Details
 
@@ -16,6 +16,7 @@
 Included configurations for:
 * i3
 * urxvt
+* tmux
 * zsh
 * emacs
 * compton
@@ -24,5 +25,6 @@ Included configurations for:
 
 ## Wallpaper
 
-![Wallpaper](https://imgur.com/PNjUdcR.jpg)
-[Source](https://unsplash.com/photos/GvL_0uNFfK4)
+```
+hsetroot -add "#c79081" -add "#dfa579" -gradient 0
+```

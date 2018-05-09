@@ -22,7 +22,7 @@ URxvt*font: xft:Hasklug Nerd Font Mono:size=8
 
 ! BORDER
 URxvt*borderWidth: 0
-URxvt*internalBorder: 24
+URxvt*internalBorder: 0
 
 ! SPECIAL
 URxvt*foreground:   #ffffff

@@ -10,7 +10,7 @@
 
 set $mod Mod4
 
-font pango:Hasklug Nerd Font Mono 0
+font pango:Hasklug Nerd Font Mono 12
 
 # APP VARIABLES
 set $browser    firefox
@@ -26,11 +26,13 @@ set $video floating toggle; resize set 1152 648px; move absolute position center
 # FLOATING
 floating_modifier $mod
 
-# NO WINDOW BORDER
-#for_window [class="^.*"] border pixel 0
-#for_window [title="^.*"] border pixel 0
-#for_window [class="Emacs"] normal pixel 24
-new_window normal 0 px
+# DEFAULT BORDER
+for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
+
+# APPLICATION BORDERS
+for_window [class="Emacs"] border normal 24px
+for_window [class="URxvt"] border normal 24px
 
 # GAP VARIABLES
 set $inner 32
@@ -83,15 +85,15 @@ bindsym $mod+Ctrl+Up move up
 bindsym $mod+Ctrl+Right move right
 
 # RESIZE
-bindsym $mod+Shift+h     resize shrink width  10px or 10 ppt
-bindsym $mod+Shift+j     resize shrink height 10px or 10 ppt
-bindsym $mod+Shift+k     resize grow height   10px or 10 ppt
-bindsym $mod+Shift+l     resize grow width    10px or 10 ppt
+bindsym $mod+Shift+h          resize shrink width  10px or 10 ppt
+bindsym $mod+Shift+j          resize shrink height 10px or 10 ppt
+bindsym $mod+Shift+k          resize grow height   10px or 10 ppt
+bindsym $mod+Shift+l          resize grow width    10px or 10 ppt
 
-bindsym $mod+Shift+Left  resize shrink width  10px or 10 ppt
-bindsym $mod+Shift+Down  resize shrink height 10px or 10 ppt
-bindsym $mod+Shift+Up    resize grow height   10px or 10 ppt
-bindsym $mod+Shift+Right resize grow width    10px or 10 ppt
+bindsym $mod+Shift+Left       resize shrink width  10px or 10 ppt
+bindsym $mod+Shift+Down       resize shrink height 10px or 10 ppt
+bindsym $mod+Shift+Up         resize grow height   10px or 10 ppt
+bindsym $mod+Shift+Right      resize grow width    10px or 10 ppt
 
 bindsym $mod+Shift+Ctrl+h     resize shrink width  1px or 1 ppt
 bindsym $mod+Shift+Ctrl+j     resize shrink height 1px or 1 ppt
@@ -133,12 +135,12 @@ bindsym $mod+c move absolute position center
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+#set $ws4 "4"
+#set $ws5 "5"
+#set $ws6 "6"
+#set $ws7 "7"
+#set $ws8 "8"
+#set $ws9 "9"
 set $ws10 "10"
 
 # LAST WORKSPACE
@@ -252,7 +254,7 @@ for_window [instance="twitch.tv"] floating enable; move absolute position center
 # assign [class="discord"] $ws8
 
 # TWEETDECK RULES
-assign [instance="tweetdeck.twitter.com"] $ws9
+#assign [instance="tweetdeck.twitter.com"] $ws9
 
 # SPOTIFY RULES
 for_window [class="Spotify"] move to workspace $ws10
@@ -269,9 +271,9 @@ bindsym $mod+m       exec $music
 bindsym $mod+Ctrl+m  exec $app=https://discordapp.com/channels/@me
 #bindsym $mod+Shift+m exec
 
-# bindsym $mod+t exec $app=https://tweetdeck.twitter.com
-#bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
-#bindsym $mod+Shift+t exec $app=https://youtube.com
+bindsym $mod+t exec $app=https://tweetdeck.twitter.com
+bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
+bindsym $mod+Shift+t exec $app=https://youtube.com
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec

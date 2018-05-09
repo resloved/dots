@@ -25,6 +25,4 @@ Included configurations for:
 
 ## Wallpaper
 
-```
-hsetroot -add "#c79081" -add "#dfa579" -gradient 0
-```
+`hsetroot -add "#c79081" -add "#dfa579" -gradient 0`

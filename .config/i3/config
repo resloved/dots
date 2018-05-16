@@ -31,8 +31,8 @@ for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
 
 # APPLICATION BORDERS
-for_window [class="Emacs"] border normal 24px
-for_window [class="URxvt"] border normal 24px
+for_window [class="Emacs"] border normal 24
+for_window [class="URxvt"] border normal 24
 
 # GAP VARIABLES
 set $inner 32
@@ -195,9 +195,9 @@ bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 ##### COLORS #######################################
 
 # CLASS                 BORDER  BACK    TEXT    INDICATOR
-client.focused          #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
+client.focused          #1b1d1e #1b1d1e #1b1d1e #1b1d1e
 client.focused_inactive #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
-client.unfocused        #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
+client.unfocused        #1b1d1e #1b1d1e #1b1d1e #1b1d1e
 client.urgent           #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
 client.placeholder      #1b1d1e #1b1d1e #1b1d1e #1b1d1e 
 

@@ -1,10 +1,4 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!                        !!!!!!!!!!!!!!!!!!!!!! 
 !!!!! .Xresources / RESLOVED !!!!!!!!!!!!!!!!!!!!!! 
-!!!!!                        !!!!!!!!!!!!!!!!!!!!!! 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!! URXVT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -12,13 +6,10 @@
 URxvt*buffered: false
 URxvt*saveLines: 0
 URxvt*skipBuiltinGlyphs: true
-
-URxvt.perl-ext:
-URxvt.perl-ext-common:
 URxvt*scrollBar: false
 
 ! FONT
-URxvt*font: xft:Hasklug Nerd Font Mono:size=8
+URxvt*font: xft:Hasklug Nerd Font Mono:size=9
 
 ! BORDER
 URxvt*borderWidth: 0
@@ -52,6 +43,4 @@ URxvt*color14:      #5fd7ff
 URxvt*color7:       #f8f8f8
 URxvt*color15:      #ffffff
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!! end !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

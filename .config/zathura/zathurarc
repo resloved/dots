@@ -1,7 +1,8 @@
-# zathurarc
+##### zathurarc / RESLOVED ########################
 
-# APPEARNACE
-set font "Hasklug Nerd Font Mono 8"
+##### APPEARNACE ##################################
+
+set font "Hasklug Nerd Font Mono 9"
 
 set default-fg "#ffffff"
 set default-bg "#1b1d1e"
@@ -40,8 +41,11 @@ set page-padding 0
 
 set guioptions
 
-# BINDS
+##### BINDS ################################## 
+
 map <C-s> toggle_statusbar
 
 map <C-i> zoom in
 map <C-o> zoom out
+
+##### end #################################### 

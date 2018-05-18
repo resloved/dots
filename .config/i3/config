@@ -1,10 +1,4 @@
-###################################################
-###################################################
-#####                       #######################
 ##### i3-config / RESLOVED  #######################
-#####                       #######################
-###################################################
-###################################################
 
 ##### GENERAL ##################################### 
 
@@ -121,7 +115,7 @@ bindsym $mod+space floating toggle; resize set 426px 670px; move absolute positi
 bindsym $mod+Ctrl+Shift+space $video
 
 # TOGGLE FLOATING
-bindsym $mod+Ctrl+space floating toggle
+bindsym $mod+Ctrl+space floating toggle; move absolute position center
 
 # MODE TOGGLE
 bindsym $mod+Shift+space focus mode_toggle
@@ -300,6 +294,4 @@ exec --no-startup-id slock
 # RELOAD
 exec_always --no-startup-id compton
 
-###################################################
 ##### end #########################################
-###################################################

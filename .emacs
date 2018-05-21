@@ -36,11 +36,14 @@
 
 ;;;;; VISUAL ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; MOLOKAI
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+
+;; MOLOKAI
 (load-theme 'molokai t)
+
 ;; VISUAL LINE (Wrapping mode)
 (global-visual-line-mode 1)
+
 
 ;;;;; MODE-LINE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -68,7 +71,6 @@
 ;; CONNECT TO MELPA
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-(package-initialize)
 ;; USE-PACKAGE
 (unless (package-installed-p 'use-pacakge)
   (package-refresh-contents)
@@ -297,5 +299,3 @@
 (set-face-attribute 'eterm-256color-15 nil
                     :background "#ffffff"
                     :foreground "#ffffff")
-
-;;;;; end ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -37,5 +37,3 @@ export PATH=/usr/lib/jvm/java-10-jdk/bin/:$PATH
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 # SCRIPTS
 export PATH=$HOME/scripts:$PATH
-
-##### end #########################################

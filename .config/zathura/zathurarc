@@ -47,5 +47,3 @@ map <C-s> toggle_statusbar
 
 map <C-i> zoom in
 map <C-o> zoom out
-
-##### end #################################### 

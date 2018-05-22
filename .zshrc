@@ -19,12 +19,12 @@ bindkey -s "^l" '^Ule^M'
 
 # SPACED DIR
 alias le="echo ''; ls; echo ''"
-# SPACED NEO
-alias neo="clear; echo '\n'; neofetch"
 # EMACS CLIENT
 alias ec="emacsclient -t"
 # RELOAD XRESOURCES
 alias xr="xrdb -merge ~/.Xresources"
+# WIFI-MENU
+alias wifi="sudo wifi-menu"
 
 ##### PATH ######################################## 
 

@@ -103,7 +103,7 @@ bindsym $mod+Shift+Ctrl+Right resize grow width    1px or 1 ppt
 bindsym $mod+v split v
 
 # HORIZONTAL SPLIT
-bindsym $mod+Ctrl+v split h
+bindsym $mod+b split h
 
 # FULLSCREEN
 bindsym $mod+f fullscreen toggle
@@ -136,9 +136,6 @@ set $ws3 "3"
 #set $ws8 "8"
 #set $ws9 "9"
 set $ws10 "10"
-
-# LAST WORKSPACE
-bindsym $mod+b workspace back_and_forth
 
 # SWITCH TO WORKSPACE
 bindsym $mod+1 workspace $ws1

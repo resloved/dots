@@ -9,7 +9,7 @@
 * {
 background-color:      #1b1d1e00;
 border-color:          #ffffff44;
-text-color:            white;
+text-color:            #f8f8f888;
 font:                  "Hasklug Nerd Font Bold 9";
 }
 
@@ -49,7 +49,8 @@ padding: 0px 2px;
 }
 
 #element selected {
-background-color: SteelBlue;
+background-color: #f8f8f800;
+color: #f8f8f8;
 }
 
 /**************************************************/

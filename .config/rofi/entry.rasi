@@ -44,14 +44,6 @@ width:      100%;
 font:       "Hasklug Nerd Font Bold 9";
 }
 
-#element {
-padding: 0px 2px;
-}
-
-#element selected {
-background-color: SteelBlue;
-}
-
 /**************************************************/
 /**** end *****************************************/
 /**************************************************/

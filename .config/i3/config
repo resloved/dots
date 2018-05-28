@@ -15,7 +15,8 @@ set $term       urxvt
 set $scripts    ~/scripts
 
 # RESIZE VARIABLES
-set $video floating toggle; resize set 1152 648px; move absolute position center
+set $center move absolute position center
+set $video floating toggle; resize set 1152 648px; $center
 
 # FLOATING
 floating_modifier $mod
@@ -109,19 +110,19 @@ bindsym $mod+b split h
 bindsym $mod+f fullscreen toggle
 
 # PAPER MODE
-bindsym $mod+space floating toggle; resize set 426px 670px; move absolute position center
+bindsym $mod+space floating toggle; resize set 426px 670px; $center
 
 # VIDEO MODE
 bindsym $mod+Ctrl+Shift+space $video
 
 # TOGGLE FLOATING
-bindsym $mod+Ctrl+space floating toggle; move absolute position center
+bindsym $mod+Ctrl+space floating toggle; $center
 
 # MODE TOGGLE
 bindsym $mod+Shift+space focus mode_toggle
 
 # CENTER FLOATING
-bindsym $mod+c move absolute position center
+bindsym $mod+c $center
 
 ##### WORKSPACES ##################################
 
@@ -242,7 +243,7 @@ bindsym $mod+grave exec $scripts/counter.sh
 for_window [instance="youtube.com"] floating enable; $video
 
 # TWITCH RULES
-for_window [instance="twitch.tv"] floating enable; move absolute position center; set resize 1270px 562px
+for_window [instance="twitch.tv"] floating enable; $center; set resize 1270px 562px
 
 # DISCORD RULES
 assign [class="discord"] $ws10

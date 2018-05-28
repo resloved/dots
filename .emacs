@@ -37,8 +37,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; MOLOKAI
-(load-theme 'molokai t)
-;(load-theme 'xresources)
+;(load-theme 'molokai t)
+(load-theme 'xresloved)
 
 ;; VISUAL LINE (Wrapping mode)
 (global-visual-line-mode 1)

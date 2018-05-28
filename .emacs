@@ -9,13 +9,11 @@
  ;; If there is more than one, they won't work right.
  '(cua-mode t nil (cua-base))
  '(custom-safe-themes
-   (quote
-    ("d92735a3039de9ceebe8326f5299a5272600b2544e34fd6e15c3c95bf99812eb" "1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default)))
+   '("a3333e31cf7bd6787078a58ce855c18e25735284ca46a0daebfcde1388522190" "1655bd4872f5a2ef5e77a653822ea9e4f8cf32d47d3a452e5a77056fb62fa212" "e4c8810d9ab925567a69c11d5c95d198a4e7d05871453b2c92c020712559c4c1" "d92735a3039de9ceebe8326f5299a5272600b2544e34fd6e15c3c95bf99812eb" "1ba61848d0d8c78e037867c26f118875705c20f5ad64949a8cee8c8059e5c50f" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" "e52718d4b950106873fed00c469941ad8db20f02392d2c7ac184c6defe37ad2c" default))
  '(fringe-mode 0 nil (fringe))
  '(menu-bar-mode nil)
  '(package-selected-packages
-   (quote
-    (multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+   '(multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -40,6 +38,7 @@
 
 ;; MOLOKAI
 (load-theme 'molokai t)
+;(load-theme 'xresources)
 
 ;; VISUAL LINE (Wrapping mode)
 (global-visual-line-mode 1)
@@ -145,7 +144,7 @@
                     :background "#1b1d1e"
                     :foreground "#f8f8f0"
                     :family "Hasklug Nerd Font Mono"
-                    :height 80)
+                    :height 90)
 
 (defun my/helm-fonts ()
   (face-remap-add-relative 'default
@@ -242,60 +241,3 @@
 ;;;;; haskell-mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package haskell-mode)
-
-;;;;; eterm-256color ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package eterm-256color)
-(add-hook 'term-mode-hook #'eterm-256color-mode)
-
-;; ETERM FACES
-(set-face-attribute 'eterm-256color-default nil
-                    :weight 'normal)
-(set-face-attribute 'eterm-256color-0 nil
-                    :background "#465457"
-                    :foreground "#465457")
-(set-face-attribute 'eterm-256color-1 nil
-                    :background "#d7005f"
-                    :foreground "#d7005f")
-(set-face-attribute 'eterm-256color-2 nil
-                    :background "#87ff00"
-                    :foreground "#87ff00")
-(set-face-attribute 'eterm-256color-3 nil
-                    :background "#ff8700"
-                    :foreground "#ff8700")
-(set-face-attribute 'eterm-256color-4 nil
-                    :background "#acac85"
-                    :foreground "#acac85")
-(set-face-attribute 'eterm-256color-5 nil
-                    :background "#af5fff"
-                    :foreground "#af5fff")
-(set-face-attribute 'eterm-256color-6 nil
-                    :background "#5fd7ff"
-                    :foreground "#5fd7ff")
-(set-face-attribute 'eterm-256color-7 nil
-                    :background "#f8f8f8"
-                    :foreground "#f8f8f8")
-(set-face-attribute 'eterm-256color-8 nil
-                    :background "#1b1d1e"
-                    :foreground "#1b1d1e")
-(set-face-attribute 'eterm-256color-9 nil
-                    :background "#d7005f"
-                    :foreground "#d7005f")
-(set-face-attribute 'eterm-256color-10 nil
-                    :foreground "#87ff00"
-                    :background "#87ff00")
-(set-face-attribute 'eterm-256color-11 nil
-                    :background "#ff8700"
-                    :foreground "#ff8700")
-(set-face-attribute 'eterm-256color-12 nil
-                    :background "#acac85"
-                    :foreground "#acac85")
-(set-face-attribute 'eterm-256color-13 nil
-                    :background "#af5fff"
-                    :foreground "#af5fff")
-(set-face-attribute 'eterm-256color-14 nil
-                    :background "#5fd7ff"
-                    :foreground "#5fd7ff")
-(set-face-attribute 'eterm-256color-15 nil
-                    :background "#ffffff"
-                    :foreground "#ffffff")

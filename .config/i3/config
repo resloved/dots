@@ -25,8 +25,8 @@ for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
 
 # APPLICATION BORDERS
-for_window [class="Emacs"] border pixel 24
-for_window [class="URxvt"] border pixel 24
+for_window [class="Emacs"] border normal 24
+for_window [class="URxvt"] border normal 24
 
 # GAP VARIABLES
 set $inner 32
@@ -245,7 +245,7 @@ for_window [instance="youtube.com"] floating enable; $video
 for_window [instance="twitch.tv"] floating enable; move absolute position center; set resize 1270px 562px
 
 # DISCORD RULES
-# assign [class="discord"] $ws8
+assign [class="discord"] $ws10
 
 # TWEETDECK RULES
 #assign [instance="tweetdeck.twitter.com"] $ws9

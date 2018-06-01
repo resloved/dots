@@ -31,5 +31,5 @@ function battery_pct_prompt() {
     else
         t='' 
     fi
-    echo "%{$fg[$color]%} $t"
+    echo "%{$fg_bold[$color]%} $t"
 }

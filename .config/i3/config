@@ -2,6 +2,8 @@
 
 ##### GENERAL ##################################### 
 
+exec_always xrdb -merge ~/.Xresources
+            
 set $mod Mod4
 
 font pango:Hasklug Nerd Font Mono 12
@@ -9,7 +11,7 @@ font pango:Hasklug Nerd Font Mono 12
 # APP VARIABLES
 set $browser    firefox
 set $music      spotify
-set $term       urxvt
+set $term       urxvt -g 42x12
 
 # DIR VARIABLES
 set $scripts    ~/scripts
@@ -224,15 +226,15 @@ bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
 bindsym $mod+d exec rofi -show window -theme list
-bindsym $mod+Ctrl+d exec rofi -show drun -show-icons -theme list
+#bindsym $mod+Ctrl+d exec rofi -show drun -theme list
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND
 #set $background ~/pictures/wallpapers/Cesar/cesar5.jpg
 #exec_always feh --bg-scale $background
-set $g1 "#c79081"
-set $g2 "#dfa579"
-exec_always hsetroot -add $g1 -add $g2 -gradient 0 
+set_from_resource $g1 color4
+set_from_resource $g2 color12
+exec_always hsetroot -add "$g1" -add "$g2" -gradient 0 
 
 # COUNTER
 bindsym $mod+grave exec $scripts/counter.sh
@@ -294,3 +296,4 @@ exec --no-startup-id slock
 
 # RELOAD
 exec_always --no-startup-id compton
+exec_always xrdb -merge ~/.Xresources

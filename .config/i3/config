@@ -2,8 +2,6 @@
 
 ##### GENERAL ##################################### 
 
-exec_always xrdb -merge ~/.Xresources
-            
 set $mod Mod4
 
 font pango:Hasklug Nerd Font Mono 12
@@ -28,8 +26,9 @@ for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
 
 # APPLICATION BORDERS
-for_window [class="Emacs"] border normal 24
-for_window [class="URxvt"] border normal 24
+set $thick 24
+for_window [class="Emacs"] border normal $thick
+for_window [class="URxvt"] border normal $thick
 
 # GAP VARIABLES
 set $inner 32
@@ -48,6 +47,11 @@ bindsym $mod+Return exec $term -e tmux
 bindsym $mod+Shift+Return exec $term -e tmux new-session -A -s main
 bindsym $mod+Ctrl+Return exec $term
 bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
+
+# SCRATCHPAD
+bindsym $mod+BackSpace scratchpad show
+bindsym $mod+Shift+BackSpace floating enable, move position $thick px $thick px, move scratchpad
+bindsym $mod+Ctrl+BackSpace exec $term -e tmux new-session -A -s scratch 
 
 # KILL
 bindsym $mod+x kill
@@ -111,17 +115,17 @@ bindsym $mod+b split h
 # FULLSCREEN
 bindsym $mod+f fullscreen toggle
 
-# PAPER MODE
-bindsym $mod+space floating toggle; resize set 426px 670px; $center
-
-# VIDEO MODE
-bindsym $mod+Ctrl+Shift+space $video
-
 # TOGGLE FLOATING
-bindsym $mod+Ctrl+space floating toggle; $center
+bindsym $mod+space floating toggle; $center
 
 # MODE TOGGLE
 bindsym $mod+Shift+space focus mode_toggle
+
+# PAPER MODE
+bindsym $mod+Ctrl+space floating toggle; resize set 426px 670px; $center
+
+# VIDEO MODE
+bindsym $mod+Ctrl+Shift+space $video
 
 # CENTER FLOATING
 bindsym $mod+c $center
@@ -190,6 +194,7 @@ bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 
 # XRESOURCES
 set_from_resource $bg background
+set_from_resource $fg foreground
 
 # CLASS                 BORDER  BACK    TEXT    INDICATOR
 client.focused          $bg     $bg     $bg     $bg
@@ -225,15 +230,15 @@ bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
-bindsym $mod+d exec rofi -show window -theme list
-#bindsym $mod+Ctrl+d exec rofi -show drun -theme list
+bindsym $mod+d       exec rofi -show window -theme list
+bindsym $mod+Ctrl+d  exec $scripts/dict.sh
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND
-#set $background ~/pictures/wallpapers/Cesar/cesar5.jpg
+#set $background ~/pictures/wallpapers/grid.png
 #exec_always feh --bg-scale $background
-set_from_resource $g1 color4
-set_from_resource $g2 color12
+set_from_resource $g1 color5
+set_from_resource $g2 color13
 exec_always hsetroot -add "$g1" -add "$g2" -gradient 0 
 
 # COUNTER
@@ -266,7 +271,7 @@ bindsym $mod+Shift+n exec $scripts/bookmarks.sh
 
 bindsym $mod+m       exec $music
 bindsym $mod+Ctrl+m  exec $app=https://discordapp.com/channels/@me
-#bindsym $mod+Shift+m exec
+bindsym $mod+Shift+m exec chromium
 
 bindsym $mod+t exec $app=https://tweetdeck.twitter.com
 bindsym $mod+Ctrl+t  exec $app=https://twitch.tv

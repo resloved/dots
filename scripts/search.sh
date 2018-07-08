@@ -3,4 +3,4 @@
 # ROFI => SURF SEARCH
 
 rofi -dmenu -theme entry | \
-    xargs -I{} surf https://duckduckgo.com/?q={}
+    xargs -I{} chromium --new-window https://duckduckgo.com/?q={}

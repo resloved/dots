@@ -246,12 +246,6 @@ bindsym $mod+grave exec $scripts/counter.sh
 
 ##### APP RULES ###################################
 
-# YOUTUBE RULES
-for_window [instance="youtube.com"] floating enable; $video
-
-# TWITCH RULES
-for_window [instance="twitch.tv"] floating enable; $center; set resize 1270px 562px
-
 # DISCORD RULES
 assign [class="discord"] $ws10
 
@@ -270,12 +264,12 @@ bindsym $mod+Ctrl+n  exec $scripts/search.sh
 bindsym $mod+Shift+n exec $scripts/bookmarks.sh 
 
 bindsym $mod+m       exec $music
-bindsym $mod+Ctrl+m  exec $app=https://discordapp.com/channels/@me
+#bindsym $mod+Ctrl+m  exec 
 bindsym $mod+Shift+m exec chromium
 
-bindsym $mod+t exec $app=https://tweetdeck.twitter.com
-bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
-bindsym $mod+Shift+t exec $app=https://youtube.com
+#bindsym $mod+t       exec $app=https://tweetdeck.twitter.com
+#bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
+#bindsym $mod+Shift+t exec $app=https://youtube.com
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
@@ -301,4 +295,3 @@ exec --no-startup-id slock
 
 # RELOAD
 exec_always --no-startup-id compton
-exec_always xrdb -merge ~/.Xresources

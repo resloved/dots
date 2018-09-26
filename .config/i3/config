@@ -7,9 +7,9 @@ set $mod Mod4
 font pango:Hasklug Nerd Font Mono 12
 
 # APP VARIABLES
-set $browser    firefox
-set $music      spotify
-set $term       urxvt -g 42x12
+set $browser	chromium
+set $music  	spotify
+set $term   	urxvt -g 42x12
 
 # DIR VARIABLES
 set $scripts    ~/scripts
@@ -27,8 +27,9 @@ for_window [title="^.*"] border pixel 0
 
 # APPLICATION BORDERS
 set $thick 24
-for_window [class="Emacs"] border normal $thick
-for_window [class="URxvt"] border normal $thick
+for_window [class="Emacs"] border pixel $thick
+for_window [class="URxvt"] border pixel $thick
+for_window [class="XTerm"] border pixel $thick
 
 # GAP VARIABLES
 set $inner 32
@@ -50,7 +51,7 @@ bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
 
 # SCRATCHPAD
 bindsym $mod+BackSpace scratchpad show
-bindsym $mod+Shift+BackSpace floating enable, move position $thick px $thick px, move scratchpad
+bindsym $mod+Shift+BackSpace floating enable, move position 24 px 24 px, move scratchpad
 bindsym $mod+Ctrl+BackSpace exec $term -e tmux new-session -A -s scratch 
 
 # KILL
@@ -148,46 +149,46 @@ set $ws10 "10"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-# bindsym $mod+4 workspace $ws4
-# bindsym $mod+5 workspace $ws5
-# bindsym $mod+6 workspace $ws6
-# bindsym $mod+7 workspace $ws7
-# bindsym $mod+8 workspace $ws8
-# bindsym $mod+9 workspace $ws9
+#bindsym $mod+4 workspace $ws4
+#bindsym $mod+5 workspace $ws5
+#bindsym $mod+6 workspace $ws6
+#bindsym $mod+7 workspace $ws7
+#bindsym $mod+8 workspace $ws8
+#bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+
+bindsym $mod+Mod2+KP_1 workspace $ws1
+bindsym $mod+Mod2+KP_2 workspace $ws2
+bindsym $mod+Mod2+KP_3 workspace $ws3
+#bindsym $mod+Mod2+KP_4 workspace $ws4
+#bindsym $mod+Mod2+KP_5 workspace $ws5
+#bindsym $mod+Mod2+KP_6 workspace $ws6
+#bindsym $mod+Mod2+KP_7 workspace $ws7
+#bindsym $mod+Mod2+KP_8 workspace $ws8
+#bindsym $mod+Mod2+KP_9 workspace $ws9
+bindsym $mod+Mod2+KP_0 workspace $ws10
 
 # MOVE WINDOW TO WORKSPACE
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3
-# bindsym $mod+Ctrl+4 move container to workspace $ws4
-# bindsym $mod+Ctrl+5 move container to workspace $ws5
-# bindsym $mod+Ctrl+6 move container to workspace $ws6
-# bindsym $mod+Ctrl+7 move container to workspace $ws7
-# bindsym $mod+Ctrl+8 move container to workspace $ws8
-# bindsym $mod+Ctrl+9 move container to workspace $ws9
+#bindsym $mod+Ctrl+4 move container to workspace $ws4
+#bindsym $mod+Ctrl+5 move container to workspace $ws5
+#bindsym $mod+Ctrl+6 move container to workspace $ws6
+#bindsym $mod+Ctrl+7 move container to workspace $ws7
+#bindsym $mod+Ctrl+8 move container to workspace $ws8
+#bindsym $mod+Ctrl+9 move container to workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10
-
-bindsym $mod+Mod2+KP_1 workspace $ws1
-bindsym $mod+Mod2+KP_2 workspace $ws2
-bindsym $mod+Mod2+KP_3 workspace $ws3
-# bindsym $mod+Mod2+KP_4 workspace $ws4
-# bindsym $mod+Mod2+KP_5 workspace $ws5
-# bindsym $mod+Mod2+KP_6 workspace $ws6
-# bindsym $mod+Mod2+KP_7 workspace $ws7
-# bindsym $mod+Mod2+KP_8 workspace $ws8
-# bindsym $mod+Mod2+KP_9 workspace $ws9
-bindsym $mod+Mod2+KP_0 workspace $ws10
 
 bindsym $mod+Ctrl+Mod2+KP_1 move container to workspace $ws1
 bindsym $mod+Ctrl+Mod2+KP_2 move container to workspace $ws2
 bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
-# bindsym $mod+Ctrl+Mod2+KP_4 move container to workspace $ws4
-# bindsym $mod+Ctrl+Mod2+KP_5 move container to workspace $ws5
-# bindsym $mod+Ctrl+Mod2+KP_6 move container to workspace $ws6
-# bindsym $mod+Ctrl+Mod2+KP_7 move container to workspace $ws7
-# bindsym $mod+Ctrl+Mod2+KP_8 move container to workspace $ws8
-# bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
+#bindsym $mod+Ctrl+Mod2+KP_4 move container to workspace $ws4
+#bindsym $mod+Ctrl+Mod2+KP_5 move container to workspace $ws5
+#bindsym $mod+Ctrl+Mod2+KP_6 move container to workspace $ws6
+#bindsym $mod+Ctrl+Mod2+KP_7 move container to workspace $ws7
+#bindsym $mod+Ctrl+Mod2+KP_8 move container to workspace $ws8
+#bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
 bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 
 ##### COLORS #######################################
@@ -202,8 +203,6 @@ client.focused_inactive $bg     $bg     $bg     $bg
 client.unfocused        $bg     $bg     $bg     $bg
 client.urgent           $bg     $bg     $bg     $bg 
 client.placeholder      $bg     $bg     $bg     $bg 
-
-client.background       $bg
 
 ##### TOOLS ########################################
 
@@ -225,7 +224,7 @@ bindsym $mod+slash  exec playerctl play-pause
 bindsym $mod+comma  exec playerctl previous
 bindsym $mod+period exec playerctl next
 
-bindsym $mod+Ctrl+slash  exec pactl set-sink-mute 0 toggle
+bindsym $mod+Ctrl+slash  exec amixer sset Master toggle
 bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
@@ -237,9 +236,9 @@ bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py
 # BACKGROUND
 #set $background ~/pictures/wallpapers/grid.png
 #exec_always feh --bg-scale $background
-set_from_resource $g1 color5
-set_from_resource $g2 color13
-exec_always hsetroot -add "$g1" -add "$g2" -gradient 0 
+set_from_resource $g1 color4
+set_from_resource $g2 color12
+exec_always hsetroot -add "$g2" -add "$g2" -gradient 0 
 
 # COUNTER
 bindsym $mod+grave exec $scripts/counter.sh
@@ -264,7 +263,7 @@ bindsym $mod+Ctrl+n  exec $scripts/search.sh
 bindsym $mod+Shift+n exec $scripts/bookmarks.sh 
 
 bindsym $mod+m       exec $music
-#bindsym $mod+Ctrl+m  exec 
+#bindsym $mod+Ctrl+m  exec
 bindsym $mod+Shift+m exec chromium
 
 #bindsym $mod+t       exec $app=https://tweetdeck.twitter.com
@@ -275,9 +274,9 @@ bindsym $mod+Shift+m exec chromium
 #bindsym $mod+Ctrl+y  exec
 #bindsym $mod+Shift+y exec
 
-bindsym $mod+u       exec $app=https://inbox.google.com
-bindsym $mod+Ctrl+u  exec $app=https://calendar.google.com
-bindsym $mod+Shift+u exec $app=https://drive.google.com
+bindsym $mod+u       exec $scripts/steam.sh
+bindsym $mod+Ctrl+u  exec $scripts/emu.sh
+#bindsym $mod+Shift+u exec 
 
 bindsym $mod+i       exec emacsclient -c
 bindsym $mod+Ctrl+i  exec emacs --daemon
@@ -291,7 +290,6 @@ bindsym $mod+Shift+i exec zathura
 
 # STARTUP
 exec --no-startup-id emacs --daemon
-exec --no-startup-id slock
 
 # RELOAD
 exec_always --no-startup-id compton

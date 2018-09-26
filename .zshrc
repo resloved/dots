@@ -3,7 +3,7 @@
 ##### OHMYZSH #####################################
 
 # PATH
-export ZSH=/home/ben/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="terminalpartied"
 plugins=(git git-prompt battery-color)
 source $ZSH/oh-my-zsh.sh
@@ -29,11 +29,11 @@ alias wifi="sudo wifi-menu"
 ##### PATH ######################################## 
 
 # PYTHON
-#export PYTHONPATH=/usr/lib/python3.6/site-packages
+export PYTHONPATH=/usr/lib/python3.6/site-packages
 export PATH=/usr/local/anaconda/bin:$PATH
 # JAVA
 export PATH=/usr/lib/jvm/java-10-jdk/bin/:$PATH
 # RUBY
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 # SCRIPTS
-export PATH=$HOME/scripts:$PATH
+#export PATH=$HOME/scripts:$PATH

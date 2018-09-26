@@ -4,38 +4,38 @@
 
 set font "Hasklug Nerd Font Mono 9"
 
-set default-fg "#ffffff"
-set default-bg "#1b1d1e"
+set default-fg "#f8f8f2"
+set default-bg "#282a36"
 
-set tabbar-fg "#465457"
-set tabbar-bg "#1b1d1e"
+set tabbar-fg "#6272a4"
+set tabbar-bg "#282a36"
 
-set tabbar-active-fg "#ffffff"
-set tabbar-active-bg "#1b1d1e"
+set tabbar-active-fg "#f8f8f2"
+set tabbar-active-bg "#282a36"
 
-set recolor-darkcolor  "#1b1d1e"
-set recolor-lightcolor "#8a8a8a"
+set recolor-darkcolor  "#282a36"
+set recolor-lightcolor "#44475a"
 
-set statusbar-fg "#ffffff"
-set statusbar-bg "#1b1d1e"
+set statusbar-fg "#f8f8f2"
+set statusbar-bg "#282a36"
 
-set inputbar-fg "#ffffff"
-set inputbar-bg "#1b1d1e"
+set inputbar-fg "#f8f8f2"
+set inputbar-bg "#282a36"
 
-set completion-fg "#465457"
-set completion-bg "#1b1d1e"
+set completion-fg "#6272a4"
+set completion-bg "#282a36"
 
-set completion-group-fg "#ffffff"
-set completion-group-bg "#1b1d1e"
+set completion-group-fg "#f8f8f2"
+set completion-group-bg "#282a36"
 
-set completion-highlight-fg "#ffffff"
-set completion-highlight-bg "#1b1d1e"
+set completion-highlight-fg "#f8f8f2"
+set completion-highlight-bg "#282a36"
 
-set index-fg "#465457"
-set index-bg "#1b1d1e"
+set index-fg "#6272a4"
+set index-bg "#282a36"
 
-set index-active-fg "#ffffff"
-set index-active-bg "#1b1d1e"
+set index-active-fg "#f8f8f2"
+set index-active-bg "#282a36"
 
 set page-padding 0
 

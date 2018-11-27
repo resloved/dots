@@ -4,7 +4,7 @@
 
 set $mod Mod4
 
-font pango:Hasklug Nerd Font Mono 12
+font pango:Hasklug Nerd Font Mono 24
 
 # APP VARIABLES
 set $browser	chromium
@@ -30,6 +30,10 @@ set $thick 24
 for_window [class="Emacs"] border pixel $thick
 for_window [class="URxvt"] border pixel $thick
 for_window [class="XTerm"] border pixel $thick
+
+# FLOATING APPLICATIONS
+for_window [class="qsynth"] floating enable
+for_window [class="qjackctl"] floating enable
 
 # GAP VARIABLES
 set $inner 32
@@ -234,11 +238,12 @@ bindsym $mod+Ctrl+d  exec $scripts/dict.sh
 bindsym $mod+Shift+d exec $scripts/rofimoji/rofimoji.py 
 
 # BACKGROUND
-#set $background ~/pictures/wallpapers/grid.png
-#exec_always feh --bg-scale $background
 set_from_resource $g1 color4
 set_from_resource $g2 color12
 exec_always hsetroot -add "$g2" -add "$g2" -gradient 0 
+
+#set_from_resource $back background
+#exec_always hsetroot -solid "$back"
 
 # COUNTER
 bindsym $mod+grave exec $scripts/counter.sh
@@ -246,13 +251,13 @@ bindsym $mod+grave exec $scripts/counter.sh
 ##### APP RULES ###################################
 
 # DISCORD RULES
-assign [class="discord"] $ws10
+#assign [class="discord"] $ws10
 
 # TWEETDECK RULES
 #assign [instance="tweetdeck.twitter.com"] $ws9
 
 # SPOTIFY RULES
-for_window [class="Spotify"] move to workspace $ws10
+#for_window [class="Spotify"] move to workspace $ws10
 
 ##### APP BINDS ###################################
 
@@ -262,13 +267,13 @@ bindsym $mod+n       exec $scripts/direct.sh
 bindsym $mod+Ctrl+n  exec $scripts/search.sh 
 bindsym $mod+Shift+n exec $scripts/bookmarks.sh 
 
-bindsym $mod+m       exec $music
-#bindsym $mod+Ctrl+m  exec
-bindsym $mod+Shift+m exec chromium
+bindsym $mod+m       exec $app=https://open.spotify.com
+bindsym $mod+Ctrl+m  exec firefox
+bindsym $mod+Shift+m exec discord
 
-#bindsym $mod+t       exec $app=https://tweetdeck.twitter.com
-#bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
-#bindsym $mod+Shift+t exec $app=https://youtube.com
+bindsym $mod+t       exec $app=https://tweetdeck.twitter.com
+bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
+bindsym $mod+Shift+t exec $app=https://youtube.com
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
@@ -279,7 +284,7 @@ bindsym $mod+Ctrl+u  exec $scripts/emu.sh
 #bindsym $mod+Shift+u exec 
 
 bindsym $mod+i       exec emacsclient -c
-bindsym $mod+Ctrl+i  exec emacs --daemon
+bindsym $mod+Ctrl+i  exec ~/.emacs_anywhere/bin/run
 bindsym $mod+Shift+i exec zathura
 
 #bindsym $mod+o       exec
@@ -290,6 +295,7 @@ bindsym $mod+Shift+i exec zathura
 
 # STARTUP
 exec --no-startup-id emacs --daemon
+exec python $scripts/battery.py
 
 # RELOAD
 exec_always --no-startup-id compton

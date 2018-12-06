@@ -1,0 +1,4 @@
+@-moz-document url("about:newtab")
+{
+    body { background-color: #ffffff !important; }
+}

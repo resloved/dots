@@ -1,44 +1,44 @@
 !!!!! .Xresources / RESLOVED !!!!!!!!!!!!!!!!!!!!!! 
 
 ! MOLOKAI
-!*foreground:   #f8f8f8
-!*background:   #1b1d1e
-!*color0:       #465457
-!*color8:       #808080
-!*color1:       #d7005f
-!*color9:       #f92672
-!*color2:       #87ff00
-!*color10:      #a6e22e
-!*color3:       #ff8700
-!*color11:      #fd971f
-!*color4:       #acac85
-!*color12:      #c4be89
-!*color5:       #af5fff
-!*color13:      #ae81ff
-!*color6:       #5fd7ff
-!*color14:      #84e0f2
-!*color7:       #f8f8f8
-!*color15:      #ffffff
+*foreground:   #f8f8f8
+*background:   #1b1d1e
+*color0:       #808080
+*color8:       #465457
+*color1:       #d7005f
+*color9:       #f92672
+*color2:       #87ff00
+*color10:      #a6e22e
+*color3:       #ff8700
+*color11:      #fd971f
+*color4:       #acac85
+*color12:      #c4be89
+*color5:       #af5fff
+*color13:      #ae81ff
+*color6:       #5fd7ff
+*color14:      #84e0f2
+*color7:       #f8f8f8
+*color15:      #ffffff
 
 ! DRACULA
-*foreground:    #F8F8F2
-*background:    #282A36
-*color0:        #44475a
-*color8:        #6272a4
-*color1:        #FF5555
-*color9:        #FF6E67
-*color2:        #50FA7B
-*color10:       #5AF78E
-*color3:        #F1FA8C
-*color11:       #F4F99D
-*color4:        #BD93F9
-*color12:       #CAA9FA
-*color5:        #FF79C6
-*color13:       #FF92D0
-*color6:        #8BE9FD
-*color14:       #9AEDFE
-*color7:        #BFBFBF
-*color15:       #F8F8F2
+!*foreground:    #F8F8F2
+!*background:    #282A36
+!*color0:        #44475a
+!*color8:        #6272a4
+!*color1:        #FF5555
+!*color9:        #FF6E67
+!*color2:        #50FA7B
+!*color10:       #5AF78E
+!*color3:        #F1FA8C
+!*color11:       #F4F99D
+!*color4:        #BD93F9
+!*color12:       #CAA9FA
+!*color5:        #FF79C6
+!*color13:       #FF92D0
+!*color6:        #8BE9FD
+!*color14:       #9AEDFE
+!*color7:        #BFBFBF
+!*color15:       #F8F8F2
 
 ! MATERIAL DARK
 !*foreground:    #FFFFFF
@@ -75,7 +75,7 @@ URxvt*borderWidth: 0
 URxvt*internalBorder: 0
 
 ! FONT
-URxvt*font: xft:Hasklug Nerd Font Mono:size=10
+URxvt*font: xft:Hasklug Nerd Font Mono:size=11
 
 !!!!! XTERM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -84,4 +84,4 @@ xterm*BorderWidth: 0
 
 ! FONT
 xterm*faceName: Hasklug Nerd Font Mono
-xterm*faceSize: 9
+xterm*faceSize: 11

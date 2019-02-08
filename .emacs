@@ -24,7 +24,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -34,7 +34,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:font "Hasklug Nerd Font Mono" :height 100)))))
+ '(default ((t (:font "Hasklug Nerd Font Mono" :height 110)))))
 
 ;;;;; packages ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -72,13 +72,10 @@
 (global-font-lock-mode 1)
 
 ;; DRACULA
-(load-theme 'dracula t)
-
-;; GITHUB
-;;(load-theme 'github-modern t)
+;;(load-theme 'dracula t)
 
 ;; MOLOKAI
-;;(load-theme 'molokai t)
+(load-theme 'molokai t)
 
 ;; VISUAL LINE (Wrapping mode)
 (global-visual-line-mode 1)
@@ -90,24 +87,23 @@
 ;;;;; mode-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; POWERLINE
-;; (use-package powerline)
-;; (require 'powerline)
-;; 
-;; (load "~/.emacs.d/powerline/material.el")
-;; (setq powerline-default-separator 'contour)
-;; (powerline-material-theme)
+;;(use-package powerline)
+;;(require 'powerline)
+
+;;(load "~/.emacs.d/powerline/material.el")
+;;(setq powerline-default-separator 'contour)
+;;(powerline-material-theme)
 
 ;; DEFAULT FORMAT
 (setq-default mode-line-format
   (list
    '(:eval (propertize "%b" 'face '(:weight bold)))
    '(:eval (if (buffer-modified-p)
-               (propertize "  " 'face '(:foreground "#ff6e67"))
-             (propertize "  " 'face '(:foreground "#5af78e"))))
+               (propertize "  " 'face '(:foreground "#f92672"))
+             (propertize "  " 'face '(:foreground "#a6e22e"))))
    '(:eval (propertize "%m" 'face '(:weight bold)))
-   '(:eval (propertize "  " 'face '(:foreground "#cca9fa")))
+   '(:eval (propertize "  " 'face '(:foreground "#fd971f")))
    '(:eval (propertize "%l" 'face '(:weight bold)))))
-
 
 ;;;;; org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -127,16 +123,6 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;; ORG-BABEL
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (python . t)
-   (C . t)
-   (java . t)
-   (js . t)
-   (latex . t)))
-
 ;; ORG FACES
 (set-face-attribute 'org-document-title nil
                     :height 1.0)
@@ -155,8 +141,11 @@
 (set-face-attribute 'org-level-7 nil
                     :weight 'bold)
 
+;; ORG-DOWNLOAD
+(use-package org-download)
+
 ;; SR
-(load "~/.emacs.d/mine/sr.el")
+;;(load "~/.emacs.d/mine/sr.el")
 
 ;;;;; helm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -168,7 +157,11 @@
 (setq helm-M-x-fuzzy-match t)
 ;; HIDE HEADER
 (setq helm-display-header-line nil)
-
+;; RESIZE HEADERS [TODO]
+(set-face-attribute 'helm-source-header nil
+                    :background "#1b1d1e"
+                    :foreground "#1b1d1e"
+                    :height 1.0) 
 
 ;;;;; projectile ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -222,15 +215,6 @@
       (kbd "M-h") 'org-promote-subtree
       (kbd "M-l") 'org-demote-subtree)))
 
-;; EVIL COLLECTION
-(use-package evil-collection
-  :after evil
-  :config
-  (evil-collection-init))
-
-(add-to-list 'auto-mode-alist '("\\.pde$" . processing-mode))
-(setq processing-location "/usr/bin/processing-java")
-
 ;;;;; magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package magit)
@@ -241,8 +225,8 @@
 
 ;;;;; pdf-tools ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;(use-package pdf-tools)
-;;(pdf-tools-install)
+;(use-package pdf-tools)
+;(pdf-tools-install)
 
 ;;;;; hide-mode-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -256,6 +240,11 @@
 ;;(add-hook 'helm-mini-hook #'hide-mode-line-mode)
 (add-hook 'term-hook #'hide-mode-line-mode)
 ;;(add-hook 'org-agenda-hook #'hide-mode-line-mode)
+
+;;;;; tramp   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq tramp-default-method "ssh")
+(eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
 ;;;;; singles ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

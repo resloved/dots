@@ -12,14 +12,11 @@ set $music  	spotify
 set $term   	urxvt -g 42x12
 
 # DIR VARIABLES
-set $scripts    ~/bin
+set $bin ~/bin
 
 # RESIZE VARIABLES
 set $center move absolute position center
 set $video floating toggle; resize set 1152 648px; $center
-
-# GENERAL VARIABLES
-set $bat /sys/class/power_supply/BAT0
 
 # FLOATING
 floating_modifier $mod
@@ -214,18 +211,25 @@ client.placeholder      $bg     $bg     $bg     $bg
 
 ##### TOOLS ########################################
 
-# LOCK
-bindsym $mod+Ctrl+x exec slock
+set $last bin/last.sh
 
 # SCREENSHOT
-bindsym $mod+Print exec maim ~/pictures/screenshots/$(date +%s).png
-bindsym $mod+Ctrl+Print exec maim -s ~/pictures/screenshots/$(date +%s).png
-bindsym $mod+Shift+Print exec $scripts/scrop.sh
+set $shots ~/pictures/screenshots
+
+bindsym $mod+Print exec maim $shots/$(date +%s).png
+bindsym $mod+Ctrl+Print exec maim -s $shots/$(date +%s).png
+bindsym $mod+Shift+Print exec feh $($last $shots)
 
 # CAST
-bindsym $mod+F12      exec $scripts/cast.sh 
-bindsym $mod+Ctrl+F12 exec $scripts/cast.sh -s 
-bindsym $mod+F11      exec pkill ffmpeg
+set $casts ~/videos/casts
+
+bindsym $mod+F12       exec $bin/cast.sh 
+bindsym $mod+Ctrl+F12  exec $bin/cast.sh -s 
+#bindsym $mod+Shift+F12 exec
+
+bindsym $mod+F11       exec pkill ffmpeg
+bindsym $mod+Ctrl+F11  exec $bin/able.sh
+bindsym $mod+Shift+F11 exec ffplay -loop 0 $($last $casts)
 
 # MEDIA CONTROLS
 bindsym $mod+slash  exec playerctl play-pause
@@ -238,13 +242,9 @@ bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
 # ROFI
 bindsym $mod+d       exec rofi -show window -theme list -display-window "🤖"
-bindsym $mod+Ctrl+d  exec $scripts/dict.sh 
+bindsym $mod+Ctrl+d  exec $bin/dict.sh 
 #bindsym $mod+Shift+d exec
-
 # BACKGROUND
-#set_from_resource $g1 color5
-#set_from_resource $g2 color13
-#exec_always hsetroot -add "$g2" -add "$g2" -gradient 0 
 exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
 
 ##### APP BINDS ###################################
@@ -252,8 +252,8 @@ exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
 set $app chromium --app
 
 bindsym $mod+n       exec $browser
-bindsym $mod+Ctrl+n  exec $scripts/search.sh "$browser --new-window"
-bindsym $mod+Shift+n exec $scripts/direct.sh "$browser --new-window" 
+bindsym $mod+Ctrl+n  exec $bin/search.sh "$browser --new-window"
+bindsym $mod+Shift+n exec $bin/direct.sh "$browser --new-window" 
 
 bindsym $mod+m       exec spotify
 #bindsym $mod+Ctrl+m  exec 
@@ -275,18 +275,18 @@ bindsym $mod+i       exec emacsclient -c
 bindsym $mod+Ctrl+i  exec pkill emacs; emacs --daemon
 bindsym $mod+Shift+i exec emacs
 
-bindsym $mod+o       exec rofi -theme output -e "⏰ $(date +'%I:%M')"
-bindsym $mod+Ctrl+o  exec $scripts/dict.sh
-bindsym $mod+Shift+o exec rofi -theme output -e "⚡ $(cat $bat/capacity)%"
+bindsym $mod+o       exec $bin/now.sh
+bindsym $mod+Ctrl+o  exec $bin/vol.sh
+bindsym $mod+Shift+o exec $bin/bat.sh
 
 ##### LAUNCH ###################################### 
 
 # STARTUP
 exec --no-startup-id emacs --daemon
-exec python $scripts/battery.py
+exec python $bin/battery.py
 
 for_window [title="boot"] floating enable $center
-exec xterm -title "boot" -geometry 25x5+0+0 -e $scripts/fetch.sh 
+exec xterm -title "boot" -geometry 25x5+0+0 -e $bin/fetch.sh 
 
 # RELOAD
 exec_always --no-startup-id compton

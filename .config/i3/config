@@ -16,7 +16,6 @@ set $bin ~/bin
 
 # RESIZE VARIABLES
 set $center move absolute position center
-set $video floating toggle; resize set 1152 648px; $center
 
 # FLOATING
 floating_modifier $mod
@@ -130,9 +129,6 @@ bindsym $mod+Shift+space focus mode_toggle
 # PAPER MODE
 bindsym $mod+Ctrl+space floating toggle; resize set 700px 975px; $center
 
-# VIDEO MODE
-bindsym $mod+Ctrl+Shift+space $video
-
 # CENTER FLOATING
 bindsym $mod+c $center
 
@@ -244,6 +240,7 @@ bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 bindsym $mod+d       exec rofi -show window -theme list -display-window "🤖"
 bindsym $mod+Ctrl+d  exec $bin/dict.sh 
 #bindsym $mod+Shift+d exec
+
 # BACKGROUND
 exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
 
@@ -256,18 +253,20 @@ bindsym $mod+Ctrl+n  exec $bin/search.sh "$browser --new-window"
 bindsym $mod+Shift+n exec $bin/direct.sh "$browser --new-window" 
 
 bindsym $mod+m       exec spotify
-#bindsym $mod+Ctrl+m  exec 
+bindsym $mod+Ctrl+m  exec steam
 bindsym $mod+Shift+m exec discord
 
-bindsym $mod+t       exec $app=https://tweetdeck.twitter.com
-bindsym $mod+Ctrl+t  exec $app=https://twitch.tv
-bindsym $mod+Shift+t exec $app=https://youtube.com
+for_window [instance="twitch.tv"] foating enable; resize set 1824x835; $center
 
-bindsym $mod+y       exec feh ~/pictures/screenshots
+bindsym $mod+t       exec $app=https://twitch.tv
+#bindsym $mod+Ctrl+t  exec
+#bindsym $mod+Shift+t exec
+
+#bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
 #bindsym $mod+Shift+y exec
 
-bindsym $mod+u       exec steam
+#bindsym $mod+u       exec
 #bindsym $mod+Ctrl+u  exec 
 #bindsym $mod+Shift+u exec 
 

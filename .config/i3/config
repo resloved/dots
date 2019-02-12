@@ -28,7 +28,7 @@ for_window [title="^.*"] border pixel 0
 set $thick 24
 for_window [class="Emacs"] border pixel $thick
 for_window [class="URxvt"] border pixel $thick
-for_window [class="XTerm"] border pixel $thick
+#for_window [class="XTerm"] border pixel $thick
 
 # FLOATING APPLICATIONS
 for_window [class="Orca"] floating enable
@@ -282,10 +282,10 @@ bindsym $mod+Shift+o exec $bin/bat.sh
 
 # STARTUP
 exec --no-startup-id emacs --daemon
-exec python $bin/battery.py
-
-for_window [title="boot"] floating enable $center
-exec xterm -title "boot" -geometry 25x5+0+0 -e $bin/fetch.sh 
+exec --no-startup-id python $bin/battery.py
+exec --no-startup-id unclutter -grab
 
 # RELOAD
+for_window [title="boot"] floating enable $center
+exec_always --no-startup-id xterm -title "boot" -geometry 25x5+0+0 -b $thick -e $bin/fetch.sh 
 exec_always --no-startup-id compton

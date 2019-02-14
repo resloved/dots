@@ -34,6 +34,8 @@ for_window [class="URxvt"] border pixel $thick
 for_window [class="Orca"] floating enable
 for_window [class="ffplay"] floating enable
 for_window [class="feh"] floating enable
+for_window [class="mupen64plus"] floating enable
+for_window [class="dolphin-emu"] floating enable
 
 # GAP VARIABLES
 set $inner 32
@@ -59,7 +61,8 @@ bindsym $mod+Shift+BackSpace floating enable, move position $thick px $thick px,
 bindsym $mod+Ctrl+BackSpace exec $term -e tmux new-session -A -s scratch 
 
 # KILL
-bindsym $mod+x kill
+bindsym $mod+x      kill
+bindsym $mod+Ctrl+x exec $bin/exit.sh
 
 # RELOAD 
 bindsym $mod+Ctrl+c reload
@@ -285,7 +288,8 @@ exec --no-startup-id emacs --daemon
 exec --no-startup-id python $bin/battery.py
 exec --no-startup-id unclutter -grab
 
-# RELOAD
 for_window [title="boot"] floating enable $center
-exec_always --no-startup-id xterm -title "boot" -geometry 25x5+0+0 -b $thick -e $bin/fetch.sh 
+exec --no-startup-id xterm -title "boot" -geometry 25x5+0+0 -b $thick -e $bin/fetch.sh 
+
+# RELOAD
 exec_always --no-startup-id compton

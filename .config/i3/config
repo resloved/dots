@@ -239,6 +239,10 @@ bindsym $mod+Ctrl+slash  exec amixer sset Master toggle
 bindsym $mod+Ctrl+comma  exec amixer sset Master 5%-
 bindsym $mod+Ctrl+period exec amixer sset Master 5%+
 
+bindsym $mod+Shift+slash  exec amixer set Capture toggle
+bindsym $mod+Shift+comma  exec amixer set Capture 5%-
+bindsym $mod+Shift+period exec amixer set Capture 5%+
+
 # ROFI
 bindsym $mod+d       exec rofi -show window -theme list -display-window "🤖"
 bindsym $mod+Ctrl+d  exec $bin/dict.sh 
@@ -269,12 +273,12 @@ bindsym $mod+t       exec $app=https://twitch.tv
 #bindsym $mod+Ctrl+y  exec
 #bindsym $mod+Shift+y exec
 
-#bindsym $mod+u       exec
+bindsym $mod+u       exec dolphin-emu
 #bindsym $mod+Ctrl+u  exec 
 #bindsym $mod+Shift+u exec 
 
 bindsym $mod+i       exec emacsclient -c
-bindsym $mod+Ctrl+i  exec pkill emacs; emacs --daemon
+bindsym $mod+Ctrl+i  exec pkill emacs && emacs --daemon
 bindsym $mod+Shift+i exec emacs
 
 bindsym $mod+o       exec $bin/now.sh

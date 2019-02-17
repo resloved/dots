@@ -37,8 +37,6 @@ alias stream="anypaste -x -s -p streamable"
 export PATH=/usr/local/anaconda/bin:$PATH
 # JAVA
 export PATH=/usr/lib/jvm/java-10-jdk/bin/:$PATH
-# SCRIPTS
-export PATH=$HOME/bin:$PATH
 
 ##### OTHER ######################################
 

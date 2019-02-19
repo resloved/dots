@@ -265,8 +265,8 @@ bindsym $mod+Shift+m exec discord
 
 for_window [instance="twitch.tv"] foating enable; resize set 1824x835; $center
 
-bindsym $mod+t       exec $app=https://twitch.tv
-#bindsym $mod+Ctrl+t  exec
+bindsym $mod+t       exec $bin/twitch.sh
+#bindsym $mod+Ctrl+t  exec 
 #bindsym $mod+Shift+t exec
 
 #bindsym $mod+y       exec

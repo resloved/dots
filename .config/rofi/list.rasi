@@ -7,7 +7,7 @@ window-format: "{n}";
 * {
 background-color:      #1b1d1e00;
 border-color:          #ffffff44;
-text-color:            #f8f8f888;
+text-color:            #ffffffff;
 font:                  "Hasklug Nerd Font Mono Bold 11";
 }
 
@@ -38,11 +38,12 @@ width:      0;
 
 #element {
 padding: 0px 2px;
+color: #ffffff44;
 }
 
 #element selected {
 background-color: #f8f8f800;
-color: #ffffff;
+color: #ffffffff;
 }
 
 /* -*- mode: css; -*- */

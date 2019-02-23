@@ -245,26 +245,22 @@ bindsym $mod+Shift+comma  exec amixer set Capture 5%-
 bindsym $mod+Shift+period exec amixer set Capture 5%+
 
 # ROFI
-bindsym $mod+d       exec rofi -show window -theme list -display-window "🤖"
+bindsym $mod+d       exec rofi -show window -theme list -display-window ""
 bindsym $mod+Ctrl+d  exec $bin/dict.sh 
-bindsym $mod+Shift+d exec
+#bindsym $mod+Shift+d exec
 
 # BACKGROUND
 exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
 
 ##### APP BINDS ###################################
 
-set $app chromium --app
-
 bindsym $mod+n       exec $browser
 bindsym $mod+Ctrl+n  exec $bin/search.sh "$browser --new-window"
-bindsym $mod+Shift+n exec $bin/direct.sh "$browser --new-window" 
+#bindsym $mod+Shift+n exec $bin/direct.sh "$browser --new-window" 
 
 bindsym $mod+m       exec spotify
 bindsym $mod+Ctrl+m  exec steam
 bindsym $mod+Shift+m exec discord
-
-for_window [instance="twitch.tv"] foating enable; resize set 1824x835; $center
 
 bindsym $mod+t       exec $bin/twitch.sh -f
 bindsym $mod+Ctrl+t  exec $bin/twitch.sh -d
@@ -290,7 +286,6 @@ bindsym $mod+Shift+o exec $bin/bat.sh
 
 # STARTUP
 exec --no-startup-id emacs --daemon
-exec --no-startup-id python $bin/battery.py
 exec --no-startup-id unclutter -grab
 
 # RELOAD

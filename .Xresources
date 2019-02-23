@@ -77,7 +77,7 @@ URxvt*borderWidth:      0
 URxvt*internalBorder:   0
 
 ! FONT
-URxvt*font:             xft:Hasklug Nerd Font Mono:size=11, xft:Noto Color Emoji
+URxvt*font:             xft:Hasklug Nerd Font Mono:size=11
 
 ! LINKS
 URxvt.perl-ext-common:  default,matcher

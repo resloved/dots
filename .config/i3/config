@@ -265,9 +265,9 @@ bindsym $mod+Shift+m exec discord
 
 for_window [instance="twitch.tv"] foating enable; resize set 1824x835; $center
 
-bindsym $mod+t       exec $bin/twitch.sh
-#bindsym $mod+Ctrl+t  exec 
-#bindsym $mod+Shift+t exec
+bindsym $mod+t       exec $bin/twitch.sh -f
+bindsym $mod+Ctrl+t  exec $bin/twitch.sh -d
+bindsym $mod+Shift+t exec $bin/twitch.sh
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
@@ -291,9 +291,6 @@ bindsym $mod+Shift+o exec $bin/bat.sh
 exec --no-startup-id emacs --daemon
 exec --no-startup-id python $bin/battery.py
 exec --no-startup-id unclutter -grab
-
-for_window [title="boot"] floating enable $center
-exec --no-startup-id xterm -title "boot" -geometry 25x5+0+0 -b $thick -e $bin/fetch.sh 
 
 # RELOAD
 exec_always --no-startup-id compton

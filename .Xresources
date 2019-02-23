@@ -62,26 +62,41 @@
 
 !!!!! URXVT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! SETTINGS
-URxvt*buffered: false
-URxvt*saveLines: 0
-URxvt*skipBuiltinGlyphs: true
-URxvt*scrollBar: false
-URxvt*iso14755: false
-URxvt*iso14755_52: false
+URxvt*termName:         rxvt-unicode-256color
 
+! SETTINGS
+URxvt*buffered:         false
+URxvt*saveLines:        0
+URxvt*scrollBar:        false
+URxvt*iso14755:         false
+URxvt*iso14755_52:      false
+
+URxvt*letterSpace:      -2
 ! BORDER
-URxvt*borderWidth: 0
-URxvt*internalBorder: 0
+URxvt*borderWidth:      0
+URxvt*internalBorder:   0
 
 ! FONT
-URxvt*font: xft:Hasklug Nerd Font Mono:size=11
+URxvt*font:             xft:Hasklug Nerd Font Mono:size=11, xft:Noto Color Emoji
+
+! LINKS
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:     /usr/bin/xdg-open
+URxvt.matcher.button:   1
 
 !!!!! XTERM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! BORDER
-xterm*BorderWidth: 0
+xterm*BorderWidth:      0
 
 ! FONT
-xterm*faceName: Hasklug Nerd Font Mono
-xterm*faceSize: 11
+xterm*faceName:         Hasklug Nerd Font Mono
+xterm*faceSize:         11
+
+!!!!! XST !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+st*termname:            st-256color
+st*shell:               /bin/zsh
+st*font:                Hasklug Nerd Font Mono:size=11
+st*bold_font:           1
+st.borderpx:            0

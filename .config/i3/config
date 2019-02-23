@@ -9,7 +9,7 @@ font pango:Hasklug Nerd Font Mono 24
 # APP VARIABLES
 set $browser	firefox
 set $music  	spotify
-set $term   	urxvt -g 42x12
+set $term   	xst -g 42x12
 
 # DIR VARIABLES
 set $bin ~/bin
@@ -28,6 +28,7 @@ for_window [title="^.*"] border pixel 0
 set $thick 24
 for_window [class="Emacs"] border pixel $thick
 for_window [class="URxvt"] border pixel $thick
+for_window [class="st"] border pixel $thick
 #for_window [class="XTerm"] border pixel $thick
 
 # FLOATING APPLICATIONS
@@ -53,7 +54,7 @@ bindsym $mod+Ctrl+g exec pkill compton; gaps inner all set 0; gaps outer all set
 bindsym $mod+Return exec $term -e tmux
 bindsym $mod+Shift+Return exec $term -e tmux new-session -A -s main
 bindsym $mod+Ctrl+Return exec $term
-bindsym $mod+Shift+Ctrl+Return exec kitty
+#bindsym $mod+Shift+Ctrl+Return exec
 
 # SCRATCHPAD
 bindsym $mod+BackSpace scratchpad show
@@ -246,7 +247,7 @@ bindsym $mod+Shift+period exec amixer set Capture 5%+
 # ROFI
 bindsym $mod+d       exec rofi -show window -theme list -display-window "🤖"
 bindsym $mod+Ctrl+d  exec $bin/dict.sh 
-#bindsym $mod+Shift+d exec
+bindsym $mod+Shift+d exec
 
 # BACKGROUND
 exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0

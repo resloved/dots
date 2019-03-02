@@ -63,7 +63,7 @@ bindsym $mod+Ctrl+BackSpace exec $term -e tmux new-session -A -s scratch
 
 # KILL
 bindsym $mod+x      kill
-bindsym $mod+Ctrl+x exec $bin/exit.sh
+bindsym $mod+Ctrl+x exec rofi-exit
 
 # RELOAD 
 bindsym $mod+Ctrl+c reload
@@ -223,12 +223,12 @@ bindsym $mod+Shift+Print exec feh $($last $shots)
 # CAST
 set $casts ~/videos/casts
 
-bindsym $mod+F12       exec $bin/cast.sh 
-bindsym $mod+Ctrl+F12  exec $bin/cast.sh -s 
+bindsym $mod+F12       exec cast 
+bindsym $mod+Ctrl+F12  exec cast -s 
 #bindsym $mod+Shift+F12 exec
 
 bindsym $mod+F11       exec pkill ffmpeg
-bindsym $mod+Ctrl+F11  exec $bin/able.sh
+bindsym $mod+Ctrl+F11  exec new-stream
 bindsym $mod+Shift+F11 exec ffplay -loop 0 $($last $casts)
 
 # MEDIA CONTROLS
@@ -246,7 +246,7 @@ bindsym $mod+Shift+period exec amixer set Capture 5%+
 
 # ROFI
 bindsym $mod+d       exec rofi -show window -theme list -display-window ""
-bindsym $mod+Ctrl+d  exec $bin/dict.sh 
+bindsym $mod+Ctrl+d  exec rofi-dict
 #bindsym $mod+Shift+d exec
 
 # BACKGROUND
@@ -255,16 +255,16 @@ exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
 ##### APP BINDS ###################################
 
 bindsym $mod+n       exec $browser
-bindsym $mod+Ctrl+n  exec $bin/search.sh "$browser --new-window"
-#bindsym $mod+Shift+n exec $bin/direct.sh "$browser --new-window" 
+bindsym $mod+Ctrl+n  exec rofi-search "$browser --new-window"
+bindsym $mod+Shift+n exec rofi-web    "$browser --new-window" 
 
 bindsym $mod+m       exec spotify
 bindsym $mod+Ctrl+m  exec steam
 bindsym $mod+Shift+m exec discord
 
-bindsym $mod+t       exec $bin/twitch.sh -f
-bindsym $mod+Ctrl+t  exec $bin/twitch.sh -d
-bindsym $mod+Shift+t exec $bin/twitch.sh
+bindsym $mod+t       exec rofi-twitch -f
+bindsym $mod+Ctrl+t  exec rofi-twitch -d
+bindsym $mod+Shift+t exec rofi-twitch
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
@@ -278,9 +278,9 @@ bindsym $mod+i       exec emacsclient -c
 bindsym $mod+Ctrl+i  exec pkill emacs && emacs --daemon
 bindsym $mod+Shift+i exec emacs
 
-bindsym $mod+o       exec $bin/now.sh
-bindsym $mod+Ctrl+o  exec $bin/vol.sh
-bindsym $mod+Shift+o exec $bin/bat.sh
+bindsym $mod+o       exec rofi-now
+bindsym $mod+Ctrl+o  exec rofi-vol
+bindsym $mod+Shift+o exec rofi-bat
 
 ##### LAUNCH ###################################### 
 

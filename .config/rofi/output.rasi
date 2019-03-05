@@ -16,10 +16,6 @@ anchor:     north;
 location:   north;
 width:      100%;
 padding:    14px 48px 16px 48px;
-children:   [ horibox ];
 }
 
-#horibox {
-orientation: horizontal;
-children:   [ prompt ];
-}
+/* -*- mode: css; -*- */

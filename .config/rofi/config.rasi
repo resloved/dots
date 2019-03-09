@@ -1,3 +1,5 @@
+/* -*- mode: css; -*- */
+
 /***** Rofi / RESLOVED ****************************/
 
 configuration {
@@ -6,8 +8,7 @@ window-format: "{n}";
 
 * {
 background-color:      #1b1d1e00;
-border-color:          #ffffff44;
-text-color:            #f8f8f888;
+text-color:            #ffffff;
 font:                  "Hasklug Nerd Font Mono Bold 11";
 }
 
@@ -15,7 +16,7 @@ font:                  "Hasklug Nerd Font Mono Bold 11";
 anchor:     north;
 location:   north;
 width:      100%;
-padding:    14px 48px 16px 48px;
+padding:    14px 48px 0 48px;
 children:   [ horibox ];
 }
 

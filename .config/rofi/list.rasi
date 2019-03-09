@@ -1,14 +1,9 @@
+/* -*- mode: css; -*- */
+
 /***** Rofi / RESLOVED ****************************/
 
 configuration {
 window-format: "{n}";
-}
-
-* {
-background-color:      #1b1d1e00;
-border-color:          #ffffff44;
-text-color:            #ffffffff;
-font:                  "Hasklug Nerd Font Mono Bold 11";
 }
 
 #window {
@@ -37,13 +32,12 @@ width:      0;
 }
 
 #element {
-padding: 0px 2px;
+padding: 3px 6px;
 color: #ffffff44;
 }
 
 #element selected {
-background-color: #f8f8f800;
+background-color: #af5fff;
 color: #ffffffff;
+border-radius: 6px;
 }
-
-/* -*- mode: css; -*- */

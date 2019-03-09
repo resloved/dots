@@ -40,26 +40,6 @@
 !*color7:        #BFBFBF
 !*color15:       #F8F8F2
 
-! MATERIAL DARK
-!*foreground:    #FFFFFF
-!*background:    #202124
-!*color0:        #292C2F
-!*color8:        #333639
-!*color1:        #EB978F
-!*color9:        #EEA8A2
-!*color2:        #7DE8B4
-!*color10:       #93ECC1
-!*color3:        #F3F3F3
-!*color11:       #737678
-!*color4:        #4C8BF5
-!*color12:       #4C8BF5
-!*color5:        #F3F3F3
-!*color13:       #737678
-!*color6:        #F3F3F3
-!*color14:       #737678
-!*color7:        #737678
-!*color15:       #F3F3F3
-
 !!!!! URXVT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 URxvt*termName:         rxvt-unicode-256color
@@ -71,7 +51,6 @@ URxvt*scrollBar:        false
 URxvt*iso14755:         false
 URxvt*iso14755_52:      false
 
-URxvt*letterSpace:      -2
 ! BORDER
 URxvt*borderWidth:      0
 URxvt*internalBorder:   0

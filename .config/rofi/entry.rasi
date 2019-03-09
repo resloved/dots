@@ -1,3 +1,5 @@
+/* -*- mode: css; -*- */
+
 /***** Rofi / RESLOVED ****************************/
 
 configuration {
@@ -28,5 +30,3 @@ children:   [ entry ];
 expand:     false;
 width:      100%;
 }
-
-/* -*- mode: css; -*- */

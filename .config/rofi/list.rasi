@@ -32,12 +32,10 @@ width:      0;
 }
 
 #element {
-padding: 3px 6px;
+padding: 3px 2px;
 color: #ffffff44;
 }
 
 #element selected {
-background-color: #af5fff;
 color: #ffffffff;
-border-radius: 6px;
 }

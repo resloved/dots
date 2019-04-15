@@ -10,7 +10,7 @@ window-format: "{n}";
 anchor:     north;
 location:   north;
 width:      100%;
-padding:    14px 36px 16px 36px;
+padding:    14px 36px 16px 48px;
 children:   [ horibox ];
 }
 
@@ -32,7 +32,7 @@ width:      0;
 }
 
 #element {
-padding: 3px 2px;
+padding-right: 2px;
 color: #ffffff44;
 }
 

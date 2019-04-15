@@ -47,8 +47,8 @@ gaps inner $inner
 gaps outer $outer
 
 # TOGGLE GAPS
-bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
-bindsym $mod+Ctrl+g exec pkill compton; gaps inner all set 0; gaps outer all set 0
+#bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
+#bindsym $mod+Ctrl+g exec compton; gaps inner all set 0; gaps outer all set 0
 
 # TERMINAL BINDS
 bindsym $mod+Return exec $term -e tmux
@@ -148,7 +148,7 @@ set $ws3 "3"
 #set $ws7 "7"
 #set $ws8 "8"
 #set $ws9 "9"
-set $ws10 "10"
+#set $ws10 "10"
 
 # SWITCH TO WORKSPACE
 bindsym $mod+1 workspace $ws1
@@ -160,7 +160,7 @@ bindsym $mod+3 workspace $ws3
 #bindsym $mod+7 workspace $ws7
 #bindsym $mod+8 workspace $ws8
 #bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+#bindsym $mod+0 workspace $ws10
 
 bindsym $mod+Mod2+KP_1 workspace $ws1
 bindsym $mod+Mod2+KP_2 workspace $ws2
@@ -171,7 +171,7 @@ bindsym $mod+Mod2+KP_3 workspace $ws3
 #bindsym $mod+Mod2+KP_7 workspace $ws7
 #bindsym $mod+Mod2+KP_8 workspace $ws8
 #bindsym $mod+Mod2+KP_9 workspace $ws9
-bindsym $mod+Mod2+KP_0 workspace $ws10
+#bindsym $mod+Mod2+KP_0 workspace $ws10
 
 # MOVE WINDOW TO WORKSPACE
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -183,7 +183,7 @@ bindsym $mod+Ctrl+3 move container to workspace $ws3
 #bindsym $mod+Ctrl+7 move container to workspace $ws7
 #bindsym $mod+Ctrl+8 move container to workspace $ws8
 #bindsym $mod+Ctrl+9 move container to workspace $ws9
-bindsym $mod+Ctrl+0 move container to workspace $ws10
+#bindsym $mod+Ctrl+0 move container to workspace $ws10
 
 bindsym $mod+Ctrl+Mod2+KP_1 move container to workspace $ws1
 bindsym $mod+Ctrl+Mod2+KP_2 move container to workspace $ws2
@@ -194,7 +194,7 @@ bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
 #bindsym $mod+Ctrl+Mod2+KP_7 move container to workspace $ws7
 #bindsym $mod+Ctrl+Mod2+KP_8 move container to workspace $ws8
 #bindsym $mod+Ctrl+Mod2+KP_9 move container to workspace $ws9
-bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
+#bindsym $mod+Ctrl+Mod2+KP_0 move container to workspace $ws10
 
 ##### COLORS #######################################
 
@@ -211,14 +211,12 @@ client.placeholder      $bg     $bg     $bg     $bg
 
 ##### TOOLS ########################################
 
-set $last bin/last.sh
-
 # SCREENSHOT
 set $shots ~/pictures/screenshots
 
 bindsym $mod+Print exec maim $shots/$(date +%s).png
 bindsym $mod+Ctrl+Print exec maim -s $shots/$(date +%s).png
-bindsym $mod+Shift+Print exec feh $($last $shots)
+bindsym $mod+Shift+Print exec feh $(last $shots)
 
 # CAST
 set $casts ~/videos/casts
@@ -229,7 +227,7 @@ bindsym $mod+Ctrl+F12  exec cast -s
 
 bindsym $mod+F11       exec pkill ffmpeg
 bindsym $mod+Ctrl+F11  exec new-stream
-bindsym $mod+Shift+F11 exec ffplay -loop 0 $($last $casts)
+bindsym $mod+Shift+F11 exec ffplay -loop 0 $(last $casts)
 
 # MEDIA CONTROLS
 bindsym $mod+slash  exec playerctl play-pause
@@ -250,7 +248,8 @@ bindsym $mod+Ctrl+d  exec rofi-dict
 #bindsym $mod+Shift+d exec
 
 # BACKGROUND
-exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
+#exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
+exec_always hsetroot -add "#c79081" -add "#c79081" -gradient 0
 
 ##### APP BINDS ###################################
 
@@ -287,6 +286,7 @@ bindsym $mod+Shift+o exec rofi-bat
 # STARTUP
 exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter -grab
+exec xbar | xstart 48 1046 &
 
 # RELOAD
 exec_always --no-startup-id compton

@@ -226,7 +226,7 @@ bindsym $mod+Ctrl+F12  exec cast -s
 #bindsym $mod+Shift+F12 exec
 
 bindsym $mod+F11       exec pkill ffmpeg
-bindsym $mod+Ctrl+F11  exec new-stream
+bindsym $mod+Ctrl+F11  exec anypaste -x -s -p streamable $(last $casts)
 bindsym $mod+Shift+F11 exec ffplay -loop 0 $(last $casts)
 
 # MEDIA CONTROLS

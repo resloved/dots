@@ -286,7 +286,7 @@ bindsym $mod+Shift+o exec rofi-bat
 # STARTUP
 exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter -grab
-exec xbar | xstart 48 1046 &
+exec xbar | xstart 48 1046 0 &
 
 # RELOAD
 exec_always --no-startup-id compton

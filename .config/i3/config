@@ -4,7 +4,7 @@
 
 set $mod Mod4
 
-font pango:Hasklug Nerd Font Mono 24
+font pango:Hasklug Nerd Font Mono 9
 
 # APP VARIABLES
 set $browser	firefox
@@ -21,8 +21,8 @@ set $center move absolute position center
 floating_modifier $mod
 
 # DEFAULT BORDER
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 0px
+for_window [title="^.*"] border pixel 0px
 
 # APPLICATION BORDERS
 set $thick 24
@@ -45,6 +45,7 @@ set $outer 16
 # SET GAPS
 gaps inner $inner
 gaps outer $outer
+border_radius 1
 
 # TOGGLE GAPS
 #bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
@@ -69,6 +70,11 @@ bindsym $mod+Ctrl+x exec rofi-exit
 bindsym $mod+Ctrl+c reload
 # RESTART
 bindsym $mod+Ctrl+r restart
+
+bindsym $mod+w layout toggle split
+bindsym $mod+Ctrl+w layout stacked
+bindsym $mod+Shift+w layout tabbed
+title_align center
 
 ##### MOVEMENT ####################################
 
@@ -203,18 +209,18 @@ set_from_resource $bg background
 set_from_resource $fg foreground
 
 # CLASS                 BORDER  BACK    TEXT    INDICATOR
-client.focused          $bg     $bg     $bg     $bg
-client.focused_inactive $bg     $bg     $bg     $bg 
-client.unfocused        $bg     $bg     $bg     $bg
-client.urgent           $bg     $bg     $bg     $bg 
-client.placeholder      $bg     $bg     $bg     $bg 
+client.focused          $bg     $bg     $fg     $bg
+client.focused_inactive $bg     $bg     $fg     $bg 
+client.unfocused        $bg     $bg     $fg     $bg
+client.urgent           $bg     $bg     $fg     $bg 
+client.placeholder      $bg     $bg     $fg     $bg 
 
 ##### TOOLS ########################################
 
 # SCREENSHOT
 set $shots ~/pictures/screenshots
 
-bindsym $mod+Print exec maim $shots/$(date +%s).png
+bindsym $mod+Print exec maim --hidecursor $shots/$(date +%s).png
 bindsym $mod+Ctrl+Print exec maim -s $shots/$(date +%s).png
 bindsym $mod+Shift+Print exec feh $(last $shots)
 
@@ -286,7 +292,7 @@ bindsym $mod+Shift+o exec rofi-bat
 # STARTUP
 exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter -grab
-exec xbar | xstart 48 1046 0 &
+exec --no-startup-id xbar | xstart 48 1046 0 &
 
 # RELOAD
 exec_always --no-startup-id compton

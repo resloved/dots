@@ -8,7 +8,7 @@ window-format: "{n}";
 background-color:      #1b1d1e00;
 border-color:          #ffffff44;
 text-color:            #ffffffff;
-font:                  "Hasklug Nerd Font Mono Bold 11";
+font:                  "Product Sans Bold 12";
 }
 
 #window {

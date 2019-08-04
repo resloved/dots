@@ -9,7 +9,7 @@ window-format: "{n}";
 * {
 background-color:      #1b1d1e00;
 text-color:            #ffffff;
-font:                  "Hasklug Nerd Font Mono Bold 11";
+font:                  "Product Sans Bold 14";
 }
 
 #window {
@@ -35,7 +35,7 @@ lines:      100;
 padding:    0px 4px;
 expand:     false;
 width:      10em;
-font:       "Hasklug Nerd Font Bold 11";
+font:       "Product Sans Bold 14";
 }
 
 #element {

@@ -55,11 +55,11 @@ border_radius 1
 bindsym $mod+Return exec $term -e tmux
 bindsym $mod+Shift+Return exec $term -e tmux new-session -A -s main
 bindsym $mod+Ctrl+Return exec $term
-#bindsym $mod+Shift+Ctrl+Return exec
+bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
 
 # SCRATCHPAD
 bindsym $mod+BackSpace scratchpad show
-bindsym $mod+Shift+BackSpace floating enable, move position $thick px $thick px, move scratchpad
+bindsym $mod+Shift+BackSpace floating enable, move position 48 px 48 px, move scratchpad
 bindsym $mod+Ctrl+BackSpace exec $term -e tmux new-session -A -s scratch 
 
 # KILL
@@ -254,8 +254,9 @@ bindsym $mod+Ctrl+d  exec rofi-dict
 #bindsym $mod+Shift+d exec
 
 # BACKGROUND
-#exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
-exec_always hsetroot -add "#c79081" -add "#c79081" -gradient 0
+exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
+#exec_always hsetroot -add "#c79081" -add "#c79081" -gradient 0
+#exec_always hsetroot -add "#c79081" -add "#c79081" -gradient 0
 
 ##### APP BINDS ###################################
 
@@ -280,7 +281,7 @@ bindsym $mod+u       exec dolphin-emu
 #bindsym $mod+Shift+u exec 
 
 bindsym $mod+i       exec emacsclient -c
-bindsym $mod+Ctrl+i  exec pkill emacs && emacs --daemon
+bindsym $mod+Ctrl+i  exec pkill emacs && emacs --daemon && emacsclient -c
 bindsym $mod+Shift+i exec emacs
 
 bindsym $mod+o       exec rofi-now
@@ -296,3 +297,4 @@ exec --no-startup-id xbar | xstart 48 1046 0 &
 
 # RELOAD
 exec_always --no-startup-id compton
+exec_always --no-startup-id dunst

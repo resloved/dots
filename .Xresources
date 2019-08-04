@@ -56,26 +56,17 @@ URxvt*borderWidth:      0
 URxvt*internalBorder:   0
 
 ! FONT
-URxvt*font:             xft:Hasklug Nerd Font Mono:size=11
+URxvt*font:             xft:Roboto Mono:size=10:style=bold
 
 ! LINKS
 URxvt.perl-ext-common:  default,matcher
 URxvt.url-launcher:     /usr/bin/xdg-open
 URxvt.matcher.button:   1
 
-!!!!! XTERM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-! BORDER
-xterm*BorderWidth:      0
-
-! FONT
-xterm*faceName:         Hasklug Nerd Font Mono
-xterm*faceSize:         11
-
 !!!!! XST !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 st*termname:            st-256color
 st*shell:               /bin/zsh
-st*font:                Hasklug Nerd Font Mono:size=11
+st*font:                Roboto Mono:size=10
 st*bold_font:           1
 st.borderpx:            0

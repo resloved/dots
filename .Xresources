@@ -56,17 +56,20 @@ URxvt*borderWidth:      0
 URxvt*internalBorder:   0
 
 ! FONT
-URxvt*font:             xft:Roboto Mono:size=10:style=bold
+URxvt*font:             xft:Roboto Mono:size=10
 
 ! LINKS
 URxvt.perl-ext-common:  default,matcher
 URxvt.url-launcher:     /usr/bin/xdg-open
 URxvt.matcher.button:   1
 
+URxvt.internalBorder:   12
+
 !!!!! XST !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-st*termname:            st-256color
-st*shell:               /bin/zsh
-st*font:                Roboto Mono:size=10
-st*bold_font:           1
+st.termname:            st-256color
+st.shell:               /bin/zsh
+st.font:                Roboto Mono:size=10
+st.bold_font:           1
 st.borderpx:            0
+st.internalBorder: 4

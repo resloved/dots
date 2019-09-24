@@ -21,11 +21,11 @@ set $center move absolute position center
 floating_modifier $mod
 
 # DEFAULT BORDER
-for_window [class="^.*"] border pixel 0px
-for_window [title="^.*"] border pixel 0px
+for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
 
 # APPLICATION BORDERS
-set $thick 24
+set $thick 16
 for_window [class="Emacs"] border pixel $thick
 for_window [class="URxvt"] border pixel $thick
 for_window [class="st"] border pixel $thick
@@ -45,11 +45,11 @@ set $outer 16
 # SET GAPS
 gaps inner $inner
 gaps outer $outer
-border_radius 1
+#border_radius 2
 
 # TOGGLE GAPS
-#bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
-#bindsym $mod+Ctrl+g exec compton; gaps inner all set 0; gaps outer all set 0
+bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
+bindsym $mod+Ctrl+g exec compton; gaps inner all set 0; gaps outer all set 0
 
 # TERMINAL BINDS
 bindsym $mod+Return exec $term -e tmux
@@ -254,9 +254,8 @@ bindsym $mod+Ctrl+d  exec rofi-dict
 #bindsym $mod+Shift+d exec
 
 # BACKGROUND
-exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
-#exec_always hsetroot -add "#c79081" -add "#c79081" -gradient 0
-#exec_always hsetroot -add "#c79081" -add "#c79081" -gradient 0
+#exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
+exec_always hsetroot -solid "#c79081"
 
 ##### APP BINDS ###################################
 
@@ -293,8 +292,10 @@ bindsym $mod+Shift+o exec rofi-bat
 # STARTUP
 exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter -grab
-exec --no-startup-id xbar | xstart 48 1046 0 &
 
 # RELOAD
+#exec_always --no-startup-id ~/code/compton/build/src/compton
 exec_always --no-startup-id compton
 exec_always --no-startup-id dunst
+exec_always xrdb --merge ~/.Xresoureces 
+#exec_always xrandr --auto --output eDP-1 --below HDMI-1 --auto

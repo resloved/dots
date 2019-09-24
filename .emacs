@@ -7,7 +7,6 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,7 +23,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (mini-modeline feebleline yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -86,24 +85,22 @@
 
 ;;;;; mode-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; POWERLINE
-;;(use-package powerline)
-;;(require 'powerline)
+;; MINI
 
-;;(load "~/.emacs.d/powerline/material.el")
-;;(setq powerline-default-separator 'contour)
-;;(powerline-material-theme)
+(use-package mini-modeline)
+(mini-modeline-mode t)
 
-;; DEFAULT FORMAT
-(setq-default mode-line-format
+(setq-default mini-modeline-l-format
   (list
    '(:eval (propertize "%b" 'face '(:weight bold)))
    '(:eval (if (buffer-modified-p)
                (propertize "  " 'face '(:foreground "#f92672"))
              (propertize "  " 'face '(:foreground "#a6e22e"))))
    '(:eval (propertize "%m" 'face '(:weight bold)))
-   '(:eval (propertize "  " 'face '(:foreground "#fd971f")))
+   '(:eval (propertize "  " 'face '(:foreground "#465457")))
    '(:eval (propertize "%l" 'face '(:weight bold)))))
+
+(setq-default mini-modeline-r-format "")
 
 ;;;;; org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -93,13 +93,13 @@
 
 (setq-default mini-modeline-l-format
   (list
-   '(:eval (propertize "%b" 'face '(:weight bold)))
+   '(:eval (propertize "%b" 'face))
    '(:eval (if (buffer-modified-p)
                (propertize "  " 'face '(:foreground "#f92672"))
              (propertize "  " 'face '(:foreground "#a6e22e"))))
-   '(:eval (propertize "%l" 'face '(:weight bold)))
+   '(:eval (propertize "%l"))
    '(:eval (propertize "  " 'face '(:foreground "#465457")))
-   '(:eval (propertize "%m" 'face '(:weight bold)))))
+   '(:eval (propertize "%m"))))
 
 (setq-default mini-modeline-r-format "")
 

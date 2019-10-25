@@ -72,4 +72,4 @@ st.shell:               /bin/zsh
 st.font:                Roboto Mono:size=10
 st.bold_font:           1
 st.borderpx:            0
-st.internalBorder: 4
+st.internalBorder:      4

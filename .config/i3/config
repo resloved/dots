@@ -9,7 +9,7 @@ font pango:Hasklug Nerd Font Mono 9
 # APP VARIABLES
 set $browser	firefox
 set $music  	spotify
-set $term   	xst -g 42x12
+set $term   	kitty
 
 # DIR VARIABLES
 set $bin ~/bin
@@ -20,12 +20,14 @@ set $center move absolute position center
 # FLOATING
 floating_modifier $mod
 
+set $thick 2
+border_radius 4
+
 # DEFAULT BORDER
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
+for_window [class="^.*"] border pixel $thick
+for_window [title="^.*"] border pixel $thick
 
 # APPLICATION BORDERS
-set $thick 16
 for_window [class="Emacs"] border pixel $thick
 for_window [class="URxvt"] border pixel $thick
 for_window [class="st"] border pixel $thick
@@ -45,7 +47,6 @@ set $outer 16
 # SET GAPS
 gaps inner $inner
 gaps outer $outer
-#border_radius 2
 
 # TOGGLE GAPS
 bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
@@ -205,15 +206,15 @@ bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
 ##### COLORS #######################################
 
 # XRESOURCES
-set_from_resource $bg background
-set_from_resource $fg foreground
+set $fg "#666666"
+set $bg "#666666"
 
 # CLASS                 BORDER  BACK    TEXT    INDICATOR
-client.focused          $bg     $bg     $fg     $bg
-client.focused_inactive $bg     $bg     $fg     $bg 
-client.unfocused        $bg     $bg     $fg     $bg
-client.urgent           $bg     $bg     $fg     $bg 
-client.placeholder      $bg     $bg     $fg     $bg 
+client.focused          $fg     $fg     $fg     $fg
+client.focused_inactive $fg     $fg     $fg     $fg 
+client.unfocused        $bg     $bg     $bg     $bg
+client.urgent           $bg     $bg     $bg     $bg 
+client.placeholder      $bg     $bg     $bg     $bg 
 
 ##### TOOLS ########################################
 
@@ -255,7 +256,8 @@ bindsym $mod+Ctrl+d  exec rofi-dict
 
 # BACKGROUND
 #exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
-exec_always hsetroot -solid "#c79081"
+exec_always hsetroot -add "#DAD299" -add "#B0DAB9" -gradient 0
+#exec_always hsetroot -solid "#c79081"
 
 ##### APP BINDS ###################################
 
@@ -281,7 +283,7 @@ bindsym $mod+u       exec dolphin-emu
 
 bindsym $mod+i       exec emacsclient -c
 bindsym $mod+Ctrl+i  exec pkill emacs && emacs --daemon && emacsclient -c
-bindsym $mod+Shift+i exec emacs
+bindsym $mod+Shift+i exec emacs -ib 16
 
 bindsym $mod+o       exec rofi-now
 bindsym $mod+Ctrl+o  exec rofi-vol
@@ -294,8 +296,8 @@ exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter -grab
 
 # RELOAD
-#exec_always --no-startup-id ~/code/compton/build/src/compton
-exec_always --no-startup-id compton
+exec_always --no-startup-id ~/code/compton/build/src/compton
+#exec_always --no-startup-id compton
 exec_always --no-startup-id dunst
 exec_always xrdb --merge ~/.Xresoureces 
 #exec_always xrandr --auto --output eDP-1 --below HDMI-1 --auto

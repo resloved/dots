@@ -4,7 +4,7 @@
 
 # PATH
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="terminalpartied"
+ZSH_THEME="circles"
 source $ZSH/oh-my-zsh.sh
 ZLE_RPROMPT_INDENT=0
 

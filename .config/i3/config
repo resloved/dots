@@ -9,7 +9,7 @@ font pango:Hasklug Nerd Font Mono 9
 # APP VARIABLES
 set $browser	firefox
 set $music  	spotify
-set $term   	st
+set $term   	urxvt
 
 # DIR VARIABLES
 set $bin ~/bin
@@ -21,7 +21,7 @@ set $center move absolute position center
 floating_modifier $mod
 
 set $thick 16
-border_radius 3
+border_radius 0
 
 # DEFAULT BORDER
 for_window [class="^.*"] border pixel 0
@@ -207,15 +207,15 @@ bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
 ##### COLORS #######################################
 
 # XRESOURCES
-set $fg "#1b1d1e"
-set $bg "#000000"
+set_from_resource $fg foreground
+set_from_resource $bg background 
 
 # CLASS                 BORDER  BACK    TEXT    INDICATOR
-client.focused          $bg     $fg     $fg     $fg
-client.focused_inactive $bg     $fg     $fg     $fg 
-client.unfocused        $bg     $fg     $fg     $fg
-client.urgent           $bg     $fg     $fg     $fg 
-client.placeholder      $bg     $fg     $fg     $fg 
+client.focused          $bg     $bg     $fg     $bg
+client.focused_inactive $bg     $bg     $fg     $bg 
+client.unfocused        $bg     $bg     $fg     $bg
+client.urgent           $bg     $bg     $fg     $bg 
+client.placeholder      $bg     $bg     $fg     $bg 
 
 ##### TOOLS ########################################
 
@@ -251,14 +251,18 @@ bindsym $mod+Shift+comma  exec amixer set Capture 5%-
 bindsym $mod+Shift+period exec amixer set Capture 5%+
 
 # ROFI
-bindsym $mod+d       exec rofi -show window -theme list -display-window ""
+bindsym $mod+d       exec rofi -show window -theme list -display-window "●"
 bindsym $mod+Ctrl+d  exec rofi-dict
 #bindsym $mod+Shift+d exec
 
 # BACKGROUND
 #exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
-exec_always hsetroot -add "#DAD299" -add "#B0DAB9" -gradient 0
+#exec_always hsetroot -add "#DAD299" -add "#B0DAB9" -gradient 0
 #exec_always hsetroot -solid "#c79081"
+set_from_resource $top color6
+set_from_resource $bot color5
+exec_always hsetroot -add "$top" -add "$bot" -gradient 0
+
 
 ##### APP BINDS ###################################
 

@@ -70,6 +70,6 @@ URxvt.internalBorder:   12
 st.termname:            st-256color
 st.shell:               /bin/zsh
 st.font:                Roboto Mono:size=10
-st.bold_font:           1
+st.bold_font:           0
 st.borderpx:            0
 st.internalBorder:      4

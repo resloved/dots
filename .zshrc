@@ -35,7 +35,7 @@ alias stream="anypaste -x -s -p streamable"
 ##### PATH ######################################## 
 
 # BIN
-export PATH=$HOME/bin/:$PATH
+export PATH=$HOME/bin:$PATH
 # PYTHON
 export PATH=/usr/local/anaconda/bin/:$PATH
 # JAVA

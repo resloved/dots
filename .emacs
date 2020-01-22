@@ -23,7 +23,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (mini-modeline feebleline yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (flutter dart-mode mini-modeline feebleline yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -244,6 +244,21 @@
 
 (setq tramp-default-method "ssh")
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+
+;;;;; dart/flutter ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Assuming usage with dart-mode
+(use-package dart-mode
+  :ensure-system-package (dart_language_server . "pub global activate dart_language_server")
+  :custom
+  (dart-format-on-save t))
+
+(use-package flutter
+  :after dart-mode
+  :bind (:map dart-mode-map
+              ("C-M-x" . #'flutter-run-or-hot-reload))
+  :custom
+  (flutter-sdk-path "/Applications/flutter/"))
 
 ;;;;; singles ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

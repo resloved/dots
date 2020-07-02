@@ -43,7 +43,7 @@
 ! DOOM-ONE
 *foreground:   #bfbfbf
 *background:   #282c34
-*color0:       #1c1f24
+*color0:       #5b6268
 *color8:       #3f444a
 *color1:       #ff6c6b
 *color9:       #ff6c6b
@@ -89,7 +89,11 @@ URxvt.internalBorder:   0
 
 st.termname:            st-256color
 st.shell:               /bin/zsh
-st.font:                Roboto Mono:size=10
-st.bold_font:           0
+st.font:                CozetteVector:size=9
+!st.bold_font:           0
 st.borderpx:            0
 st.internalBorder:      4
+
+!!!!! XTERM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+xterm.BorderWidth: 0

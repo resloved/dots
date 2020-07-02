@@ -33,7 +33,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+  '(default ((t (:height 90 :width normal :family "CozetteVector"))))
+  )
 
 ;;;;; packages ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -89,15 +90,9 @@
 
 ;;;;; mode-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; MINI
-
-(use-package mini-modeline)
-(mini-modeline-mode t)
-(window-divider-mode -1)
-
-(setq-default mini-modeline-l-format
+(setq-default mode-line-format
   (list
-   '(:eval (propertize "%b" 'face))
+   '(:eval (propertize "%b"))
    '(:eval (if (buffer-modified-p)
                (propertize " ● " 'face '(:foreground "#ff6c6b"))
              (propertize " ● " 'face '(:foreground "#98be65"))))
@@ -105,7 +100,10 @@
    '(:eval (propertize " ○ " 'face '(:foreground "#5B6268")))
    '(:eval (propertize "%m"))))
 
-(setq-default mini-modeline-r-format "")
+(set-face-attribute 'mode-line nil
+                    :background "#282c34")
+(set-face-attribute 'mode-line-inactive nil
+                    :background "#282c34")
 
 ;;;;; org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -244,21 +242,6 @@
 (setq tramp-default-method "ssh")
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
-;;;;; dart/flutter ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Assuming usage with dart-mode
-(use-package dart-mode
-  :ensure-system-package (dart_language_server . "pub global activate dart_language_server")
-  :custom
-  (dart-format-on-save t))
-
-(use-package flutter
-  :after dart-mode
-  :bind (:map dart-mode-map
-              ("C-M-x" . #'flutter-run-or-hot-reload))
-  :custom
-  (flutter-sdk-path "/Applications/flutter/"))
-
 ;;;;; singles ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package impatient-mode)
@@ -271,3 +254,18 @@
 (use-package ein)
 (use-package yaml-mode)
 (use-package emojify)
+
+;;;;; exit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; NO BOLD
+(defun remap-faces-default-attributes ()
+   (let ((family (face-attribute 'default :family))
+         (height (face-attribute 'default :height)))
+     (mapcar (lambda (face)
+              (face-remap-add-relative
+               face :family family :weight 'normal :height height))
+          (face-list))))
+
+(when (display-graphic-p)
+   (add-hook 'minibuffer-setup-hook 'remap-faces-default-attributes)
+   (add-hook 'change-major-mode-after-body-hook 'remap-faces-default-attributes))

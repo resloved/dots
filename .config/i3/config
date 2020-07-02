@@ -9,7 +9,7 @@ font pango:Hasklug Nerd Font Mono 9
 # APP VARIABLES
 set $browser	firefox
 set $music  	spotify
-set $term   	urxvt
+set $term   	xst
 
 # DIR VARIABLES
 set $bin ~/bin
@@ -21,7 +21,7 @@ set $center move absolute position center
 floating_modifier $mod
 
 set $thick 16
-border_radius 0
+#border_radius 0
 
 # DEFAULT BORDER
 for_window [class="^.*"] border pixel 0
@@ -31,7 +31,7 @@ for_window [title="^.*"] border pixel 0
 for_window [class="Emacs"] border pixel $thick
 for_window [class="URxvt"] border pixel $thick
 for_window [class="st"] border pixel $thick
-#for_window [class="XTerm"] border pixel $thick
+for_window [class="XTerm"] border pixel $thick
 
 # FLOATING APPLICATIONS
 for_window [class="Orca"] floating enable
@@ -259,9 +259,10 @@ bindsym $mod+Ctrl+d  exec rofi-dict
 #exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
 #exec_always hsetroot -add "#DAD299" -add "#B0DAB9" -gradient 0
 #exec_always hsetroot -solid "#c79081"
-set_from_resource $top color6
-set_from_resource $bot color5
-exec_always hsetroot -add "$top" -add "$bot" -gradient 0
+#set_from_resource $top color6
+#set_from_resource $bot color5
+#exec_always hsetroot -add "$top" -add "$bot" -gradient 0
+exec_always hsetroot -solid "#F3F3F3"
 
 
 ##### APP BINDS ###################################
@@ -280,7 +281,7 @@ bindsym $mod+Shift+t exec rofi-twitch
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
-#bindsym $mod+Shift+y exec
+#bindsym $mod+Shift+y exec 
 
 bindsym $mod+u       exec dolphin-emu
 #bindsym $mod+Ctrl+u  exec 
@@ -299,11 +300,11 @@ bindsym $mod+Shift+o exec rofi-bat
 # STARTUP
 exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter -grab
-exec --no-startup-id $term -e sh "sudo wifi-menu; ntpd -qg; exit"
+#exec --no-startup-id $term -e sh "sudo wifi-menu; ntpd -qg; exit"
 
 # RELOAD
-exec_always --no-startup-id ~/code/compton/build/src/compton
-#exec_always --no-startup-id compton
+#exec_always --no-startup-id ~/code/compton/build/src/compton
+exec_always --no-startup-id picom
 exec_always --no-startup-id dunst
 exec_always xrdb -merge ~/.Xresoureces 
 #exec_always xrandr --auto --output eDP-1 --below HDMI-1 --auto

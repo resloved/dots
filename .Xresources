@@ -1,4 +1,4 @@
-!!!!! .Xresources / RESLOVED !!!!!!!!!!!!!!!!!!!!!! 
+!!!!! .Xresources / RESLOVED !!!!!!!!!!!!!!!!!!!!!!
 
 ! MOLOKAI
 !*foreground:   #f8f8f8
@@ -76,20 +76,20 @@ URxvt*borderWidth:      0
 URxvt*internalBorder:   0
 
 ! FONT
-URxvt*font:             xft:Roboto Mono:size=10
+URxvt*font:             xft:Hasklug Nerd Font Mono:size=9
 
 ! LINKS
-URxvt.perl-ext-common:  default,matcher
-URxvt.url-launcher:     /usr/bin/xdg-open
-URxvt.matcher.button:   1
+URxvt*perl-ext-common:  default,matcher,keyboard-select
+URxvt*url-launcher:     /usr/bin/xdg-open
+URxvt*matcher.button:   1
 
-URxvt.internalBorder:   0
+! COPY/PASTE
+URxvt*clipboard.autocopy: true
+URxvt*copyCommand: xclip -i -selection clipboard
+URxvt*pasteCommand: xclip -o -selection clipboard
+URxvt*keysym.Shift-Control-v: perl:clipboard:paste
+URxvt*keysym.Shift-Control-c: perl:clipboard:copy
 
-!!!!! XST !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! KEYBOARD-SELECT
 
-st.termname:            st-256color
-st.shell:               /bin/zsh
-st.font:                Roboto Mono:size=10
-st.bold_font:           0
-st.borderpx:            0
-st.internalBorder:      4
+URxvt*keyboard-select.clipboard: true

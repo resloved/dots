@@ -1,6 +1,6 @@
 ##### i3-config / RESLOVED  #######################
 
-##### GENERAL ##################################### 
+##### GENERAL #####################################
 
 set $mod Mod4
 
@@ -15,15 +15,15 @@ set $term   	urxvt
 set $bin ~/bin
 
 # RESIZE VARIABLES
-set $center move absolute position center
+set $center move position center
 
 # FLOATING
 floating_modifier $mod
 
 set $thick 16
-border_radius 0
+#border_radius 0
 
-# DEFAULT BORDER
+# DEFAULT BORDE
 for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
 
@@ -41,7 +41,7 @@ for_window [class="mupen64plus"] floating enable
 for_window [class="dolphin-emu"] floating enable
 
 # GAP VARIABLES
-set $inner 32 
+set $inner 32
 set $outer 0
 
 # SET GAPS
@@ -61,13 +61,13 @@ bindsym $mod+Shift+Ctrl+Return exec xterm -class blank
 # SCRATCHPAD
 bindsym $mod+BackSpace scratchpad show
 bindsym $mod+Shift+BackSpace floating enable, move position $inner px $inner px, move scratchpad
-bindsym $mod+Ctrl+BackSpace exec $term -e tmux new-session -A -s scratch 
+bindsym $mod+Ctrl+BackSpace exec $term -e tmux new-session -A -s scratch
 
 # KILL
 bindsym $mod+x      kill
 bindsym $mod+Ctrl+x exec rofi-exit
 
-# RELOAD 
+# RELOAD
 bindsym $mod+Ctrl+c reload
 # RESTART
 bindsym $mod+Ctrl+r restart
@@ -208,14 +208,14 @@ bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
 
 # XRESOURCES
 set_from_resource $fg foreground
-set_from_resource $bg background 
+set_from_resource $bg background
 
 # CLASS                 BORDER  BACK    TEXT    INDICATOR
 client.focused          $bg     $bg     $fg     $bg
-client.focused_inactive $bg     $bg     $fg     $bg 
+client.focused_inactive $bg     $bg     $fg     $bg
 client.unfocused        $bg     $bg     $fg     $bg
-client.urgent           $bg     $bg     $fg     $bg 
-client.placeholder      $bg     $bg     $fg     $bg 
+client.urgent           $bg     $bg     $fg     $bg
+client.placeholder      $bg     $bg     $fg     $bg
 
 ##### TOOLS ########################################
 
@@ -229,8 +229,8 @@ bindsym $mod+Shift+Print exec feh $(last $shots)
 # CAST
 set $casts ~/videos/casts
 
-bindsym $mod+F12       exec ~/bin/cast
-bindsym $mod+Ctrl+F12  exec ~/bin/cast -s 
+#bindsym $mod+F12       exec ~/bin/cast
+#bindsym $mod+Ctrl+F12  exec ~/bin/cast -s
 #bindsym $mod+Shift+F12 exec
 
 bindsym $mod+F11       exec pkill ffmpeg
@@ -251,61 +251,58 @@ bindsym $mod+Shift+comma  exec amixer set Capture 5%-
 bindsym $mod+Shift+period exec amixer set Capture 5%+
 
 # ROFI
-bindsym $mod+d       exec rofi -show window -theme list -display-window "●"
-bindsym $mod+Ctrl+d  exec rofi-dict
+#bindsym $mod+d       exec rofi -show window -theme list -display-window "●"
+#bindsym $mod+Ctrl+d  exec rofi-dict
 #bindsym $mod+Shift+d exec
 
 # BACKGROUND
 #exec_always hsetroot -add "#c79081" -add "#dfa579" -gradient 0
 #exec_always hsetroot -add "#DAD299" -add "#B0DAB9" -gradient 0
 #exec_always hsetroot -solid "#c79081"
-set_from_resource $top color6
-set_from_resource $bot color5
-exec_always hsetroot -add "$top" -add "$bot" -gradient 0
+set_from_resource $top color7
+#set_from_resource $bot color0
+exec_always hsetroot -solid "$top"
 
 
 ##### APP BINDS ###################################
 
 bindsym $mod+n       exec $browser
-bindsym $mod+Ctrl+n  exec rofi-search "$browser --new-window"
-bindsym $mod+Shift+n exec rofi-web    "$browser --new-window" 
+#bindsym $mod+Ctrl+n  exec
+bindsym $mod+Shift+n exec slack
 
-bindsym $mod+m       exec spotify
-bindsym $mod+Ctrl+m  exec steam
-bindsym $mod+Shift+m exec discord
+bindsym $mod+m       exec $music
+#bindsym $mod+Ctrl+m  exec
+#bindsym $mod+Shift+m exec
 
-bindsym $mod+t       exec rofi-twitch -f
-bindsym $mod+Ctrl+t  exec rofi-twitch -d
-bindsym $mod+Shift+t exec rofi-twitch
+#bindsym $mod+t       exec
+#bindsym $mod+Ctrl+t  exec
+#bindsym $mod+Shift+t exec
 
 #bindsym $mod+y       exec
 #bindsym $mod+Ctrl+y  exec
 #bindsym $mod+Shift+y exec
 
-bindsym $mod+u       exec dolphin-emu
-#bindsym $mod+Ctrl+u  exec 
-#bindsym $mod+Shift+u exec 
+#bindsym $mod+u       exec
+#bindsym $mod+Ctrl+u  exec
+#bindsym $mod+Shift+u exec
 
 bindsym $mod+i       exec emacsclient -c
 bindsym $mod+Ctrl+i  exec pkill emacs && emacs --daemon && emacsclient -c
 bindsym $mod+Shift+i exec emacs -ib 16
 
-bindsym $mod+o       exec rofi-now
-bindsym $mod+Ctrl+o  exec rofi-vol
-bindsym $mod+Shift+o exec rofi-bat
+#bindsym $mod+o       exec
+#bindsym $mod+Ctrl+o  exec
+#bindsym $mod+Shift+o exec
 
-##### LAUNCH ###################################### 
+##### LAUNCH ######################################
 
 # STARTUP
 exec --no-startup-id emacs --daemon
-exec --no-startup-id unclutter -grab
-exec --no-startup-id $term -e sh "sudo wifi-menu; ntpd -qg; exit"
 
 # RELOAD
-exec_always --no-startup-id ~/code/compton/build/src/compton
-#exec_always --no-startup-id compton
+exec_always --no-startup-id ~/code/sdhand/build/src/picom
 exec_always --no-startup-id dunst
-exec_always xrdb -merge ~/.Xresoureces 
-#exec_always xrandr --auto --output eDP-1 --below HDMI-1 --auto
+exec_always xrdb -merge ~/.Xresoureces
+exec_always xrandr --auto --output DVI-D-0 --left-of HDMI-A-0 --auto
 exec_always xmodmap -e "clear lock"
 exec_always xmodmap -e "keysym Caps_Lock = Escape"

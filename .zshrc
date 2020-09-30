@@ -4,9 +4,13 @@
 
 # PATH
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="circles"
+ZSH_THEME="circle"
 source $ZSH/oh-my-zsh.sh
 ZLE_RPROMPT_INDENT=0
+
+# VTERM BUFFER NAME
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%m:%2~\a" }
 
 ##### BINDS #######################################
 
@@ -23,16 +27,14 @@ alias le="echo ''; ls; echo ''"
 alias ec="emacsclient -t"
 # RELOAD XRESOURCES
 alias xr="xrdb -merge ~/.Xresources"
-# WIFI
-alias wifi="sudo wifi-menu"
-# BATTERY
-alias bat="echo -e $(cat /sys/class/power_supply/BAT0/capacity)%"
 # TIME
 alias now="echo -e $(date +'%H:%M')"
 # UPLOAD TO STREAMABLE
 alias stream="anypaste -x -s -p streamable"
+# CLAER => CLEAR
+alias claer="clear"
 
-##### PATH ######################################## 
+##### PATH ########################################
 
 # BIN
 export PATH=$HOME/bin:$PATH
@@ -52,4 +54,3 @@ then
 	unfunction preexec
 	PS1='$ '
 fi
-

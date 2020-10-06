@@ -23,7 +23,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (doom-themes flutter dart-mode mini-modeline feebleline yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
+    (cargo rust-mode doom-themes flutter dart-mode mini-modeline feebleline yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -33,8 +33,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-  '(default ((t (:height 90 :width normal :family "CozetteVector"))))
-  )
+ '(default ((t (:height 80 :width normal :family "CozetteVector")))))
 
 ;;;;; packages ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -97,7 +96,7 @@
                (propertize " ● " 'face '(:foreground "#ff6c6b"))
              (propertize " ● " 'face '(:foreground "#98be65"))))
    '(:eval (propertize "%l"))
-   '(:eval (propertize " ○ " 'face '(:foreground "#5B6268")))
+   '(:eval (propertize " ● " 'face '(:foreground "#5B6268")))
    '(:eval (propertize "%m"))))
 
 (set-face-attribute 'mode-line nil
@@ -119,27 +118,13 @@
 (use-package org-bullets
   :init
   (setq org-bullets-bullet-list
-        '("●" "◉" "○"))
+        '("●"))
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; ORG FACES
 (set-face-attribute 'org-document-title nil
                     :height 1.0)
-(set-face-attribute 'org-level-1 nil
-                    :weight 'bold)
-(set-face-attribute 'org-level-2 nil
-                    :weight 'bold)
-(set-face-attribute 'org-level-3 nil
-                    :weight 'bold)
-(set-face-attribute 'org-level-4 nil
-                    :weight 'bold)
-(set-face-attribute 'org-level-5 nil
-                    :weight 'bold)
-(set-face-attribute 'org-level-6 nil
-                    :weight 'bold)
-(set-face-attribute 'org-level-7 nil
-                    :weight 'bold)
 
 ;; ORG-DOWNLOAD
 (use-package org-download)
@@ -241,6 +226,12 @@
 
 (setq tramp-default-method "ssh")
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+
+;;;;; rust ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package rust-mode)
+(use-package cargo)
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
 
 ;;;;; singles ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

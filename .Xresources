@@ -97,3 +97,19 @@ st.internalBorder:      4
 !!!!! XTERM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 xterm.BorderWidth: 0
+
+!!!!! HERBE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+herbe.background_color: #44475a
+herbe.border_color: #44475a
+herbe.font_color: #DFDFDF
+herbe.font_pattern: CozetteVector:size=9
+herbe.line_spacing: 6
+herbe.padding: 16
+herbe.width: 300
+herbe.border_size: 0
+herbe.pos_x: 810
+herbe.pos_y: 16
+! 0 = TOP_LEFT, 1 = TOP_RIGHT, 2 = BOTTOM_LEFT, 3 = BOTTOM_RIGHT
+herbe.corner: 3
+herbe.duration: 5

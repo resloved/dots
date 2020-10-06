@@ -300,13 +300,12 @@ bindsym $mod+Shift+o exec rofi-bat
 # STARTUP
 exec --no-startup-id emacs --daemon
 exec --no-startup-id unclutter -grab
-#exec --no-startup-id $term -e sh "sudo wifi-menu; ntpd -qg; exit"
 
 # RELOAD
-#exec_always --no-startup-id ~/code/compton/build/src/compton
+exec_always --no-startup-id ~/code/compton/build/src/picom
 exec_always --no-startup-id picom
 exec_always --no-startup-id dunst
 exec_always xrdb -merge ~/.Xresoureces 
-#exec_always xrandr --auto --output eDP-1 --below HDMI-1 --auto
+exec_always xrandr --auto --output DVI-D-0 --right-of HDMI-0 --auto
 exec_always xmodmap -e "clear lock"
 exec_always xmodmap -e "keysym Caps_Lock = Escape"

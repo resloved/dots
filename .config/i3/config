@@ -268,11 +268,11 @@ exec_always hsetroot -solid "$top"
 
 bindsym $mod+n       exec $browser
 #bindsym $mod+Ctrl+n  exec
-bindsym $mod+Shift+n exec slack
+#bindsym $mod+Shift+n exec
 
 bindsym $mod+m       exec $music
 #bindsym $mod+Ctrl+m  exec
-#bindsym $mod+Shift+m exec
+bindsym $mod+Shift+m exec slack
 
 #bindsym $mod+t       exec
 #bindsym $mod+Ctrl+t  exec

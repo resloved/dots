@@ -33,6 +33,8 @@ alias now="echo -e $(date +'%H:%M')"
 alias stream="anypaste -x -s -p streamable"
 # CLAER => CLEAR
 alias claer="clear"
+# SSH TERM
+alias ssh="TERM=xterm ssh"
 
 ##### PATH ########################################
 

@@ -27,6 +27,8 @@ alias xr="xrdb -merge ~/.Xresources"
 alias now="echo -e $(date +'%H:%M')"
 # UPLOAD TO STREAMABLE
 alias stream="anypaste -x -s -p streamable"
+# SSH TERM
+alias ssh="TERM=xterm ssh"
 
 ##### PATH ######################################## 
 

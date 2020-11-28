@@ -15,7 +15,7 @@ set $term   	xst
 set $bin ~/bin
 
 # RESIZE VARIABLES
-set $center move absolute position center
+set $center move position center
 
 # FLOATING
 floating_modifier $mod
@@ -225,6 +225,10 @@ set $shots ~/pictures/screenshots
 bindsym $mod+Print exec maim --hidecursor $shots/$(date +%s).png
 bindsym $mod+Ctrl+Print exec maim -s $shots/$(date +%s).png
 bindsym $mod+Shift+Print exec feh $(last $shots)
+
+bindsym $mod+p exec maim --hidecursor $shots/$(date +%s).png
+bindsym $mod+Ctrl+p exec maim -s $shots/$(date +%s).png
+bindsym $mod+Shift+p exec feh $(last $shots)
 
 # CAST
 set $casts ~/videos/casts

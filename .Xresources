@@ -90,9 +90,7 @@ URxvt.internalBorder:   0
 st.termname:            st-256color
 st.shell:               /bin/zsh
 st.font:                CozetteVector:size=9
-!st.bold_font:           0
-st.borderpx:            0
-st.internalBorder:      4
+st.borderpx:            10
 
 !!!!! XTERM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

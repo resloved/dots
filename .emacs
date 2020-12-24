@@ -20,7 +20,7 @@
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill))
  '(package-selected-packages
-   '(cargo rust-mode doom-themes flutter dart-mode mini-modeline feebleline yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm))
+   '(lua-mode forge cargo rust-mode doom-themes flutter dart-mode mini-modeline feebleline yaml-mode org-download powerline haskell-mode helm-projectile projectile exwm org-plus-contrib org-drill hide-mode-line github-theme github-modern-theme paper-theme monochrome-theme monochrome twilight-bright-theme telephone-line org-pomodoro ein atomic-chrome writeroom-mode writeroom pdf-tools multi-term eterm-256color eterm-color web-mode git-gutter-fringe+ diff-hl git-gutter emojify emmet-mode impatient-mode evil-magit magit flycheck evil-surround org-bullets all-the-icons zoom processing-mode processing2-emacs ox-twbs rainbow-delimiters rainbow-mode fiplr evil-collection evil-leader evil use-package helm))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -88,9 +88,8 @@
 (use-package doom-themes)
 (load-theme 'doom-one t)
 
-;; PADDING
-;;(setq-default left-margin-width 5 right-margin-width 5)
-;;(set-window-buffer nil (current-buffer))
+;; INTERNAL BORDER
+(add-to-list 'default-frame-alist '(internal-border-width . 10))
 
 ;;;;; mode-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -222,6 +221,13 @@
 (use-package evil-magit)
 (require 'evil-magit)
 
+(use-package transient)
+
+;; FORGE
+(use-package forge
+  :after magit
+  :after transient)
+
 ;;;;; pdf-tools ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;(use-package pdf-tools)
@@ -263,5 +269,7 @@
 (use-package ein)
 (use-package yaml-mode)
 (use-package emojify)
+
+(define-coding-system-alias 'UTF-8 'utf-8)
 
 ;;;;; exit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

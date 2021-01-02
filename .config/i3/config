@@ -21,17 +21,11 @@ set $center move position center
 floating_modifier $mod
 
 set $thick 16
-#border_radius 0
+border_radius 4
 
 # DEFAULT BORDER
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
-
-# APPLICATION BORDERS
-for_window [class="Emacs"] border pixel $thick
-for_window [class="URxvt"] border pixel $thick
-for_window [class="st"] border pixel $thick
-for_window [class="XTerm"] border pixel $thick
+for_window [class="^.*"] border pixel 1
+for_window [title="^.*"] border pixel 1
 
 # FLOATING APPLICATIONS
 for_window [class="Orca"] floating enable
@@ -207,8 +201,9 @@ bindsym $mod+Ctrl+Mod2+KP_3 move container to workspace $ws3
 ##### COLORS #######################################
 
 # XRESOURCES
-set_from_resource $fg foreground
-set_from_resource $bg background 
+#set_from_resource $fg foreground
+set $fg "#888888"
+set $bg "#888888"
 
 # CLASS                 BORDER  BACK    TEXT    INDICATOR
 client.focused          $bg     $bg     $fg     $bg
